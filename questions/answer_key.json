@@ -1,0 +1,804 @@
+{
+  "version": "2026-09-27",
+  "rule_types": {
+    "exact_number": "the number must match exactly",
+    "exact_list": "the set of items must match exactly (no missing, no extra, order ignored)",
+    "tolerance": "a number within ± the stated tolerance"
+  },
+  "aliases": {
+    "E2": [
+      "e2",
+      "estradiol",
+      "17beta-estradiol",
+      "17β-estradiol",
+      "17-beta-estradiol",
+      "oestradiol"
+    ],
+    "4-OHT": [
+      "4-oht",
+      "4-hydroxytamoxifen",
+      "4oht",
+      "4-oh tamoxifen",
+      "4-oh-tamoxifen",
+      "4oh-tamoxifen",
+      "hydroxytamoxifen",
+      "trans-hydroxytamoxifen",
+      "tot",
+      "afimoxifene",
+      "oht"
+    ],
+    "tamoxifen (form not stated)": [
+      "tamoxifen",
+      "tamoxifen (form not stated)",
+      "tamoxifen (unspecified)",
+      "tam_unspecified",
+      "tamoxifen, form not stated",
+      "tamoxifen form not stated",
+      "tamoxifen (form unspecified)"
+    ],
+    "heregulin": [
+      "heregulin",
+      "hrg",
+      "heregulin-beta1",
+      "heregulin beta1",
+      "neuregulin",
+      "hrg-b1",
+      "hrg_b1"
+    ],
+    "fulvestrant": [
+      "fulvestrant",
+      "ici 182,780",
+      "faslodex"
+    ],
+    "GDC-0810": [
+      "gdc-0810",
+      "gdc0810",
+      "brilanestrant"
+    ],
+    "GDC-0927": [
+      "gdc-0927",
+      "gdc0927"
+    ],
+    "GNE-274": [
+      "gne-274",
+      "gne274",
+      "g-03046274"
+    ],
+    "ethanol": [
+      "ethanol",
+      "etoh",
+      "vehicle (ethanol)"
+    ],
+    "DMSO": [
+      "dmso",
+      "dimethyl sulfoxide"
+    ],
+    "not stated": [
+      "not stated",
+      "unknown",
+      "not given",
+      "none",
+      "not 4-oht",
+      "not 4-oht / not stated",
+      "not 4-oht: tamoxifen of unstated form, dose not stated",
+      "no 4-oht",
+      "unspecified"
+    ],
+    "chronic": [
+      "chronic",
+      "chronic (months)",
+      "months",
+      "8-12 months",
+      "eight to twelve months"
+    ],
+    "yes": [
+      "yes",
+      "true",
+      "y"
+    ],
+    "no": [
+      "no",
+      "false",
+      "n"
+    ],
+    "ZR-75-1 Tam2": [
+      "zr-75-1 tam2",
+      "zr751 tam2",
+      "zr-75-1_tam2",
+      "zr-75-1 tam2 (helsinki)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question": "*(CEO)* How many MCF-7 samples were exposed to 4-OHT, across all five studies? Count resistant MCF-7 lines grown in 4-OHT. Don't count samples whose tamoxifen form isn't stated.",
+      "answer": {
+        "total": 13,
+        "per_study": {
+          "GSE111151": 1,
+          "GSE117942": 2,
+          "GSE26298": 4,
+          "GSE4025": 6
+        }
+      },
+      "grading": {
+        "parts": [
+          {
+            "field": "per_study",
+            "type": "exact_list",
+            "expected": [
+              "GSE4025: 6",
+              "GSE26298: 4",
+              "GSE111151: 1",
+              "GSE117942: 2"
+            ]
+          },
+          {
+            "field": "total",
+            "type": "exact_number",
+            "expected": 13
+          }
+        ],
+        "rule": "Counts are exact; per-study pairs catch answers that reach 13 by the wrong route. GSE21618 must not appear."
+      },
+      "hand_check": "Counted raw titles containing 'TOT' (S1) and '4-hydroxytamoxifen' (S3), the 'MCF-7 Tam1' title (S4) and MCF-7 + '4-OH tamoxifen' characteristics (S5); S2 left out because its paper says only 'tamoxifen'.",
+      "query": "SELECT st.geo_accession, count(DISTINCT s.sample_id) AS samples\nFROM sample_treatment t JOIN sample s USING (sample_id) JOIN study st USING (study_id)\nWHERE t.compound_id = 'OHT' AND s.cell_line_id = 'CVCL_0031'\nGROUP BY ALL ORDER BY 1"
+    },
+    {
+      "id": "Q02",
+      "question": "*(Head of data)* How many control samples does each study have? A control is a sample given no drug, hormone or growth factor (only the solvent, or nothing at all), including 0-hour baselines and parental lines, whatever was done to its genes.",
+      "answer": {
+        "GSE111151": 4,
+        "GSE117942": 14,
+        "GSE21618": 31,
+        "GSE26298": 8,
+        "GSE4025": 5
+      },
+      "grading": {
+        "parts": [
+          {
+            "field": "per_study",
+            "type": "exact_list",
+            "expected": [
+              "GSE4025: 5",
+              "GSE21618: 31",
+              "GSE26298: 8",
+              "GSE111151: 4",
+              "GSE117942: 14"
+            ]
+          }
+        ],
+        "rule": "Exact counts per study; GSE21618 = 31 requires treating 0 h samples as untreated."
+      },
+      "hand_check": "Counted raw 'veh'/'vehicle' titles (S1, S3), S2 samples whose treatment field says untreated or whose time field says 0h, the four parental titles (S4) and 'ligand: DMSO' (S5).",
+      "query": "SELECT st.geo_accession, count(*) AS controls\nFROM sample s JOIN study st USING (study_id)\nWHERE s.role IN ('vehicle_control', 'untreated_control', 'parental')\nGROUP BY ALL ORDER BY 1"
+    },
+    {
+      "id": "Q03",
+      "question": "*(Head of data)* Which cell lines are in the data, and how many samples does each have? Count tamoxifen-resistant derivatives under the line they were made from.",
+      "answer": {
+        "MCF-7": 188,
+        "CAMA-1": 14,
+        "HCC1500": 14,
+        "BT-474": 13,
+        "T-47D": 13,
+        "EFM-19": 10,
+        "MDA-MB-330": 10,
+        "ZR-75-1": 3
+      },
+      "grading": {
+        "parts": [
+          {
+            "field": "per_line",
+            "type": "exact_list",
+            "expected": [
+              "MCF-7: 188",
+              "CAMA-1: 14",
+              "HCC1500: 14",
+              "BT-474: 13",
+              "T-47D: 13",
+              "EFM-19: 10",
+              "MDA-MB-330: 10",
+              "ZR-75-1: 3"
+            ]
+          }
+        ],
+        "rule": "Exact counts per line, resistant derivatives counted under their parent."
+      },
+      "hand_check": "Counted samples per line from raw fields: all S1-S3 samples are MCF-7 (their characteristics say so), S4 line names from titles, S5 from 'cell line:' characteristics.",
+      "query": "SELECT cl.preferred_name AS cell_line, count(*) AS samples\nFROM sample s JOIN cell_line cl ON cl.cell_line_id = s.cell_line_id\nGROUP BY ALL ORDER BY samples DESC, cell_line"
+    },
+    {
+      "id": "Q04",
+      "question": "*(Scientist)* Which compounds were added to cells, and in how many samples each? Count the solvents too. Keep tamoxifen of an unstated form separate from 4-OHT.",
+      "answer": {
+        "17beta-estradiol": 76,
+        "tamoxifen (form not stated)": 49,
+        "heregulin-beta1 (176-246)": 42,
+        "4-hydroxytamoxifen": 31,
+        "GDC-0810 (brilanestrant)": 14,
+        "dimethyl sulfoxide": 14,
+        "fulvestrant": 14,
+        "ethanol": 13,
+        "GDC-0927": 6,
+        "GNE-274": 6
+      },
+      "grading": {
+        "parts": [
+          {
+            "field": "per_compound",
+            "type": "exact_list",
+            "expected": [
+              "E2: 76",
+              "tamoxifen (form not stated): 49",
+              "heregulin: 42",
+              "4-OHT: 31",
+              "GDC-0810: 14",
+              "DMSO: 14",
+              "fulvestrant: 14",
+              "ethanol: 13",
+              "GDC-0927: 6",
+              "GNE-274: 6"
+            ]
+          }
+        ],
+        "rule": "Exact counts per compound; the spellings above are all accepted for each compound."
+      },
+      "hand_check": "Counted raw treatment labels per compound (S2 excludes 0h samples, where nothing had been added yet); vehicle solvents from paper_1 and paper_3 ('0.1% ethanol', 'vehicle (ethanol)') and S5's 'DMSO'.",
+      "query": "SELECT c.preferred_name AS compound, count(DISTINCT t.sample_id) AS samples\nFROM sample_treatment t JOIN compound c USING (compound_id)\nGROUP BY ALL ORDER BY samples DESC, compound"
+    },
+    {
+      "id": "Q05",
+      "question": "*(CEO)* How many distinct tamoxifen-resistant cell lines do we have, and which lab made each?",
+      "answer": {
+        "total": 13,
+        "per_study": {
+          "GSE111151": [
+            "BT-474 Tam1 (Helsinki)",
+            "BT-474 Tam2 (Helsinki)",
+            "MCF-7 Tam1 (Helsinki)",
+            "T-47D Tam1 (Helsinki)",
+            "T-47D Tam2 (Helsinki)",
+            "ZR-75-1 Tam1 (Helsinki)",
+            "ZR-75-1 Tam2 (Helsinki)"
+          ],
+          "GSE21618": [
+            "MCF-7 TamR clone #1 (RIKEN)",
+            "MCF-7 TamR clone #2 (RIKEN)",
+            "MCF-7 TamR clone #3 (RIKEN)",
+            "MCF-7 TamR clone #4 (RIKEN)",
+            "MCF-7 TamR clone #5 (RIKEN)",
+            "MCF-7 TamR clone #6 (RIKEN)"
+          ]
+        }
+      },
+      "grading": {
+        "parts": [
+          {
+            "field": "total",
+            "type": "exact_number",
+            "expected": 13
+          }
+        ],
+        "rule": "6 RIKEN clones + 7 Helsinki lines; RIKEN's time-course clone is one of its six, so 14 is wrong."
+      },
+      "hand_check": "Listed S2 titles 'TamR#1'-'#6' and S4 titles with 'Tam'; paper_2 says the time-course line is one of the six clones ('one TamR clone of the six clones available': found).",
+      "query": "-- resistant lines actually measured; RIKEN's time-course clone is one of its six numbered clones\n-- (cell_line.notes), so it is not counted as a seventh line\nSELECT st.geo_accession, cl.cell_line_id, cl.preferred_name\nFROM cell_line cl JOIN study st ON st.study_id = cl.derived_by_study\nWHERE cl.is_derived\n  AND cl.cell_line_id IN (SELECT derived_line_id FROM sample)\n  AND cl.cell_line_id <> 'S2_TAMR_SELECTED'\nORDER BY 1, 2"
+    },
+    {
+      "id": "Q06",
+      "question": "*(Head of data)* How many genes can we compare across all five studies?",
+      "answer": 11781,
+      "grading": {
+        "parts": [
+          {
+            "field": "genes",
+            "type": "tolerance",
+            "expected": 11781,
+            "tolerance": 236
+          }
+        ],
+        "rule": "±2% (11,545-12,017): a proper gene-ID mapping by another route gives 11,703; matching raw names gives 10,687 and fails."
+      },
+      "hand_check": "Second route: mapped every study to Entrez IDs instead of HGNC IDs and intersected: 11,703; spot genes in all five: ESR1, GREB1, NSD2, KMT2D, PGR, TFF1. Within 1% of the database's 11,781; the gap is genes the two routes match differently (e.g. genes with no Entrez ID). Raw names as written give 10,687.",
+      "query": "SELECT count(*) AS genes\nFROM (SELECT hgnc_id FROM feature_map WHERE chosen_for_gene\n      GROUP BY 1 HAVING count(DISTINCT study_id) = 5)"
+    },
+    {
+      "id": "Q07",
+      "question": "*(Scientist)* Which samples are the right controls for the RAR-alpha knockdown samples in GSE26298?",
+      "answer": [
+        "GSM645718",
+        "GSM645719"
+      ],
+      "grading": {
+        "parts": [
+          {
+            "field": "samples",
+            "type": "exact_list",
+            "expected": [
+              "GSM645718",
+              "GSM645719"
+            ]
+          }
+        ],
+        "rule": "Only the same-experiment controls; MD31/MD32 (GSM645710/11) are the other experiment's and fail."
+      },
+      "hand_check": "Raw titles MD39/MD40 are the scrambled-siRNA vehicles next to MD41/MD42; paper_3 lists a separate 'Control sample 2' (found); raw expression correlation with the RAR-alpha arrays 0.986 (MD39/40) vs 0.969 (MD31/32).",
+      "query": "SELECT c.sample_id\nFROM sample k JOIN sample c ON c.study_id = k.study_id AND c.batch = k.batch\nWHERE k.study_id = 'S3' AND k.genetic_change = 'knockdown'\n  AND k.genetic_change_target = (SELECT hgnc_id FROM gene WHERE symbol = 'RARA')\n  AND c.genetic_change = 'non_targeting_control' AND c.role = 'vehicle_control'\nGROUP BY 1 ORDER BY 1"
+    },
+    {
+      "id": "Q08",
+      "question": "*(Scientist)* How many samples in GSE21618 never had anything added to them before their RNA was taken?",
+      "answer": 31,
+      "grading": {
+        "parts": [
+          {
+            "field": "count",
+            "type": "exact_number",
+            "expected": 31
+          }
+        ],
+        "rule": "15 labeled untreated + 16 labeled with a drug at 0 h; answering 15 fails."
+      },
+      "hand_check": "Counted S2 samples whose raw treatment field is 'untreated' (15) or whose time field is '0h' (drug labeled but not yet added).",
+      "query": "SELECT count(*) AS never_treated\nFROM sample s\nWHERE s.study_id = 'S2'\n  AND NOT EXISTS (SELECT 1 FROM sample_treatment t WHERE t.sample_id = s.sample_id)"
+    },
+    {
+      "id": "Q09",
+      "question": "*(Scientist)* What concentration of 4-OHT did each study use?",
+      "answer": {
+        "GSE111151": "1000",
+        "GSE117942": "1000",
+        "GSE21618": "not 4-OHT: tamoxifen of unstated form, dose not stated",
+        "GSE26298": "100, 500",
+        "GSE4025": "10"
+      },
+      "grading": {
+        "parts": [
+          {
+            "field": "per_study",
+            "type": "exact_list",
+            "expected": [
+              "GSE4025: 10",
+              "GSE26298: 100",
+              "GSE26298: 500",
+              "GSE111151: 1000",
+              "GSE117942: 1000",
+              "GSE21618: not stated"
+            ]
+          }
+        ],
+        "rule": "Doses in nM, every dose per study; GSE21618 must be marked not stated / not 4-OHT, never given a number."
+      },
+      "hand_check": "Read the raw dose text: S1 series design '10nM hydroxytamoxifen', S3 'dose: 100/500 nM', S4 description '1uM 4-OH-tamoxifen', S5 'concentration: 1uM'; S2 paper says only 'tamoxifen (Sigma-Aldrich)'.",
+      "query": "SELECT st.geo_accession,\n       CASE WHEN count(t.sample_id) FILTER (WHERE t.compound_id = 'OHT') > 0\n            THEN string_agg(DISTINCT CAST(CAST(t.dose_nM AS INTEGER) AS VARCHAR), ', ' ORDER BY CAST(CAST(t.dose_nM AS INTEGER) AS VARCHAR))\n                 FILTER (WHERE t.compound_id = 'OHT')\n            WHEN count(t.sample_id) FILTER (WHERE t.compound_id = 'TAM_UNSPECIFIED') > 0\n            THEN 'not 4-OHT: tamoxifen of unstated form, dose not stated'\n            ELSE 'no 4-OHT' END AS oht_dose_nM\nFROM study st LEFT JOIN sample s USING (study_id) LEFT JOIN sample_treatment t USING (sample_id)\nGROUP BY 1 ORDER BY 1"
+    },
+    {
+      "id": "Q10",
+      "question": "*(Scientist)* How long were cells exposed to 4-OHT before RNA was collected, in each study that used 4-OHT?",
+      "answer": {
+        "GSE111151": "chronic (months)",
+        "GSE117942": "24 h",
+        "GSE26298": "not stated",
+        "GSE4025": "24 h"
+      },
+      "grading": {
+        "parts": [
+          {
+            "field": "per_study",
+            "type": "exact_list",
+            "expected": [
+              "GSE4025: 24",
+              "GSE117942: 24",
+              "GSE111151: chronic",
+              "GSE26298: not stated"
+            ]
+          }
+        ],
+        "rule": "Hours as a number; GSE26298 must be 'not stated' (guessing 72 fails); GSE21618 must not appear."
+      },
+      "hand_check": "Raw fields: S1 '...-treated for 24hr', S5 'time: 24h', S4 'eight to twelve months'; S3 GEO gives no harvest time (paper_3 legend: RNA taken 72 h after transfection, drug length never stated).",
+      "query": "SELECT st.geo_accession,\n       CASE WHEN bool_and(t.exposure_type = 'chronic') THEN 'chronic (months)'\n            WHEN count(t.exposure_h) = 0 THEN 'not stated'\n            ELSE string_agg(DISTINCT CAST(CAST(t.exposure_h AS INTEGER) AS VARCHAR), ', ') || ' h' END AS exposure,\n       any_value(t.exposure_note) AS note\nFROM sample_treatment t JOIN sample s USING (sample_id) JOIN study st USING (study_id)\nWHERE t.compound_id = 'OHT'\nGROUP BY 1 ORDER BY 1"
+    },
+    {
+      "id": "Q11",
+      "question": "*(Head of data)* Which treated samples have no control (solvent-only or untreated) with the same cells in the same experimental run?",
+      "answer": [
+        "GSM3315688",
+        "GSM3315689",
+        "GSM3315690",
+        "GSM3315691",
+        "GSM3315692",
+        "GSM3315693",
+        "GSM3315694",
+        "GSM3315695"
+      ],
+      "grading": {
+        "parts": [
+          {
+            "field": "samples",
+            "type": "exact_list",
+            "expected": [
+              "GSM3315688",
+              "GSM3315689",
+              "GSM3315690",
+              "GSM3315691",
+              "GSM3315692",
+              "GSM3315693",
+              "GSM3315694",
+              "GSM3315695"
+            ]
+          }
+        ],
+        "rule": "Exactly the 8 GSE117942 samples in the run with no DMSO."
+      },
+      "hand_check": "Grouped raw S5 samples by sample-ID block (SAM24314, SAM24322, ...) and cell line; these treated samples (MCF-7 and HCC1500 given GDC-0927 or GNE-274, all in block SAM24322) share no block with a DMSO sample of the same line.",
+      "query": "SELECT t.sample_id\nFROM sample t\nWHERE t.role = 'treated' AND NOT EXISTS (\n    SELECT 1 FROM sample c\n    WHERE c.study_id = t.study_id\n      AND c.batch IS NOT DISTINCT FROM t.batch\n      AND c.cell_line_id = t.cell_line_id\n      AND (c.derived_line_id IS NOT DISTINCT FROM t.derived_line_id OR c.role = 'parental')\n      AND c.genetic_change IS NOT DISTINCT FROM t.genetic_change\n      AND c.genetic_change_target IS NOT DISTINCT FROM t.genetic_change_target\n      AND c.role IN ('vehicle_control', 'untreated_control', 'parental'))\nORDER BY 1"
+    },
+    {
+      "id": "Q12",
+      "question": "*(Scientist)* Which studies removed estrogen from the growth medium before treating the cells, and which didn't?",
+      "answer": {
+        "deprived": [
+          "GSE117942",
+          "GSE21618",
+          "GSE26298",
+          "GSE4025"
+        ],
+        "not_deprived": [
+          "GSE111151"
+        ]
+      },
+      "grading": {
+        "parts": [
+          {
+            "field": "per_study",
+            "type": "exact_list",
+            "expected": [
+              "GSE4025: yes",
+              "GSE21618: yes",
+              "GSE26298: yes",
+              "GSE117942: yes",
+              "GSE111151: no"
+            ]
+          }
+        ],
+        "rule": "Each study marked deprived (yes) or not (no)."
+      },
+      "hand_check": "Read the raw protocols: S1 'CD-stripped calf serum', S3 'charcoal stripped FBS', S5 'hormone deprivation media', S2 paper 'charcoal-dextran-treated FBS'; S4's protocol has 10% FCS and no stripping or deprivation.",
+      "query": "SELECT st.geo_accession, string_agg(DISTINCT s.hormone_deprived, ',') AS hormone_deprived\nFROM sample s JOIN study st USING (study_id) GROUP BY 1 ORDER BY 1"
+    },
+    {
+      "id": "Q13",
+      "question": "*(Head of data)* Which samples have labels that contradict each other?",
+      "answer": [
+        "GSM539725",
+        "GSM539726",
+        "GSM539727",
+        "GSM539728"
+      ],
+      "grading": {
+        "parts": [
+          {
+            "field": "samples",
+            "type": "exact_list",
+            "expected": [
+              "GSM539725",
+              "GSM539726",
+              "GSM539727",
+              "GSM539728"
+            ]
+          }
+        ],
+        "rule": "Exactly the four RIKEN samples whose source name disagrees with their title and treatment field."
+      },
+      "hand_check": "Compared each S2 sample's raw source name with its raw treatment field and title; only these four disagree, and in each the title, treatment field and lab code agree with each other.",
+      "query": "SELECT DISTINCT entity_id AS sample_id FROM issue\nWHERE check_name = 'fields_contradict' AND entity_type = 'sample' ORDER BY 1"
+    },
+    {
+      "id": "Q14",
+      "question": "*(Head of data)* Is any dose written at an impossible level anywhere in the data? If so, where, and what should it be?",
+      "answer": [
+        {
+          "study": "GSE117942",
+          "as_written": "1 M",
+          "corrected_nM": 1000
+        }
+      ],
+      "grading": {
+        "parts": [
+          {
+            "field": "study",
+            "type": "exact_list",
+            "expected": [
+              "GSE117942"
+            ]
+          },
+          {
+            "field": "corrected_nM",
+            "type": "exact_number",
+            "expected": 1000
+          }
+        ],
+        "rule": "The study and the corrected dose (1 uM = 1,000 nM)."
+      },
+      "hand_check": "Found '1 M 4-OH tamoxifen' in the raw S5 treatment protocol; the same samples' characteristics say 'concentration: 1uM' (= 1,000 nM).",
+      "query": "SELECT st.geo_accession, i.observed AS as_written, i.message\nFROM issue i JOIN study st USING (study_id)\nWHERE i.check_name = 'dose_above_100uM'"
+    },
+    {
+      "id": "Q15",
+      "question": "*(Head of data)* In which studies are the deposited expression values not what GEO's own processing description says they are?",
+      "answer": [
+        "GSE117942",
+        "GSE4025"
+      ],
+      "grading": {
+        "parts": [
+          {
+            "field": "studies",
+            "type": "exact_list",
+            "expected": [
+              "GSE4025",
+              "GSE117942"
+            ]
+          }
+        ],
+        "rule": "Only mismatches with GEO's own processing text; GSE26298's mismatch is with the paper, so including it fails."
+      },
+      "hand_check": "S1 says 'R/Bioconductor GCRMA' (a log2 method) but raw values reach 19,450; S5 says values are nRPKM but every raw value is a whole-number count.",
+      "query": "-- mismatches against GEO's own processing text (the S3 flag compares GEO with the paper instead)\nSELECT DISTINCT st.geo_accession FROM issue i JOIN study st USING (study_id)\nWHERE i.check_name = 'value_scale_mismatch' AND i.expected NOT ILIKE '%paper%' ORDER BY 1"
+    },
+    {
+      "id": "Q16",
+      "question": "*(Head of data)* How many gene names have been corrupted into dates by Excel, and in which study?",
+      "answer": {
+        "count": 28,
+        "study": [
+          "GSE117942"
+        ]
+      },
+      "grading": {
+        "parts": [
+          {
+            "field": "count",
+            "type": "exact_number",
+            "expected": 28
+          },
+          {
+            "field": "study",
+            "type": "exact_list",
+            "expected": [
+              "GSE117942"
+            ]
+          }
+        ],
+        "rule": "Exact count and the one study."
+      },
+      "hand_check": "Counted date-shaped gene names (e.g. '1-Mar', '7-Sep') in the raw S5 counts file's symbol column; none in the other studies' gene columns.",
+      "query": "SELECT st.geo_accession, count(*) AS names FROM issue i JOIN study st USING (study_id)\nWHERE i.check_name = 'date_like_gene_name' GROUP BY 1"
+    },
+    {
+      "id": "Q17",
+      "question": "*(Scientist)* Which samples carry a replicate label that is repeated or wrong?",
+      "answer": [
+        "GSM645720",
+        "GSM645721"
+      ],
+      "grading": {
+        "parts": [
+          {
+            "field": "samples",
+            "type": "exact_list",
+            "expected": [
+              "GSM645720",
+              "GSM645721"
+            ]
+          }
+        ],
+        "rule": "The two RAR-alpha samples both labeled rep1."
+      },
+      "hand_check": "Raw S3 titles: MD41 and MD42 are both 'RARalpha siRNA + vehicle rep1' in the same experiment.",
+      "query": "SELECT DISTINCT entity_id AS sample_id FROM issue\nWHERE check_name = 'duplicate_titles' AND message LIKE '%replicate number is repeated%' ORDER BY 1"
+    },
+    {
+      "id": "Q18",
+      "question": "*(Scientist)* Is GREB1 induced by 24 hours of 4-OHT in ordinary MCF-7, compared with its own control, in every study that tested this?",
+      "answer": {
+        "induced_everywhere": "no",
+        "log2_change": {
+          "GSE117942": -2.52,
+          "GSE4025": -0.07
+        }
+      },
+      "grading": {
+        "parts": [
+          {
+            "field": "answer",
+            "type": "exact_list",
+            "expected": [
+              "no"
+            ]
+          },
+          {
+            "field": "log2_change.GSE4025",
+            "type": "tolerance",
+            "expected": -0.07,
+            "tolerance": 0.3
+          },
+          {
+            "field": "log2_change.GSE117942",
+            "type": "tolerance",
+            "expected": -2.52,
+            "tolerance": 0.3
+          }
+        ],
+        "rule": "No, plus each study's log2 change within ±0.3 (room for probe choice or normalization)."
+      },
+      "hand_check": "Recomputed from raw values: S1 GREB1 probe 205862_at (log2 of raw), Ad+TOT vs Ad+veh; S5 GREB1 counts -> log2 CPM, MCF-7 4-OH tamoxifen vs same-block DMSO.",
+      "query": "SELECT st.geo_accession, round(e.log2_change, 2) AS log2_change, e.n_treated, e.n_control, e.treated_ids, e.control_ids\nFROM treatment_effect('GREB1') e JOIN study st USING (study_id)\nJOIN (SELECT DISTINCT cell_line_id, derived_line_id, genetic_change FROM sample s WHERE s.cell_line_id = 'CVCL_0031' AND s.derived_line_id IS NULL AND s.genetic_change IN ('none', 'empty_vector', 'non_targeting_control')) o\n  ON o.cell_line_id = e.cell_line_id AND o.derived_line_id IS NOT DISTINCT FROM e.derived_line_id\n AND o.genetic_change = e.genetic_change\nWHERE e.compounds = 'OHT' AND e.exposure_h = 24 AND e.log2_change IS NOT NULL\nORDER BY 1"
+    },
+    {
+      "id": "Q19",
+      "question": "*(Scientist)* In GSE117942, which compound raised GREB1 in every cell line, compared with DMSO from the same run?",
+      "answer": [
+        "E2"
+      ],
+      "grading": {
+        "parts": [
+          {
+            "field": "compounds",
+            "type": "exact_list",
+            "expected": [
+              "E2"
+            ]
+          }
+        ],
+        "rule": "Only E2 rises in all seven lines against same-run DMSO."
+      },
+      "hand_check": "From raw S5 counts (log2 CPM): GREB1 change vs DMSO in the same sample-ID block, for every line and ligand; only E2 is positive in all seven lines (GDC-0927/GNE-274 have no same-block DMSO in two lines).",
+      "query": "-- compounds that raised GREB1 in every GSE117942 cell line, using only same-run DMSO controls;\n-- a compound with any line lacking a same-run control can't qualify\nWITH x AS (SELECT compounds, cell_line_id, log2_change FROM treatment_effect('GREB1') WHERE study_id = 'S5'),\nlines AS (SELECT count(DISTINCT cell_line_id) AS n FROM sample WHERE study_id = 'S5')\nSELECT compounds, count(*) FILTER (WHERE log2_change > 0) AS lines_up, count(*) AS lines_tested,\n       count(*) FILTER (WHERE log2_change IS NULL) AS lines_without_same_run_control, (SELECT n FROM lines) AS lines_in_study\nFROM x GROUP BY 1 ORDER BY 1"
+    },
+    {
+      "id": "Q20",
+      "question": "*(Scientist)* Does 24 hours of estradiol (E2) raise GREB1 in ordinary MCF-7 in every study that tested it, compared within each experimental run?",
+      "answer": {
+        "answer": "yes",
+        "log2_change": {
+          "GSE117942 S5_SAM24314": 2.85,
+          "GSE21618 S2_wt1": 0.48,
+          "GSE21618 S2_wt3": 1.33,
+          "GSE21618 S2_wt4": 0.29,
+          "GSE4025": 1.77
+        }
+      },
+      "grading": {
+        "parts": [
+          {
+            "field": "answer",
+            "type": "exact_list",
+            "expected": [
+              "yes"
+            ]
+          }
+        ],
+        "rule": "Yes: positive in every study and run that tested 24 h E2."
+      },
+      "hand_check": "Recomputed from raw values: S1 Ad+E2 vs Ad+veh; S2 GREB1 probe NM_014668_at, E2 24h vs the untreated/0h samples in the same lab-code batch (wt1, wt3, wt4); S5 E2 vs same-block DMSO.",
+      "query": "SELECT st.geo_accession, e.batch, round(e.log2_change, 2) AS log2_change\nFROM treatment_effect('GREB1') e JOIN study st USING (study_id)\nJOIN (SELECT DISTINCT cell_line_id, derived_line_id, genetic_change FROM sample s WHERE s.cell_line_id = 'CVCL_0031' AND s.derived_line_id IS NULL AND s.genetic_change IN ('none', 'empty_vector', 'non_targeting_control')) o\n  ON o.cell_line_id = e.cell_line_id AND o.derived_line_id IS NOT DISTINCT FROM e.derived_line_id\n AND o.genetic_change = e.genetic_change\nWHERE e.compounds = 'E2' AND e.exposure_h = 24 AND e.log2_change IS NOT NULL\nORDER BY 1, 2"
+    },
+    {
+      "id": "Q21",
+      "question": "*(Scientist)* In GSE26298, how much lower is ESR1 in the ESR1-knockdown samples than in their own experiment's control?",
+      "answer": -2.82,
+      "grading": {
+        "parts": [
+          {
+            "field": "log2_change",
+            "type": "tolerance",
+            "expected": -2.82,
+            "tolerance": 0.3
+          }
+        ],
+        "rule": "±0.3 log2."
+      },
+      "hand_check": "Raw S3 ESR1 probe 205225_at (log2 of raw): ER-siRNA MD37/MD38 minus the same experiment's scrambled-vehicle MD31/MD32.",
+      "query": "WITH x AS (\n    SELECT s.batch, s.genetic_change, s.genetic_change_target, m.value\n    FROM sample s JOIN measurement m USING (sample_id) JOIN gene g USING (hgnc_id)\n    WHERE g.symbol = 'ESR1' AND s.study_id = 'S3' AND s.role = 'vehicle_control'),\nkd AS (SELECT batch, avg(value) AS v FROM x WHERE genetic_change = 'knockdown'\n       AND genetic_change_target = (SELECT hgnc_id FROM gene WHERE symbol = 'ESR1') GROUP BY 1),\nctl AS (SELECT batch, avg(value) AS v FROM x WHERE genetic_change = 'non_targeting_control' GROUP BY 1)\nSELECT kd.batch, round(kd.v - ctl.v, 2) AS log2_change FROM kd JOIN ctl USING (batch)"
+    },
+    {
+      "id": "Q22",
+      "question": "*(Scientist)* In GSE111151, which tamoxifen-resistant line shows the largest drop in ESR1 compared with its parental line?",
+      "answer": "ZR-75-1 Tam2",
+      "grading": {
+        "parts": [
+          {
+            "field": "line",
+            "type": "exact_list",
+            "expected": [
+              "ZR-75-1 Tam2"
+            ]
+          }
+        ],
+        "rule": "One line."
+      },
+      "hand_check": "Raw S4 ESR1 counts (ENSG00000091831) -> log2 CPM; each Tam line minus its parental line; largest drop -1.24 (ZR-75-1 Tam2).",
+      "query": "WITH x AS (\n    SELECT s.sample_id, s.cell_line_id, s.derived_line_id, m.value\n    FROM sample s JOIN measurement m USING (sample_id) JOIN gene g USING (hgnc_id)\n    WHERE g.symbol = 'ESR1' AND s.study_id = 'S4')\nSELECT cl.preferred_name AS resistant_line, round(r.value - p.value, 2) AS log2_change_vs_parent\nFROM x r JOIN x p ON p.cell_line_id = r.cell_line_id AND p.derived_line_id IS NULL\nJOIN cell_line cl ON cl.cell_line_id = r.derived_line_id\nWHERE r.derived_line_id IS NOT NULL\nORDER BY log2_change_vs_parent"
+    },
+    {
+      "id": "Q23",
+      "question": "*(CEO)* Which studies can't simply be pooled with the others to study 4-OHT response, and why?",
+      "answer": {
+        "GSE111151": [
+          "4-OHT only as months-long selection, not an acute treatment",
+          "cells not hormone-deprived, unlike the other studies",
+          "resistant lines in drug at harvest vs parental lines without it; no replicates"
+        ],
+        "GSE21618": [
+          "tamoxifen form (and dose) not stated, so it may not be 4-OHT"
+        ],
+        "GSE26298": [
+          "4-OHT exposure time not stated"
+        ],
+        "all studies": [
+          "array and RNA-seq values are on different scales; only within-study changes can be combined"
+        ]
+      },
+      "grading": {
+        "parts": [
+          {
+            "field": "studies",
+            "type": "exact_list",
+            "expected": [
+              "GSE21618",
+              "GSE26298",
+              "GSE111151"
+            ]
+          }
+        ],
+        "rule": "The three studies that can't be pooled for 4-OHT response; reasons are recorded but not graded."
+      },
+      "hand_check": "Each reason re-read at its source: paper_2 'tamoxifen (Sigma-Aldrich)'; S3 protocol and paper_3 give no drug duration; S4 description 'eight to twelve months', growth protocol 10% FCS, paper_4 resistant lines 'supplemented with 1 uM 4-OH-tamoxifen'; arrays (S1-S3) vs RNA-seq (S4, S5) from the platforms.",
+      "query": "-- study-level facts that block pooling for a 4-OHT question\nSELECT st.geo_accession,\n       bool_or(t.compound_id = 'TAM_UNSPECIFIED')                       AS tamoxifen_form_not_stated,\n       bool_or(t.compound_id = 'OHT' AND t.exposure_type = 'acute' AND t.exposure_h IS NULL) AS oht_exposure_not_stated,\n       bool_or(t.compound_id = 'OHT' AND t.exposure_type = 'chronic')    AS oht_chronic_only,\n       bool_or(s.hormone_deprived = 'no')                                AS not_hormone_deprived,\n       bool_or(s.in_drug_at_harvest = 'yes' AND s.role = 'treated' AND t.exposure_type = 'chronic') AS drug_present_vs_absent,\n       count(DISTINCT s.batch) FILTER (WHERE s.batch_basis = 'inferred')  AS inferred_batches,\n       any_value(st.technology)                                          AS technology\nFROM study st JOIN sample s USING (study_id) LEFT JOIN sample_treatment t USING (sample_id)\nGROUP BY 1 ORDER BY 1"
+    },
+    {
+      "id": "Q24",
+      "question": "*(Head of data)* Which studies measured ordinary MCF-7 given 4-OHT for a stated 24 hours with a matched control in the same run, so that their responses can be combined?",
+      "answer": [
+        "GSE117942",
+        "GSE4025"
+      ],
+      "grading": {
+        "parts": [
+          {
+            "field": "studies",
+            "type": "exact_list",
+            "expected": [
+              "GSE4025",
+              "GSE117942"
+            ]
+          }
+        ],
+        "rule": "Exactly the two studies with ordinary MCF-7, 24 h 4-OHT and a same-run control."
+      },
+      "hand_check": "From the checks above: only S1 (Ad+TOT vs Ad+veh, 24hr) and S5 (MCF-7 4-OH tamoxifen vs same-block DMSO, 24h) have ordinary MCF-7, 4-OHT, a stated 24 h and a same-run control.",
+      "query": "SELECT DISTINCT st.geo_accession\nFROM treatment_effect('GREB1') e JOIN study st USING (study_id)\nJOIN (SELECT DISTINCT cell_line_id, derived_line_id, genetic_change FROM sample s WHERE s.cell_line_id = 'CVCL_0031' AND s.derived_line_id IS NULL AND s.genetic_change IN ('none', 'empty_vector', 'non_targeting_control')) o\n  ON o.cell_line_id = e.cell_line_id AND o.derived_line_id IS NOT DISTINCT FROM e.derived_line_id\n AND o.genetic_change = e.genetic_change\nWHERE e.compounds = 'OHT' AND e.exposure_type = 'acute' AND e.exposure_h = 24 AND e.n_control > 0\nORDER BY 1"
+    },
+    {
+      "id": "Q25",
+      "question": "*(CEO)* Combining only the studies that can be combined, what is the average change in GREB1 after 24 hours of 4-OHT in ordinary MCF-7?",
+      "answer": -1.29,
+      "grading": {
+        "parts": [
+          {
+            "field": "log2_change",
+            "type": "tolerance",
+            "expected": -1.29,
+            "tolerance": 0.3
+          }
+        ],
+        "rule": "±0.3 log2; pooling other studies or skipping same-run controls moves it outside."
+      },
+      "hand_check": "Average of the two raw-file changes from Q18: (-0.068 + -2.520) / 2.",
+      "query": "WITH per_study AS (\n    SELECT e.study_id, avg(e.log2_change) AS change\n    FROM treatment_effect('GREB1') e\n    JOIN (SELECT DISTINCT cell_line_id, derived_line_id, genetic_change FROM sample s WHERE s.cell_line_id = 'CVCL_0031' AND s.derived_line_id IS NULL AND s.genetic_change IN ('none', 'empty_vector', 'non_targeting_control')) o\n      ON o.cell_line_id = e.cell_line_id AND o.derived_line_id IS NOT DISTINCT FROM e.derived_line_id\n     AND o.genetic_change = e.genetic_change\n    WHERE e.compounds = 'OHT' AND e.exposure_type = 'acute' AND e.exposure_h = 24 AND e.n_control > 0\n    GROUP BY 1)\nSELECT round(avg(change), 2) AS mean_log2_change, count(*) AS studies,\n       string_agg(study_id || ': ' || CAST(round(change, 2) AS VARCHAR), '; ' ORDER BY study_id) AS per_study\nFROM per_study"
+    }
+  ]
+}

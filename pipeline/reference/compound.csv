@@ -1,0 +1,11 @@
+compound_id,preferred_name,compound_class,is_vehicle,pubchem_cid,notes
+OHT,4-hydroxytamoxifen,SERM,false,449459,"Active metabolite of tamoxifen. Used by S1, S3, S4, S5. S1 specifies the trans isomer."
+TAM_UNSPECIFIED,tamoxifen (form not stated),SERM,false,,"S2 says only 'tamoxifen (Sigma-Aldrich)'. May be the parent drug (CID 2733526), a different compound from OHT. Never pooled with OHT without a flag."
+E2,17beta-estradiol,hormone,false,5757,The natural estrogen.
+HRG_B1,heregulin-beta1 (176-246),growth_factor,false,,"A protein growth factor, so no PubChem CID. 10 nM per the S2 paper."
+FULVESTRANT,fulvestrant,SERD,false,104741,Estrogen receptor degrader.
+GDC0810,GDC-0810 (brilanestrant),SERD,false,56941241,"Experimental receptor degrader, S5."
+GDC0927,GDC-0927,SERD,false,87055263,"Experimental receptor degrader, S5."
+GNE274,GNE-274,other,false,162641011,Non-degrading analog of GDC-0927 (S5 paper). Called 'G-03046274' in the S5 counts file. CID from PubChem name lookup.
+ETHANOL,ethanol,vehicle,true,702,Solvent for vehicle controls in S1 (0.1%) and S3 (per papers).
+DMSO,dimethyl sulfoxide,vehicle,true,679,Solvent for vehicle controls in S5.

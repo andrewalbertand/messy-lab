@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Messy Lab Assistant</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500&display=swap">
+<style>
+:root{--bg:#f3f5f6;--panel:#fff;--ink:#132026;--ink-2:#4b5a61;--ink-3:#7b888e;--line:#dfe4e7;--line-2:#eef1f3;--accent:#1d5c8a;--ok:#1d8a4e;--no:#b5562a;--breaks:#d03b3b;--misleads:#c8652f;--minor:#7b888e;
+--sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;--serif:"IBM Plex Serif",Georgia,serif;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 var(--sans)}
+.wrap{max-width:980px;margin:0 auto;padding-inline:20px;padding-block:24px 60px;display:grid;gap:18px}
+.eyebrow{font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+h1{font:500 26px/1.2 var(--serif);margin:6px 0 4px}
+.lede{color:var(--ink-2);margin:0;max-width:70ch}
+form{display:flex;gap:8px}
+input{flex:1;font:15px var(--sans);padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+input:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+button.go{font:600 14px var(--sans);background:var(--ink);color:#fff;border:0;border-radius:8px;padding:0 18px;cursor:pointer}
+button.go:disabled{opacity:.5;cursor:default}
+.try{display:flex;gap:6px;flex-wrap:wrap;font-size:12px;color:var(--ink-3);align-items:center}
+.try button{font:12.5px var(--sans);border:1px solid var(--line);background:var(--panel);color:var(--accent);padding:4px 10px;border-radius:999px;cursor:pointer}
+.turn{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px;display:grid;gap:14px}
+.q{font:600 16px/1.35 var(--sans)}
+.steps{display:grid;gap:4px;border-left:2px solid var(--line);padding-left:12px}
+.step{font-size:13px;color:var(--ink-2)}
+.step code{display:block;font:11.5px/1.45 var(--mono);color:var(--ink-3);white-space:pre-wrap;max-height:3.1em;overflow:hidden}
+.step b{font-weight:500;color:var(--ink)}
+.step .n{font:11px var(--mono);color:var(--ink-3);margin-left:6px}
+.working{font-size:13px;color:var(--ink-3)}
+.working::after{content:"";display:inline-block;width:10px;animation:dots 1.2s steps(4) infinite}
+@keyframes dots{0%{content:""}25%{content:"."}50%{content:".."}75%{content:"..."}}
+.ans{display:grid;gap:8px}
+.pill{justify-self:start;font:600 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:5px 8px;border-radius:4px;color:#fff}
+.pill.ok{background:var(--ok)}.pill.no{background:var(--no)}
+.ans p{margin:0;font-size:15px;line-height:1.55}
+.cites{display:grid;gap:12px;border-top:1px solid var(--line-2);padding-top:12px}
+.cites h3{margin:0 0 6px;font:500 11px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:12px var(--mono);border:1px solid var(--line);border-radius:4px;padding:3px 7px;background:var(--bg)}
+.chip small{font-family:var(--sans);color:var(--ink-3);margin-left:6px}
+table{border-collapse:collapse;width:100%;font-size:12.5px}
+td,th{text-align:left;padding:5px 8px;border-bottom:1px solid var(--line-2);vertical-align:top}
+th{font:500 10.5px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3)}
+td.m{font-family:var(--mono);font-size:12px;white-space:nowrap}
+.scroll{overflow-x:auto}
+.imp{font:600 11px var(--mono);text-transform:uppercase}
+.imp.breaks{color:var(--breaks)}.imp.misleads{color:var(--misleads)}.imp.minor{color:var(--minor)}
+.meta{font:11.5px var(--mono);color:var(--ink-3)}
+.err{color:var(--breaks)}
+</style></head>
+<body><div class="wrap">
+<header>
+  <div class="eyebrow">Messy Lab · assistant demo</div>
+  <h1>Ask the program's data a question</h1>
+  <p class="lede">Answers come only from the clean database of five public tamoxifen studies. Every answer lists the samples, source files and known data issues behind it, and says so when the data can't answer.</p>
+</header>
+<form id="f"><input id="q" autocomplete="off" placeholder="e.g. How many MCF-7 samples were given 4-OHT, and in which studies?" aria-label="Your question"><button class="go" id="go">Ask</button></form>
+<div class="try" id="try">Try:</div>
+<div id="log" style="display:grid;gap:16px"></div>
+</div>
+<script>
+const EX = ["How many MCF-7 samples were given 4-OHT, and in which studies?",
+            "In GSE117942, how much does GREB1 change in MCF-7 cells after 4-OHT?",
+            "What tamoxifen dose did GSE21618 use?"];
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+EX.forEach(x => { const b = document.createElement("button"); b.type = "button"; b.textContent = x; b.onclick = () => { $("q").value = x; run(x); }; $("try").appendChild(b); });
+$("f").onsubmit = e => { e.preventDefault(); const q = $("q").value.trim(); if (q) run(q); };
+function run(q){
+  $("go").disabled = true;
+  const t = document.createElement("section"); t.className = "turn";
+  t.innerHTML = `<div class="q">${esc(q)}</div><div class="steps"></div><div class="working">Querying the database</div>`;
+  $("log").prepend(t);
+  const steps = t.querySelector(".steps"), work = t.querySelector(".working");
+  const es = new EventSource("/ask?q=" + encodeURIComponent(q));
+  es.addEventListener("step", e => { const s = JSON.parse(e.data);
+    steps.insertAdjacentHTML("beforeend", `<div class="step"><b>${esc(s.purpose)}</b><span class="n">${s.error ? "error" : s.rows + " rows"}</span><code>${esc(s.sql.trim())}</code></div>`); });
+  es.addEventListener("answer", e => { es.close(); work.remove(); $("go").disabled = false; t.insertAdjacentHTML("beforeend", render(JSON.parse(e.data))); });
+  es.addEventListener("error", e => { es.close(); $("go").disabled = false; work.className = "err"; work.textContent = e.data ? JSON.parse(e.data).error : "Connection lost."; });
+}
+function render(a){
+  const c = a.citations, n = a.total_samples && a.total_samples > c.samples.length ? ` · ${a.total_samples} in total` : "";
+  const samples = c.samples.length ? `<div><h3>Samples used (${c.samples.length}${n})</h3><div class="chips">${c.samples.map(s =>
+      `<span class="chip" title="${esc(s.title)}">${esc(s.sample_id)}<small>${esc(s.study)} · ${esc(s.treatment || s.role.replace(/_/g, " "))}</small></span>`).join("")}</div></div>` : "";
+  const files = c.files.length ? `<div><h3>Source files</h3><div class="scroll"><table><tr><th>File record</th><th>Path</th><th>SHA-256</th></tr>${c.files.map(f =>
+      `<tr><td class="m">${esc(f.source_file_id)}</td><td class="m">${esc(f.path)}</td><td class="m">${esc(f.sha256.slice(0, 12))}…</td></tr>`).join("")}</table></div></div>` : "";
+  const prov = c.provenance.length ? `<div><h3>What the raw files said</h3><div class="scroll"><table><tr><th>Record</th><th>Field</th><th>Raw text</th><th>Rule</th></tr>${c.provenance.slice(0, 6).map(p =>
+      `<tr><td class="m">${esc(p.entity_id)}</td><td class="m">${esc(p.field)}</td><td>${esc(p.raw_text)}</td><td>${esc(p.rule)}</td></tr>`).join("")}</table></div>${c.provenance.length > 6 ? `<div class="meta">+ ${c.provenance.length - 6} more provenance rows</div>` : ""}</div>` : "";
+  const issues = c.issues.length ? `<div><h3>Known data issues</h3><table>${c.issues.map(i =>
+      `<tr><td class="m">${esc(i.inventory_id)}</td><td><span class="imp ${esc(i.impact)}">${esc(i.impact)}</span></td><td>${esc(i.message)}</td></tr>`).join("")}</table></div>` : "";
+  const bad = c.not_found.length ? `<div class="meta err">Cited but not in the database, dropped: ${esc(c.not_found.join(", "))}</div>` : "";
+  return `<div class="ans"><span class="pill ${a.can_answer ? "ok" : "no"}">${a.can_answer ? "Answered from the data" : "The data can't answer this"}</span><p>${esc(a.answer)}</p></div>
+    <div class="cites">${samples}${files}${prov}${issues}${bad}</div>
+    <div class="meta">${a.steps.length} queries · ${a.seconds} s · ${esc(a.model)}</div>`;
+}
+</script></body></html>

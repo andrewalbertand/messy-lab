@@ -1,0 +1,455 @@
+
+====================================================================================================
+STUDY 1  GSE4025  (Frasor 2006, microarray U133A)
+====================================================================================================
+   geo_accession                  title                           characteristics_ch1                          description
+0       GSM92147    Ad+veh replicate1 b  Ad(moi10)-infected, vehicle-treated for 24hr  Ad(moi10)-infected, vehicle-treated
+1       GSM92148    Ad+veh replicate2 b  Ad(moi10)-infected, vehicle-treated for 24hr  Ad(moi10)-infected, vehicle-treated
+2       GSM92149     Ad+E2 replicate1 b       Ad(moi10)-infected, E2-treated for 24hr       Ad(moi10)-infected, E2-treated
+3       GSM92150     Ad+E2 replicate2 b       Ad(moi10)-infected, E2-treated for 24hr       Ad(moi10)-infected, E2-treated
+4       GSM92151       Ad+E2 replicate3       Ad(moi10)-infected, E2-treated for 24hr       Ad(moi10)-infected, E2-treated
+5       GSM92152      Ad+TOT replicate1      Ad(moi10)-infected, TOT-treated for 24hr      Ad(moi10)-infected, TOT-treated
+6       GSM92153      Ad+TOT replicate2      Ad(moi10)-infected, TOT-treated for 24hr      Ad(moi10)-infected, TOT-treated
+7       GSM92154      Ad+TOT replicate3      Ad(moi10)-infected, TOT-treated for 24hr      Ad(moi10)-infected, TOT-treated
+8       GSM92155  AdERb +veh replicate1   AdERb(moi10)-infected, veh-treated for 24hr   AdERb(moi10)-infected, veh-treated
+9       GSM92156  AdERb +veh replicate2   AdERb(moi10)-infected, veh-treated for 24hr   AdERb(moi10)-infected, veh-treated
+10      GSM92157  AdERb +veh replicate3   AdERb(moi10)-infected, veh-treated for 24hr   AdERb(moi10)-infected, veh-treated
+11      GSM92158   AdERb +E2 replicate1    AdERb(moi10)-infected, E2-treated for 24hr    AdERb(moi10)-infected, E2-treated
+12      GSM92159   AdERb +E2 replicate2    AdERb(moi10)-infected, E2-treated for 24hr    AdERb(moi10)-infected, E2-treated
+13      GSM92160   AdERb +E2 replicate3    AdERb(moi10)-infected, E2-treated for 24hr    AdERb(moi10)-infected, E2-treated
+14      GSM92161  AdERb +TOT replicate1   AdERb(moi10)-infected, TOT-treated for 24hr   AdERb(moi10)-infected, TOT-treated
+15      GSM92162  AdERb +TOT replicate2   AdERb(moi10)-infected, TOT-treated for 24hr   AdERb(moi10)-infected, TOT-treated
+16      GSM92163  AdERb +TOT replicate3   AdERb(moi10)-infected, TOT-treated for 24hr   AdERb(moi10)-infected, TOT-treated
+
+source_name: {'MCF-7 breast cancer cells': 17}
+data_processing: {'R/Bioconductor GCRMA': 17}
+contact_institute: {'Kite Pharma': 17}
+sample extract protocol (moi): ['multiplicity of infection (moi) of 5 or 50']
+series overall design (moi): ['multiplicity of infection (moi) of 10']
+characteristics moi: ['moi10']
+values: 22,283 rows x 17 samples | min 1.15 | median 7.96 | max 19,450.09 | zeros 0 | blank 0
+
+====================================================================================================
+STUDY 2  GSE21618  (Oyama 2011, microarray U133 Plus 2 with custom RefSeq CDF)
+====================================================================================================
+    geo_accession                    title                                          source_name_ch1      characteristics_ch1#8 characteristics_ch1#9     description#1
+0       GSM539602          TamR Control 0h       breast epithelial cell, adherent, without stimulus       treatment: untreated              time: 0h     TamR.Ctrl.00h
+1       GSM539603          TamR Control 1h   breast epithelial cell, adherent, without stimulus, 1h       treatment: untreated              time: 1h     TamR.Ctrl.01h
+2       GSM539604          TamR Control 2h   breast epithelial cell, adherent, without stimulus, 2h       treatment: untreated              time: 2h     TamR.Ctrl.02h
+3       GSM539605          TamR Control 3h   breast epithelial cell, adherent, without stimulus, 3h       treatment: untreated              time: 3h     TamR.Ctrl.03h
+4       GSM539606          TamR Control 6h   breast epithelial cell, adherent, without stimulus, 6h       treatment: untreated              time: 6h     TamR.Ctrl.06h
+5       GSM539607         TamR Control 12h  breast epithelial cell, adherent, without stimulus, 12h       treatment: untreated             time: 12h     TamR.Ctrl.12h
+6       GSM539608         TamR Control 24h  breast epithelial cell, adherent, without stimulus, 24h       treatment: untreated             time: 24h     TamR.Ctrl.24h
+7       GSM539609         TamR Control 48h  breast epithelial cell, adherent, without stimulus, 48h       treatment: untreated             time: 48h     TamR.Ctrl.48h
+8       GSM539610               TamR E2 1h                 breast epithelial cell, adherent, E2, 1h              treatment: E2              time: 1h       TamR.E2.01h
+9       GSM539611               TamR E2 2h                 breast epithelial cell, adherent, E2, 2h              treatment: E2              time: 2h       TamR.E2.02h
+10      GSM539612               TamR E2 3h                 breast epithelial cell, adherent, E2, 3h              treatment: E2              time: 3h       TamR.E2.03h
+11      GSM539613               TamR E2 6h                 breast epithelial cell, adherent, E2, 6h              treatment: E2              time: 6h       TamR.E2.06h
+12      GSM539614              TamR E2 12h                breast epithelial cell, adherent, E2, 12h              treatment: E2             time: 12h       TamR.E2.12h
+13      GSM539615              TamR E2 24h                breast epithelial cell, adherent, E2, 24h              treatment: E2             time: 24h       TamR.E2.24h
+14      GSM539616              TamR E2 48h                breast epithelial cell, adherent, E2, 48h              treatment: E2             time: 48h       TamR.E2.48h
+15      GSM539617     TamR E2+Tamoxifen 1h       breast epithelial cell, adherent, E2+Tamoxifen, 1h   treatment: E2, tamoxifen              time: 1h   TamR.E2_Tam.01h
+16      GSM539618     TamR E2+Tamoxifen 2h       breast epithelial cell, adherent, E2+Tamoxifen, 2h   treatment: E2, tamoxifen              time: 2h   TamR.E2_Tam.02h
+17      GSM539619     TamR E2+Tamoxifen 3h       breast epithelial cell, adherent, E2+Tamoxifen, 3h   treatment: E2, tamoxifen              time: 3h   TamR.E2_Tam.03h
+18      GSM539620     TamR E2+Tamoxifen 6h       breast epithelial cell, adherent, E2+Tamoxifen, 6h   treatment: E2, tamoxifen              time: 6h   TamR.E2_Tam.06h
+19      GSM539621    TamR E2+Tamoxifen 12h      breast epithelial cell, adherent, E2+Tamoxifen, 12h   treatment: E2, tamoxifen             time: 12h   TamR.E2_Tam.12h
+20      GSM539622    TamR E2+Tamoxifen 24h      breast epithelial cell, adherent, E2+Tamoxifen, 24h   treatment: E2, tamoxifen             time: 24h   TamR.E2_Tam.24h
+21      GSM539623    TamR E2+Tamoxifen 48h      breast epithelial cell, adherent, E2+Tamoxifen, 48h   treatment: E2, tamoxifen             time: 48h   TamR.E2_Tam.48h
+22      GSM539624              TamR HRG 1h                breast epithelial cell, adherent, HRG, 1h             treatment: HRG              time: 1h      TamR.HRG.01h
+23      GSM539625              TamR HRG 2h                breast epithelial cell, adherent, HRG, 2h             treatment: HRG              time: 2h      TamR.HRG.02h
+24      GSM539626              TamR HRG 3h                breast epithelial cell, adherent, HRG, 3h             treatment: HRG              time: 3h      TamR.HRG.03h
+25      GSM539627              TamR HRG 6h                breast epithelial cell, adherent, HRG, 6h             treatment: HRG              time: 6h      TamR.HRG.06h
+26      GSM539628             TamR HRG 12h               breast epithelial cell, adherent, HRG, 12h             treatment: HRG             time: 12h      TamR.HRG.12h
+27      GSM539629             TamR HRG 24h               breast epithelial cell, adherent, HRG, 24h             treatment: HRG             time: 24h      TamR.HRG.24h
+28      GSM539630             TamR HRG 48h               breast epithelial cell, adherent, HRG, 48h             treatment: HRG             time: 48h      TamR.HRG.48h
+29      GSM539631    TamR HRG+Tamoxifen 1h      breast epithelial cell, adherent, HRG+Tamoxifen, 1h  treatment: HRG, tamoxifen              time: 1h  TamR.HRG_Tam.01h
+30      GSM539632    TamR HRG+Tamoxifen 2h      breast epithelial cell, adherent, HRG+Tamoxifen, 2h  treatment: HRG, tamoxifen              time: 2h  TamR.HRG_Tam.02h
+31      GSM539633    TamR HRG+Tamoxifen 3h      breast epithelial cell, adherent, HRG+Tamoxifen, 3h  treatment: HRG, tamoxifen              time: 3h  TamR.HRG_Tam.03h
+32      GSM539634    TamR HRG+Tamoxifen 6h      breast epithelial cell, adherent, HRG+Tamoxifen, 6h  treatment: HRG, tamoxifen              time: 6h  TamR.HRG_Tam.06h
+33      GSM539635   TamR HRG+Tamoxifen 12h     breast epithelial cell, adherent, HRG+Tamoxifen, 12h  treatment: HRG, tamoxifen             time: 12h  TamR.HRG_Tam.12h
+34      GSM539636   TamR HRG+Tamoxifen 24h     breast epithelial cell, adherent, HRG+Tamoxifen, 24h  treatment: HRG, tamoxifen             time: 24h  TamR.HRG_Tam.24h
+35      GSM539637   TamR HRG+Tamoxifen 48h     breast epithelial cell, adherent, HRG+Tamoxifen, 48h  treatment: HRG, tamoxifen             time: 48h  TamR.HRG_Tam.48h
+36      GSM539638        TamR Tamoxifen 0h          breast epithelial cell, adherent, Tamoxifen, 0h       treatment: tamoxifen              time: 0h      TamR.Tam.00h
+37      GSM539639        TamR Tamoxifen 1h          breast epithelial cell, adherent, Tamoxifen, 1h       treatment: tamoxifen              time: 1h      TamR.Tam.01h
+38      GSM539640        TamR Tamoxifen 2h          breast epithelial cell, adherent, Tamoxifen, 2h       treatment: tamoxifen              time: 2h      TamR.Tam.02h
+39      GSM539641        TamR Tamoxifen 3h          breast epithelial cell, adherent, Tamoxifen, 3h       treatment: tamoxifen              time: 3h      TamR.Tam.03h
+40      GSM539642        TamR Tamoxifen 6h          breast epithelial cell, adherent, Tamoxifen, 6h       treatment: tamoxifen              time: 6h      TamR.Tam.06h
+41      GSM539643       TamR Tamoxifen 12h         breast epithelial cell, adherent, Tamoxifen, 12h       treatment: tamoxifen             time: 12h      TamR.Tam.12h
+42      GSM539644       TamR Tamoxifen 24h         breast epithelial cell, adherent, Tamoxifen, 24h       treatment: tamoxifen             time: 24h      TamR.Tam.24h
+43      GSM539645       TamR Tamoxifen 48h         breast epithelial cell, adherent, Tamoxifen, 48h       treatment: tamoxifen             time: 48h      TamR.Tam.48h
+44      GSM539646           TamR#1 Control       breast epithelial cell, adherent, without stimulus       treatment: untreated                              TamR1.Ctrl
+45      GSM539647            TamR#1 E2 24h                breast epithelial cell, adherent, E2, 24h              treatment: E2             time: 24h      TamR1.E2.24h
+46      GSM539648  TamR#1 E2+Tamoxifen 24h      breast epithelial cell, adherent, E2+Tamoxifen, 24h   treatment: E2, tamoxifen             time: 24h  TamR1.E2_Tam.24h
+47      GSM539649      TamR#1 Tamoxifen 0h          breast epithelial cell, adherent, Tamoxifen, 0h       treatment: tamoxifen              time: 0h     TamR1.Tam.00h
+48      GSM539650           TamR#2 Control       breast epithelial cell, adherent, without stimulus       treatment: untreated                              TamR2.Ctrl
+49      GSM539651            TamR#2 E2 24h                breast epithelial cell, adherent, E2, 24h              treatment: E2             time: 24h      TamR2.E2.24h
+50      GSM539652  TamR#2 E2+Tamoxifen 24h      breast epithelial cell, adherent, E2+Tamoxifen, 24h   treatment: E2, tamoxifen             time: 24h  TamR2.E2_Tam.24h
+51      GSM539653      TamR#2 Tamoxifen 0h          breast epithelial cell, adherent, Tamoxifen, 0h       treatment: tamoxifen              time: 0h     TamR2.Tam.00h
+52      GSM539654           TamR#3 Control       breast epithelial cell, adherent, without stimulus       treatment: untreated                              TamR3.Ctrl
+53      GSM539655            TamR#3 E2 24h                breast epithelial cell, adherent, E2, 24h              treatment: E2             time: 24h      TamR3.E2.24h
+54      GSM539656  TamR#3 E2+Tamoxifen 24h      breast epithelial cell, adherent, E2+Tamoxifen, 24h   treatment: E2, tamoxifen             time: 24h  TamR3.E2_Tam.24h
+55      GSM539657      TamR#3 Tamoxifen 0h          breast epithelial cell, adherent, Tamoxifen, 0h       treatment: tamoxifen              time: 0h     TamR3.Tam.00h
+56      GSM539658           TamR#4 Control       breast epithelial cell, adherent, without stimulus       treatment: untreated                              TamR4.Ctrl
+57      GSM539659            TamR#4 E2 24h                breast epithelial cell, adherent, E2, 24h              treatment: E2             time: 24h      TamR4.E2.24h
+58      GSM539660  TamR#4 E2+Tamoxifen 24h      breast epithelial cell, adherent, E2+Tamoxifen, 24h   treatment: E2, tamoxifen             time: 24h  TamR4.E2_Tam.24h
+59      GSM539661      TamR#4 Tamoxifen 0h          breast epithelial cell, adherent, Tamoxifen, 0h       treatment: tamoxifen              time: 0h     TamR4.Tam.00h
+60      GSM539662           TamR#5 Control       breast epithelial cell, adherent, without stimulus       treatment: untreated                              TamR5.Ctrl
+61      GSM539663            TamR#5 E2 24h                breast epithelial cell, adherent, E2, 24h              treatment: E2             time: 24h      TamR5.E2.24h
+62      GSM539664  TamR#5 E2+Tamoxifen 24h      breast epithelial cell, adherent, E2+Tamoxifen, 24h   treatment: E2, tamoxifen             time: 24h  TamR5.E2_Tam.24h
+63      GSM539665      TamR#5 Tamoxifen 0h          breast epithelial cell, adherent, Tamoxifen, 0h       treatment: tamoxifen              time: 0h     TamR5.Tam.00h
+64      GSM539666           TamR#6 Control       breast epithelial cell, adherent, without stimulus       treatment: untreated                              TamR6.Ctrl
+65      GSM539667            TamR#6 E2 24h                breast epithelial cell, adherent, E2, 24h              treatment: E2             time: 24h      TamR6.E2.24h
+66      GSM539668  TamR#6 E2+Tamoxifen 24h      breast epithelial cell, adherent, E2+Tamoxifen, 24h   treatment: E2, tamoxifen             time: 24h  TamR6.E2_Tam.24h
+67      GSM539669            WT E2 0h rep1                 breast epithelial cell, adherent, E2, 0h              treatment: E2              time: 0h     wt1.E2.00h.r1
+68      GSM539670            WT E2 0h rep2                 breast epithelial cell, adherent, E2, 0h              treatment: E2              time: 0h     wt1.E2.00h.r2
+69      GSM539671            WT E2 1h rep1                 breast epithelial cell, adherent, E2, 1h              treatment: E2              time: 1h     wt1.E2.01h.r1
+70      GSM539672            WT E2 1h rep2                 breast epithelial cell, adherent, E2, 1h              treatment: E2              time: 1h     wt1.E2.01h.r2
+71      GSM539673            WT E2 2h rep1                 breast epithelial cell, adherent, E2, 2h              treatment: E2              time: 2h     wt1.E2.02h.r1
+72      GSM539674            WT E2 2h rep2                 breast epithelial cell, adherent, E2, 2h              treatment: E2              time: 2h     wt1.E2.02h.r2
+73      GSM539675            WT E2 3h rep1                 breast epithelial cell, adherent, E2, 3h              treatment: E2              time: 3h     wt1.E2.03h.r1
+74      GSM539676            WT E2 3h rep2                 breast epithelial cell, adherent, E2, 3h              treatment: E2              time: 3h     wt1.E2.03h.r2
+75      GSM539677            WT E2 6h rep1                 breast epithelial cell, adherent, E2, 6h              treatment: E2              time: 6h     wt1.E2.06h.r1
+76      GSM539678            WT E2 6h rep2                 breast epithelial cell, adherent, E2, 6h              treatment: E2              time: 6h     wt1.E2.06h.r2
+77      GSM539679           WT E2 12h rep1                breast epithelial cell, adherent, E2, 12h              treatment: E2             time: 12h     wt1.E2.12h.r1
+78      GSM539680           WT E2 12h rep2                breast epithelial cell, adherent, E2, 12h              treatment: E2             time: 12h     wt1.E2.12h.r2
+79      GSM539681           WT E2 24h rep1                breast epithelial cell, adherent, E2, 24h              treatment: E2             time: 24h     wt1.E2.24h.r1
+80      GSM539682           WT E2 24h rep2                breast epithelial cell, adherent, E2, 24h              treatment: E2             time: 24h     wt1.E2.24h.r2
+81      GSM539683           WT E2 48h rep1                breast epithelial cell, adherent, E2, 48h              treatment: E2             time: 48h     wt1.E2.48h.r1
+82      GSM539684           WT E2 48h rep2                breast epithelial cell, adherent, E2, 48h              treatment: E2             time: 48h     wt1.E2.48h.r2
+83      GSM539685           WT HRG 0h rep1                breast epithelial cell, adherent, HRG, 0h             treatment: HRG              time: 0h    wt1.HRG.00h.r1
+84      GSM539686           WT HRG 0h rep2                breast epithelial cell, adherent, HRG, 0h             treatment: HRG              time: 0h    wt1.HRG.00h.r2
+85      GSM539687           WT HRG 1h rep1                breast epithelial cell, adherent, HRG, 1h             treatment: HRG              time: 1h    wt1.HRG.01h.r1
+86      GSM539688           WT HRG 1h rep2                breast epithelial cell, adherent, HRG, 1h             treatment: HRG              time: 1h    wt1.HRG.01h.r2
+87      GSM539689           WT HRG 2h rep1                breast epithelial cell, adherent, HRG, 2h             treatment: HRG              time: 2h    wt1.HRG.02h.r1
+88      GSM539690           WT HRG 2h rep2                breast epithelial cell, adherent, HRG, 2h             treatment: HRG              time: 2h    wt1.HRG.02h.r2
+89      GSM539691           WT HRG 3h rep1                breast epithelial cell, adherent, HRG, 3h             treatment: HRG              time: 3h    wt1.HRG.03h.r1
+90      GSM539692           WT HRG 3h rep2                breast epithelial cell, adherent, HRG, 3h             treatment: HRG              time: 3h    wt1.HRG.03h.r2
+91      GSM539693           WT HRG 6h rep1                breast epithelial cell, adherent, HRG, 6h             treatment: HRG              time: 6h    wt1.HRG.06h.r1
+92      GSM539694           WT HRG 6h rep2                breast epithelial cell, adherent, HRG, 6h             treatment: HRG              time: 6h    wt1.HRG.06h.r2
+93      GSM539695          WT HRG 12h rep1               breast epithelial cell, adherent, HRG, 12h             treatment: HRG             time: 12h    wt1.HRG.12h.r1
+94      GSM539696          WT HRG 12h rep2               breast epithelial cell, adherent, HRG, 12h             treatment: HRG             time: 12h    wt1.HRG.12h.r2
+95      GSM539697          WT HRG 24h rep1               breast epithelial cell, adherent, HRG, 24h             treatment: HRG             time: 24h    wt1.HRG.24h.r1
+96      GSM539698          WT HRG 24h rep2               breast epithelial cell, adherent, HRG, 24h             treatment: HRG             time: 24h    wt1.HRG.24h.r2
+97      GSM539699          WT HRG 48h rep1               breast epithelial cell, adherent, HRG, 48h             treatment: HRG             time: 48h    wt1.HRG.48h.r1
+98      GSM539700          WT HRG 48h rep2               breast epithelial cell, adherent, HRG, 48h             treatment: HRG             time: 48h    wt1.HRG.48h.r2
+99      GSM539701                WT HRG 0h                breast epithelial cell, adherent, HRG, 0h             treatment: HRG              time: 0h       wt2.HRG.00h
+100     GSM539702                WT HRG 1h                breast epithelial cell, adherent, HRG, 1h             treatment: HRG              time: 1h       wt2.HRG.01h
+101     GSM539703                WT HRG 2h                breast epithelial cell, adherent, HRG, 2h             treatment: HRG              time: 2h       wt2.HRG.02h
+102     GSM539704                WT HRG 3h                breast epithelial cell, adherent, HRG, 3h             treatment: HRG              time: 3h       wt2.HRG.03h
+103     GSM539705                WT HRG 6h                breast epithelial cell, adherent, HRG, 6h             treatment: HRG              time: 6h       wt2.HRG.06h
+104     GSM539706               WT HRG 12h               breast epithelial cell, adherent, HRG, 12h             treatment: HRG             time: 12h       wt2.HRG.12h
+105     GSM539707               WT HRG 24h               breast epithelial cell, adherent, HRG, 24h             treatment: HRG             time: 24h       wt2.HRG.24h
+106     GSM539708               WT HRG 48h               breast epithelial cell, adherent, HRG, 48h             treatment: HRG             time: 48h       wt2.HRG.48h
+107     GSM539709      WT HRG+Tamoxifen 0h      breast epithelial cell, adherent, HRG+Tamoxifen, 0h  treatment: HRG, tamoxifen              time: 0h   wt2.HRG_Tam.00h
+108     GSM539710      WT HRG+Tamoxifen 1h      breast epithelial cell, adherent, HRG+Tamoxifen, 1h  treatment: HRG, tamoxifen              time: 1h   wt2.HRG_Tam.01h
+109     GSM539711      WT HRG+Tamoxifen 2h      breast epithelial cell, adherent, HRG+Tamoxifen, 2h  treatment: HRG, tamoxifen              time: 2h   wt2.HRG_Tam.02h
+110     GSM539712      WT HRG+Tamoxifen 3h      breast epithelial cell, adherent, HRG+Tamoxifen, 3h  treatment: HRG, tamoxifen              time: 3h   wt2.HRG_Tam.03h
+111     GSM539713      WT HRG+Tamoxifen 6h      breast epithelial cell, adherent, HRG+Tamoxifen, 6h  treatment: HRG, tamoxifen              time: 6h   wt2.HRG_Tam.06h
+112     GSM539714     WT HRG+Tamoxifen 12h     breast epithelial cell, adherent, HRG+Tamoxifen, 12h  treatment: HRG, tamoxifen             time: 12h   wt2.HRG_Tam.12h
+113     GSM539715     WT HRG+Tamoxifen 24h     breast epithelial cell, adherent, HRG+Tamoxifen, 24h  treatment: HRG, tamoxifen             time: 24h   wt2.HRG_Tam.24h
+114     GSM539716     WT HRG+Tamoxifen 48h     breast epithelial cell, adherent, HRG+Tamoxifen, 48h  treatment: HRG, tamoxifen             time: 48h   wt2.HRG_Tam.48h
+115     GSM539717          WT Tamoxifen 0h          breast epithelial cell, adherent, Tamoxifen, 0h       treatment: tamoxifen              time: 0h       wt2.Tam.00h
+116     GSM539718          WT Tamoxifen 1h          breast epithelial cell, adherent, Tamoxifen, 1h       treatment: tamoxifen              time: 1h       wt2.Tam.01h
+117     GSM539719          WT Tamoxifen 2h          breast epithelial cell, adherent, Tamoxifen, 2h       treatment: tamoxifen              time: 2h       wt2.Tam.02h
+118     GSM539720          WT Tamoxifen 3h          breast epithelial cell, adherent, Tamoxifen, 3h       treatment: tamoxifen              time: 3h       wt2.Tam.03h
+119     GSM539721          WT Tamoxifen 6h          breast epithelial cell, adherent, Tamoxifen, 6h       treatment: tamoxifen              time: 6h       wt2.Tam.06h
+120     GSM539722         WT Tamoxifen 12h         breast epithelial cell, adherent, Tamoxifen, 12h       treatment: tamoxifen             time: 12h       wt2.Tam.12h
+121     GSM539723         WT Tamoxifen 24h         breast epithelial cell, adherent, Tamoxifen, 24h       treatment: tamoxifen             time: 24h       wt2.Tam.24h
+122     GSM539724         WT Tamoxifen 48h         breast epithelial cell, adherent, Tamoxifen, 48h       treatment: tamoxifen             time: 48h       wt2.Tam.48h
+123     GSM539725               WT Control                breast epithelial cell, adherent, E2, 24h       treatment: untreated                                wt3.Ctrl
+124     GSM539726                WT E2 24h      breast epithelial cell, adherent, E2+Tamoxifen, 24h              treatment: E2             time: 24h        wt3.E2.24h
+125     GSM539727      WT E2+Tamoxifen 24h         breast epithelial cell, adherent, Tamoxifen, 24h   treatment: E2, tamoxifen             time: 24h    wt3.E2_Tam.24h
+126     GSM539728       WT Tamoxifen 0h, 2       breast epithelial cell, adherent, without stimulus       treatment: tamoxifen              time: 0h       wt3.Tam.00h
+127     GSM539729                 WT E2 0h                 breast epithelial cell, adherent, E2, 0h              treatment: E2              time: 0h        wt4.E2.00h
+128     GSM539730                 WT E2 1h                 breast epithelial cell, adherent, E2, 1h              treatment: E2              time: 1h        wt4.E2.01h
+129     GSM539731                 WT E2 2h                 breast epithelial cell, adherent, E2, 2h              treatment: E2              time: 2h        wt4.E2.02h
+130     GSM539732                 WT E2 3h                 breast epithelial cell, adherent, E2, 3h              treatment: E2              time: 3h        wt4.E2.03h
+131     GSM539733                 WT E2 6h                 breast epithelial cell, adherent, E2, 6h              treatment: E2              time: 6h        wt4.E2.06h
+132     GSM539734                WT E2 12h                breast epithelial cell, adherent, E2, 12h              treatment: E2             time: 12h        wt4.E2.12h
+133     GSM539735             WT E2 24h, 2                breast epithelial cell, adherent, E2, 24h              treatment: E2             time: 24h        wt4.E2.24h
+134     GSM539736                WT E2 48h                breast epithelial cell, adherent, E2, 48h              treatment: E2             time: 48h        wt4.E2.48h
+135     GSM539737       WT E2+Tamoxifen 0h       breast epithelial cell, adherent, E2+Tamoxifen, 0h   treatment: E2, tamoxifen              time: 0h    wt4.E2_Tam.00h
+136     GSM539738       WT E2+Tamoxifen 1h       breast epithelial cell, adherent, E2+Tamoxifen, 1h   treatment: E2, tamoxifen              time: 1h    wt4.E2_Tam.01h
+137     GSM539739       WT E2+Tamoxifen 2h       breast epithelial cell, adherent, E2+Tamoxifen, 2h   treatment: E2, tamoxifen              time: 2h    wt4.E2_Tam.02h
+138     GSM539740       WT E2+Tamoxifen 3h       breast epithelial cell, adherent, E2+Tamoxifen, 3h   treatment: E2, tamoxifen              time: 3h    wt4.E2_Tam.03h
+139     GSM539741       WT E2+Tamoxifen 6h       breast epithelial cell, adherent, E2+Tamoxifen, 6h   treatment: E2, tamoxifen              time: 6h    wt4.E2_Tam.06h
+140     GSM539742      WT E2+Tamoxifen 12h      breast epithelial cell, adherent, E2+Tamoxifen, 12h   treatment: E2, tamoxifen             time: 12h    wt4.E2_Tam.12h
+141     GSM539743   WT E2+Tamoxifen 24h, 2      breast epithelial cell, adherent, E2+Tamoxifen, 24h   treatment: E2, tamoxifen             time: 24h    wt4.E2_Tam.24h
+142     GSM539744      WT E2+Tamoxifen 48h      breast epithelial cell, adherent, E2+Tamoxifen, 48h   treatment: E2, tamoxifen             time: 48h    wt4.E2_Tam.48h
+
+phenotype: {'tamoxifen phenotype: resistant': 67, 'tamoxifen phenotype: sensitive': 76}
+treatment: {'treatment: untreated': 15, 'treatment: E2': 38, 'treatment: E2, tamoxifen': 22, 'treatment: HRG': 31, 'treatment: HRG, tamoxifen': 15, 'treatment: tamoxifen': 22}
+time: {'time: 0h': 17, 'time: 1h': 15, 'time: 2h': 15, 'time: 3h': 15, 'time: 6h': 15, 'time: 12h': 15, 'time: 24h': 29, 'time: 48h': 15, '': 7}
+growth protocol: Prior to the growth factor (GF) treatment, cells were serum starved for 16-18 hours with serum-free RPMI medium and incubated at 37C/5% CO2. The medium was again changed 2 hr prior to the GF treatment.
+data_processing: The data were preprocessed with RMA. Signal intensity was calculated for RefSeq mRNA by using a CustomCDF (HGU133Plus2_Hs_REFSEQ ver.11).
+
+Samples whose source_name treatment disagrees with the treatment field:
+    geo_accession                title                                      source_name_ch1     characteristics_ch1#8
+123     GSM539725           WT Control            breast epithelial cell, adherent, E2, 24h      treatment: untreated
+124     GSM539726            WT E2 24h  breast epithelial cell, adherent, E2+Tamoxifen, 24h             treatment: E2
+125     GSM539727  WT E2+Tamoxifen 24h     breast epithelial cell, adherent, Tamoxifen, 24h  treatment: E2, tamoxifen
+126     GSM539728   WT Tamoxifen 0h, 2   breast epithelial cell, adherent, without stimulus      treatment: tamoxifen
+values: 26,871 rows x 143 samples | min 3.44 | median 7.03 | max 15.04 | zeros 0 | blank 0
+
+====================================================================================================
+STUDY 3  GSE26298  (Salazar 2011, microarray U133 Plus 2)
+====================================================================================================
+   geo_accession                                                           title             characteristics_ch1#1      characteristics_ch1#2 characteristics_ch1#3
+0      GSM645710                    MCF-7 +scrambled siRNA + vehicle rep1 (MD31)  sirna: control (scrambled siRNA)   agent: control (vehicle)             dose: n/a
+1      GSM645711                    MCF-7 +scrambled siRNA + vehicle rep2 (MD32)  sirna: control (scrambled siRNA)   agent: control (vehicle)             dose: n/a
+2      GSM645712  MCF-7 +scrambled siRNA + 100 nM 4-hydroxytamoxifen rep1 (MD33)  sirna: control (scrambled siRNA)  agent: 4-hydroxytamoxifen          dose: 100 nM
+3      GSM645713  MCF-7 +scrambled siRNA + 100 nM 4-hydroxytamoxifen rep2 (MD34)  sirna: control (scrambled siRNA)  agent: 4-hydroxytamoxifen          dose: 100 nM
+4      GSM645714  MCF-7 +scrambled siRNA + 500 nM 4-hydroxytamoxifen rep1 (MD35)  sirna: control (scrambled siRNA)  agent: 4-hydroxytamoxifen          dose: 500 nM
+5      GSM645715  MCF-7 +scrambled siRNA + 500 nM 4-hydroxytamoxifen rep2 (MD36)  sirna: control (scrambled siRNA)  agent: 4-hydroxytamoxifen          dose: 500 nM
+6      GSM645716                           MCF-7 +ER siRNA + vehicle rep1 (MD37)                   sirna: ER siRNA   agent: control (vehicle)             dose: n/a
+7      GSM645717                           MCF-7 +ER siRNA + vehicle rep2 (MD38)                   sirna: ER siRNA   agent: control (vehicle)             dose: n/a
+8      GSM645718                    MCF-7 +scrambled siRNA + vehicle rep1 (MD39)  sirna: control (scrambled siRNA)   agent: control (vehicle)             dose: n/a
+9      GSM645719                    MCF-7 +scrambled siRNA + vehicle rep2 (MD40)  sirna: control (scrambled siRNA)   agent: control (vehicle)             dose: n/a
+10     GSM645720                    MCF-7 + RARalpha siRNA + vehicle rep1 (MD41)             sirna: RARalpha siRNA   agent: control (vehicle)             dose: n/a
+11     GSM645721                    MCF-7 + RARalpha siRNA + vehicle rep1 (MD42)             sirna: RARalpha siRNA   agent: control (vehicle)             dose: n/a
+
+titles that are identical once the (MDxx) code is removed:
+   geo_accession                                         title
+0      GSM645710  MCF-7 +scrambled siRNA + vehicle rep1 (MD31)
+1      GSM645711  MCF-7 +scrambled siRNA + vehicle rep2 (MD32)
+8      GSM645718  MCF-7 +scrambled siRNA + vehicle rep1 (MD39)
+9      GSM645719  MCF-7 +scrambled siRNA + vehicle rep2 (MD40)
+10     GSM645720  MCF-7 + RARalpha siRNA + vehicle rep1 (MD41)
+11     GSM645721  MCF-7 + RARalpha siRNA + vehicle rep1 (MD42)
+source_name: {'MCF-7cells treated with vehicle and scrambled siRNA': 4, 'MCF-7cells treated with 100 nM 4-hydroxytamoxifen and scrambled siRNA': 2, 'MCF-7cells treated with 500 nM 4-hydroxytamoxifen and scrambled siRNA': 2, 'MCF-7cells treated with vehicle and ER siRNA': 2, 'MCF-7cells treated with vehicle and RARalpha siRNA': 2}
+data_processing: Scanned image files were analyzed using the Gene Chip Operating System Version 1.4 software, and standard thresholding and filtering operations were used.   The data was normalized using house keeping genes. Normalization assumes that for a subset of genes (i.e., housekeeping genes) the ratio of measured expression averaged over the set should be one.
+contributors: ['Marcela,,d’Alincourt Salazara', 'Ratnam,,Maya', 'Patki,,Mugdha', 'Kisovic,,Ivana', 'Robert,,Trumbly', 'Mohamed,,Iman', 'Manohar,,Ratnam']
+values: 54,675 rows x 12 samples | min 0.00 | median 20.90 | max 25,380.80 | zeros 9 | blank 0
+
+Correlation of the four vehicle controls with the rest (log2, expressed probes):
+description#1   MD31   MD32   MD33   MD34   MD35   MD36   MD37   MD38   MD39   MD40   MD41   MD42
+description#1                                                                                    
+MD31           1.000  0.985  0.983  0.980  0.979  0.982  0.978  0.976  0.973  0.973  0.971  0.969
+MD32           0.985  1.000  0.981  0.978  0.982  0.980  0.977  0.979  0.974  0.970  0.966  0.968
+MD39           0.973  0.974  0.973  0.967  0.970  0.970  0.976  0.976  1.000  0.991  0.986  0.987
+MD40           0.973  0.970  0.973  0.967  0.970  0.972  0.975  0.974  0.991  1.000  0.986  0.987
+mean corr ['MD31', 'MD32'] vs OH-Tam/ER-siRNA arrays 0.9796 | vs RARa-siRNA arrays 0.9686
+mean corr ['MD39', 'MD40'] vs OH-Tam/ER-siRNA arrays 0.9718 | vs RARa-siRNA arrays 0.9864
+
+====================================================================================================
+STUDY 4  GSE111151  (Hultsch 2018, RNA-seq)
+====================================================================================================
+   geo_accession         title                                            characteristics_ch1                                                                                                                      description
+0     GSM3024053         MCF-7                                    vendor: Cell line from ATCC                                                                                                                                 
+1     GSM3024054    MCF-7 Tam1  vendor: tamoxifen-resistant derivative of cell line from ATCC      Tamoxifen resistant MCF-7; MCF-7 (ATCC) cells were continuously treated with 1uM 4-OH-tamoxifen for eight to twelve months.
+2     GSM3024055         T-47D                                    vendor: Cell line from ATCC                                                                                                                                 
+3     GSM3024056    T-47D Tam1  vendor: tamoxifen-resistant derivative of cell line from ATCC      Tamoxifen resistant T-47D; T-47D (ATCC) cells were continuously treated with 1uM 4-OH-tamoxifen for eight to twelve months.
+4     GSM3024057    T-47D Tam2  vendor: tamoxifen-resistant derivative of cell line from ATCC      Tamoxifen resistant T-47D; T-47D (ATCC) cells were continuously treated with 1uM 4-OH-tamoxifen for eight to twelve months.
+5     GSM3024058       ZR-75-1                                    vendor: Cell line from ATCC                                                                                                                                 
+6     GSM3024059  ZR-75-1 Tam1  vendor: tamoxifen-resistant derivative of cell line from ATCC  Tamoxifen resistant ZR-75-1; ZR-75-1 (ATCC) cells were continuously treated with 1uM 4-OH-tamoxifen for eight to twelve months.
+7     GSM3024060  ZR-75-1 Tam2  vendor: tamoxifen-resistant derivative of cell line from ATCC  Tamoxifen resistant ZR-75-1; ZR-75-1 (ATCC) cells were continuously treated with 1uM 4-OH-tamoxifen for eight to twelve months.
+8     GSM3024061        BT-474                                    vendor: Cell line from ATCC                                                                                                                                 
+9     GSM3024062   BT-474 Tam1  vendor: tamoxifen-resistant derivative of cell line from ATCC    Tamoxifen resistant BT-474; BT-474 (ATCC) cells were continuously treated with 1uM 4-OH-tamoxifen for eight to twelve months.
+10    GSM3024063   BT-474 Tam2  vendor: tamoxifen-resistant derivative of cell line from ATCC    Tamoxifen resistant BT-474; BT-474 (ATCC) cells were continuously treated with 1uM 4-OH-tamoxifen for eight to twelve months.
+treatment_protocol: {'see above': 11}
+data_processing : Basecalls performed using standard Illumina base-caller
+data_processing#1 : RNA-seq reads were pre-processed using Trimmomatics v0.32 with the following configurations ILLUMINACLIP:TruSeqAdapters-2.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+data_processing#2 : Pre-processed RNA-seq reads were aligned to the hg38 genome assembly (EnsEMBL v80 or v82) using the STAR per-sample 2-pass mapping strategy. STAR v2.3.0e aligner was used with the following configurations --outSAMattributes All --outSAMunmapped Within. The STAR indexes were build from primary assemb
+data_processing#3 : PCR duplicates were marked with the MarkDuplicates tool of PICARD v1.63 with the following configurations CREATE_INDEX=true VALIDATION_STRINGENCY=SILENT
+data_processing#4 : Patient sample data (GSE58708 dataset) has been reanalyzed as described above
+data_processing#5 : Counts and Counts per Megabase of library size (CPM) values were calculated using subreadR, limma, and edgeR as implemented in the statistical environment R (v.3.3.0). Data from the listed breast cancer cell lines were combined with patient sample data (GSE58708 dataset), normalized using the TMM fu
+data_processing#6 : Genome_build: hg38 genome assembly, EnsEMBL v80 or v82
+data_processing#7 : Supplementary_files_format_and_content: Tab-delimited text file (.txt). Columns: 1) EnsEMBL gene id, 2) Gene name, 3) raw count value, 4) non-batch adjusted log2 CPM value, and 5) batch adjusted log2 CPM value
+series supplementary files: 9
+series relations: ['Reanalysis of: GSM1417177', 'Reanalysis of: GSM1417178', 'Reanalysis of: GSM1417179', 'Reanalysis of: GSM1417180', 'Reanalysis of: GSM1417181', 'Reanalysis of: GSM1417182', 'Reanalysis of: GSM1417183', 'Reanalysis of: GSM1417184', 'BioProject: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA436018', 'SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRP133519']
+GSM3024053_MCF-7.txt.gz: 60,619 genes | columns ['EnsEMBL_GenID', 'gene_name', 'counts', 'CPM (log2)', 'CPM_batch (log2)'] | reads 48,419,811 | duplicate gene names 1893
+GSM3024054_MCF-7_Tam1.txt.gz: 60,619 genes | columns ['EnsEMBL_GenID', 'gene_name', 'counts', 'CPM (log2)', 'CPM_batch (log2)'] | reads 57,925,533 | duplicate gene names 1893
+GSM3024055_T-47D.txt.gz: 60,619 genes | columns ['EnsEMBL_GenID', 'gene_name', 'counts', 'CPM (log2)', 'CPM_batch (log2)'] | reads 46,929,605 | duplicate gene names 1893
+GSM3024056_T-47D_Tam1.txt.gz: 60,619 genes | columns ['EnsEMBL_GenID', 'gene_name', 'counts', 'CPM (log2)', 'CPM_batch (log2)'] | reads 48,634,372 | duplicate gene names 1893
+GSM3024057_T-47D_Tam2.txt.gz: 60,619 genes | columns ['EnsEMBL_GenID', 'gene_name', 'counts', 'CPM (log2)', 'CPM_batch (log2)'] | reads 49,913,262 | duplicate gene names 1893
+GSM3024058_ZR-75-1.txt.gz: 60,619 genes | columns ['EnsEMBL_GenID', 'gene_name', 'counts', 'CPM (log2)', 'CPM_batch (log2)'] | reads 50,259,852 | duplicate gene names 1893
+GSM3024059_ZR-75-1_Tam1.txt.gz: 60,619 genes | columns ['EnsEMBL_GenID', 'gene_name', 'counts', 'CPM (log2)', 'CPM_batch (log2)'] | reads 75,013,457 | duplicate gene names 1893
+GSM3024060_ZR-75-1_Tam2.txt.gz: 60,619 genes | columns ['EnsEMBL_GenID', 'gene_name', 'counts', 'CPM (log2)', 'CPM_batch (log2)'] | reads 59,763,367 | duplicate gene names 1893
+GSM3024061_BT-474.txt.gz: 60,619 genes | columns ['EnsEMBL_GenID', 'gene_name', 'counts', 'CPM (log2)', 'CPM_batch (log2)'] | reads 54,675,181 | duplicate gene names 1893
+GSM3024062_BT-474_Tam1.txt.gz: 60,619 genes | columns ['EnsEMBL_GenID', 'gene_name', 'counts', 'CPM (log2)', 'CPM_batch (log2)'] | reads 57,324,255 | duplicate gene names 1893
+GSM3024063_BT-474_Tam2.txt.gz: 60,619 genes | columns ['EnsEMBL_GenID', 'gene_name', 'counts', 'CPM (log2)', 'CPM_batch (log2)'] | reads 30,857,748 | duplicate gene names 1893
+
+====================================================================================================
+STUDY 5  GSE117942  (Guan 2019, RNA-seq)
+====================================================================================================
+cell line: {'cell line: MCF-7': 14, 'cell line: HCC1500': 14, 'cell line: MDA-MB-330': 10, 'cell line: EFM-19': 10, 'cell line: T-47D': 10, 'cell line: BT-474': 10, 'cell line: CAMA-1': 14}
+ligand: {'ligand: DMSO': 14, 'ligand: E2': 14, 'ligand: 4-OH tamoxifen': 14, 'ligand: GDC-0810': 14, 'ligand: Fulvestrant': 14, 'ligand: GDC-0927': 6, 'ligand: GNE-274': 6}
+concentration: {'concentration: 0': 14, 'concentration: 1nM': 14, 'concentration: 1uM': 54}
+time: {'time: 24h': 82}
+treatment_protocol: Cells were treated with either 1 nM E2, or 1 M 4-OH tamoxifen, GDC-0810, fulvestrant, GNE-274 or GDC-0927 for 24 hours
+growth_protocol: MCF7, HCC1500, Cama-1, MDA-MB-330, BT-474, EFM-19 and T47D cells were grown in hormone deprivation media for at least 3 days prior to treatment
+data_processing#1: Gene expression was quantified as Reads Per Kilobase of exon model per Million mapped reads normalized by size factor (nRPKM), defined as number of reads aligning to a gene in a sample / (total number of uniquely mapped reads for that sample x gene length x size factor).
+series relations: ['SubSeries of: GSE117943', 'BioProject: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA483773', 'SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRP155879']
+per line x ligand:
+ characteristics_ch1#1  4-OH tamoxifen  DMSO  E2  Fulvestrant  GDC-0810  GDC-0927  GNE-274
+characteristics_ch1                                                                      
+BT-474                              2     2   2            2         2         0        0
+CAMA-1                              2     2   2            2         2         2        2
+EFM-19                              2     2   2            2         2         0        0
+HCC1500                             2     2   2            2         2         2        2
+MCF-7                               2     2   2            2         2         2        2
+MDA-MB-330                          2     2   2            2         2         0        0
+T-47D                               2     2   2            2         2         0        0
+
+first three rows of the counts file (first 14 columns):
+         0    1      2    3    4       5     6     7       8     9               10            11                 12            13
+0      NaN  NaN    NaN  NaN  NaN     NaN   NaN   NaN     NaN   NaN       CELL LINE        BT-474         MDA-MB-330       HCC1500
+1      NaN  NaN    NaN  NaN  NaN     NaN   NaN   NaN     NaN   NaN       TREATMENT  1uM GDC-0810  1uM 4OH-Tamoxifen  1uM GDC-0810
+2  aliases  chr  start  end  str  coords  size  type  symbol  desc  Entrez Gene ID   SAM24321900        SAM24314565   SAM24314555
+
+counts-file treatment label vs series-matrix label:
+ counts_file_treatment  matrix_ligand           matrix_conc       
+1nM E2                 ligand: E2              concentration: 1nM    14
+1uM 4OH-Tamoxifen      ligand: 4-OH tamoxifen  concentration: 1uM    14
+1uM Fulvestrant        ligand: Fulvestrant     concentration: 1uM    14
+1uM G-03046274         ligand: GNE-274         concentration: 1uM     6
+1uM GDC-0810           ligand: GDC-0810        concentration: 1uM    14
+1uM GDC-0927           ligand: GDC-0927        concentration: 1uM     6
+DMSO control           ligand: DMSO            concentration: 0      14
+counts file column order equals matrix order: False
+counts table: 30,727 genes | blank symbols 135 | duplicated symbols 137
+symbols turned into dates: 28
+        symbol  Entrez Gene ID                                                            aliases
+8899    6-Mar           10299                                         DOA10,MARCH-VI,RNF176,TEB4
+9393    9-Sep           10801                          AF17q25,MSF,MSF1,NAPB,PNUTL4,SeptD1,SINT1
+10052   3-Mar          115123                                                   MARCH-III,RNF173
+10462  12-Sep          124404                                                             SPGF10
+11731  10-Sep          151011                                                                NaN
+12160  10-Mar          162333                                                     MARCH-X,RNF190
+12445   1-Sep            1731                                             DIFF6,LARP,PNUTL3,SEP1
+13210   8-Mar          220972                                        c-MIR,MARCH-VIII,MIR,RNF178
+13696   6-Sep           23157                                                         SEP2,SEPT2
+13716   8-Sep           23176                                                              2-Sep
+17338  14-Sep          346288                                                                NaN
+19581  11-Mar          441061                                                           MARCH-XI
+19975   2-Sep            4735                                   DIFF6,hNedd5,NEDD-5,NEDD5,Pnutl3
+20315   1-Dec           50514                                                               CTS9
+20631   2-Mar           51257                                                    MARCH-II,RNF172
+21275   5-Sep            5413  BDPLT1,BS,CD42C,GPIBB,CDCREL,CDCREL-1,CDCREL1,H5,HCDCREL-1,PNUTL1
+21276   4-Sep            5414                  ARTS,BRADEION,CE5B3,H5,hCDCREL-2,MART,PNUTL2,SEP4
+21500   5-Mar           54708                                               MARCH-V,MITOL,RNF153
+21734   2-Mar           54996                                                              MOSC2
+21759   1-Mar           55016                                                     MARCH-I,RNF171
+22342  11-Sep           55752                                                                NaN
+22500   3-Sep           55964                                                    bK250D10.3,SEP3
+23284   4-Mar           57574                                                    MARCH-IV,RNF174
+24820   1-Mar           64757                                                              MOSC1
+24880   7-Mar           64844                                          AXO,AXOT,MARCH-VII,RNF177
+29970   9-Mar           92979                                                    MARCH-IX,RNF179
+30134  15-Sep            9403                                                                NaN
+30625   7-Sep             989                                        CDC10,CDC3,NBLA02942,SEPT7A
+
+reads per sample (millions), sorted:
+              reads_M        cell          ligand
+SAM24314541     15.9       MCF-7  4-OH tamoxifen
+SAM24314569     16.2  MDA-MB-330     Fulvestrant
+SAM24314537     17.2       MCF-7            DMSO
+SAM24314555     17.4     HCC1500        GDC-0810
+SAM24314542     18.0       MCF-7  4-OH tamoxifen
+SAM24314550     18.0     HCC1500            DMSO
+SAM24314565     18.6  MDA-MB-330  4-OH tamoxifen
+SAM24314566     18.6  MDA-MB-330  4-OH tamoxifen
+SAM24314561     18.6  MDA-MB-330            DMSO
+SAM24314540     18.6       MCF-7              E2
+SAM24318761     19.1       T-47D     Fulvestrant
+SAM24314545     19.2       MCF-7     Fulvestrant
+SAM24314570     19.3  MDA-MB-330     Fulvestrant
+SAM24314557     19.5     HCC1500     Fulvestrant
+SAM24321894     19.5      BT-474            DMSO
+SAM24314539     19.9       MCF-7              E2
+SAM24314556     20.0     HCC1500        GDC-0810
+SAM24314552     20.2     HCC1500              E2
+SAM24314558     20.3     HCC1500     Fulvestrant
+SAM24321901     20.3      BT-474        GDC-0810
+SAM24318745     20.5      EFM-19  4-OH tamoxifen
+SAM24321898     20.5      BT-474  4-OH tamoxifen
+SAM24318743     20.5      EFM-19              E2
+SAM24321895     20.6      BT-474            DMSO
+SAM24318757     20.7       T-47D  4-OH tamoxifen
+SAM24314554     20.8     HCC1500  4-OH tamoxifen
+SAM24321903     21.1      BT-474     Fulvestrant
+SAM24318754     21.1       T-47D              E2
+SAM24314562     21.4  MDA-MB-330            DMSO
+SAM24322062     21.7     HCC1500        GDC-0927
+SAM24314544     22.0       MCF-7        GDC-0810
+SAM24314553     22.0     HCC1500  4-OH tamoxifen
+SAM24314549     22.1     HCC1500            DMSO
+SAM24314567     22.2  MDA-MB-330        GDC-0810
+SAM24318756     22.3       T-47D  4-OH tamoxifen
+SAM24318744     22.4      EFM-19  4-OH tamoxifen
+SAM24314546     22.4       MCF-7     Fulvestrant
+SAM24321899     22.6      BT-474  4-OH tamoxifen
+SAM24321897     22.7      BT-474              E2
+SAM24321902     22.9      BT-474     Fulvestrant
+SAM24318747     23.4      EFM-19        GDC-0810
+SAM24314564     23.4  MDA-MB-330              E2
+SAM24314538     23.5       MCF-7            DMSO
+SAM24314551     23.7     HCC1500              E2
+SAM24318741     23.8      EFM-19            DMSO
+SAM24321896     24.2      BT-474              E2
+SAM24322064     24.2     HCC1500         GNE-274
+SAM24314563     24.2  MDA-MB-330              E2
+SAM24318748     24.4      EFM-19     Fulvestrant
+SAM24318740     24.8      EFM-19            DMSO
+SAM24318752     24.8       T-47D            DMSO
+SAM24318749     25.0      EFM-19     Fulvestrant
+SAM24314543     25.1       MCF-7        GDC-0810
+SAM24314568     25.4  MDA-MB-330        GDC-0810
+SAM24318753     26.0       T-47D            DMSO
+SAM24322063     26.1     HCC1500        GDC-0927
+SAM24318758     26.3       T-47D        GDC-0810
+SAM24318760     27.0       T-47D     Fulvestrant
+SAM24322065     27.3     HCC1500         GNE-274
+SAM24318755     27.9       T-47D              E2
+SAM24318746     28.9      EFM-19        GDC-0810
+SAM24318759     30.3       T-47D        GDC-0810
+SAM24318742     30.4      EFM-19              E2
+SAM24321900     31.5      BT-474        GDC-0810
+SAM24322047     39.8       MCF-7        GDC-0927
+SAM24322049     41.9       MCF-7         GNE-274
+SAM24331042     42.0      CAMA-1         GNE-274
+SAM24322048     42.1       MCF-7         GNE-274
+SAM24322046     43.0       MCF-7        GDC-0927
+SAM24331033     43.4      CAMA-1  4-OH tamoxifen
+SAM24331034     43.8      CAMA-1        GDC-0810
+SAM24331036     43.8      CAMA-1     Fulvestrant
+SAM24331040     44.5      CAMA-1        GDC-0927
+SAM24331030     45.5      CAMA-1              E2
+SAM24331037     45.9      CAMA-1     Fulvestrant
+SAM24331031     47.0      CAMA-1              E2
+SAM24331041     47.2      CAMA-1        GDC-0927
+SAM24331029     47.4      CAMA-1            DMSO
+SAM24331043     48.5      CAMA-1         GNE-274
+SAM24331028     49.4      CAMA-1            DMSO
+SAM24331032     52.3      CAMA-1  4-OH tamoxifen
+SAM24331035     55.2      CAMA-1        GDC-0810
+
+====================================================================================================
+GENE IDENTIFIERS ACROSS STUDIES
+====================================================================================================
+GPL96 (study 1): 22,283 probes | no gene symbol 1,127 | map to several genes (///) 1,223 | ESR1 probes 9
+GPL570 (study 3): 54,675 probes | no gene symbol 9,557 | map to several genes (///) 2,214 | ESR1 probes 9
+GPL10371 (study 2): 26,809 probe sets | columns ['ID', 'GB_ACC', 'Description', 'SPOT_ID'] | prefixes {'NM_': 23085, 'XM_': 2295, 'XR_': 1138, 'NR_': 291}
+  genes with more than one probe set: 4963 | ESR1 rows: ['NM_000125_at', 'NM_001122740_at', 'NM_001122741_at', 'NM_001122742_at']
+  rows whose description is not text:                  ID                                                                                                                                                                                                                                                      Description
+25672  XR_015118_at  ###############################################################################################################################################################################################################################################################
+GSE4025: 12,502 gene symbols | current HGNC 11,877 | outdated (renamed since) 493
+GSE21618: 18,495 gene symbols | current HGNC 14,219 | outdated (renamed since) 2,471
+GSE26298: 20,848 gene symbols | current HGNC 17,862 | outdated (renamed since) 1,115
+GSE111151: 58,726 gene symbols | current HGNC 33,097 | outdated (renamed since) 2,080
+GSE117942: 30,589 gene symbols | current HGNC 22,658 | outdated (renamed since) 1,759
+symbols present in all five studies, as written: 10687
+  KMT2D    {'GSE4025': True, 'GSE21618': False, 'GSE26298': True, 'GSE111151': True, 'GSE117942': True} | HGNC: current
+  MLL2     {'GSE4025': False, 'GSE21618': True, 'GSE26298': False, 'GSE111151': False, 'GSE117942': False} | HGNC: renamed to KMT2D
+  NSD2     {'GSE4025': False, 'GSE21618': False, 'GSE26298': False, 'GSE111151': False, 'GSE117942': False} | HGNC: current
+  WHSC1    {'GSE4025': True, 'GSE21618': True, 'GSE26298': True, 'GSE111151': True, 'GSE117942': True} | HGNC: renamed to NSD2
+  SEPTIN7  {'GSE4025': False, 'GSE21618': False, 'GSE26298': False, 'GSE111151': False, 'GSE117942': False} | HGNC: current
+  SEPT7    {'GSE4025': True, 'GSE21618': True, 'GSE26298': True, 'GSE111151': True, 'GSE117942': False} | HGNC: renamed to SEPTIN7
+  7-Sep    {'GSE4025': False, 'GSE21618': False, 'GSE26298': False, 'GSE111151': False, 'GSE117942': True} | HGNC: unknown
+  MARCHF1  {'GSE4025': False, 'GSE21618': False, 'GSE26298': False, 'GSE111151': False, 'GSE117942': False} | HGNC: current
+  MARCH1   {'GSE4025': True, 'GSE21618': False, 'GSE26298': True, 'GSE111151': True, 'GSE117942': False} | HGNC: renamed to MARCHF1
+  1-Mar    {'GSE4025': False, 'GSE21618': False, 'GSE26298': False, 'GSE111151': False, 'GSE117942': True} | HGNC: unknown
+  ESR1     {'GSE4025': True, 'GSE21618': True, 'GSE26298': True, 'GSE111151': True, 'GSE117942': True} | HGNC: current
+  GREB1    {'GSE4025': True, 'GSE21618': True, 'GSE26298': True, 'GSE111151': True, 'GSE117942': True} | HGNC: current
+  PGR      {'GSE4025': True, 'GSE21618': True, 'GSE26298': True, 'GSE111151': True, 'GSE117942': True} | HGNC: current
+  TFF1     {'GSE4025': True, 'GSE21618': True, 'GSE26298': True, 'GSE111151': True, 'GSE117942': True} | HGNC: current

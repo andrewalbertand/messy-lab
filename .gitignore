@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Built database (rebuilt from raw with pipeline/build.py)
+db/*.duckdb
+db/*.duckdb.wal
+
+# API keys (never commit)
+.env
+
+# Not published: copyrighted papers (see studies/papers/README.md) and client-facing sales material
+studies/papers/*.pdf
+report/

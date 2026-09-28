@@ -1,0 +1,23 @@
+cell_line_id,preferred_name,is_derived,parent_cell_line_id,derived_by_study,derivation,disease,source_bank,notes
+CVCL_0031,MCF-7,false,,,,Invasive breast carcinoma of no special type,ATCC,Used by all five studies.
+CVCL_0553,T-47D,false,,,,Invasive breast carcinoma of no special type,ATCC,"S4, S5."
+CVCL_0179,BT-474,false,,,,Invasive breast carcinoma of no special type,ATCC,"S4, S5."
+CVCL_0588,ZR-75-1,false,,,,Invasive breast carcinoma of no special type,ATCC,S4.
+CVCL_1254,HCC1500,false,,,,Breast ductal carcinoma,ATCC,S5.
+CVCL_0619,MDA-MB-330,false,,,,Invasive breast lobular carcinoma,ATCC,S5.
+CVCL_1115,CAMA-1,false,,,,Breast adenocarcinoma,ATCC,S5.
+CVCL_0253,EFM-19,false,,,,Breast ductal carcinoma,DSMZ,S5.
+S2_TAMR_SELECTED,"MCF-7 TamR, selected clone (RIKEN)",true,CVCL_0031,S2,"MCF-7 in 1 uM tamoxifen for 1 month, then 2 more months; one of six clones chosen",,lab-made,"Used for the time course. Identical to one of S2_TAMR_C1..C6, but the paper never says which."
+S2_TAMR_C1,MCF-7 TamR clone #1 (RIKEN),true,CVCL_0031,S2,"MCF-7 in 1 uM tamoxifen for 1 month, then 2 more months",,lab-made,One of six resistant clones. Not a replicate of the others.
+S2_TAMR_C2,MCF-7 TamR clone #2 (RIKEN),true,CVCL_0031,S2,"MCF-7 in 1 uM tamoxifen for 1 month, then 2 more months",,lab-made,One of six resistant clones. Not a replicate of the others.
+S2_TAMR_C3,MCF-7 TamR clone #3 (RIKEN),true,CVCL_0031,S2,"MCF-7 in 1 uM tamoxifen for 1 month, then 2 more months",,lab-made,One of six resistant clones. Not a replicate of the others.
+S2_TAMR_C4,MCF-7 TamR clone #4 (RIKEN),true,CVCL_0031,S2,"MCF-7 in 1 uM tamoxifen for 1 month, then 2 more months",,lab-made,One of six resistant clones. Not a replicate of the others.
+S2_TAMR_C5,MCF-7 TamR clone #5 (RIKEN),true,CVCL_0031,S2,"MCF-7 in 1 uM tamoxifen for 1 month, then 2 more months",,lab-made,One of six resistant clones. Not a replicate of the others.
+S2_TAMR_C6,MCF-7 TamR clone #6 (RIKEN),true,CVCL_0031,S2,"MCF-7 in 1 uM tamoxifen for 1 month, then 2 more months",,lab-made,One of six resistant clones. Not a replicate of the others.
+S4_MCF7_TAM1,MCF-7 Tam1 (Helsinki),true,CVCL_0031,S4,1 uM 4-OHT for 8-12 months,,lab-made,Kept in 1 uM 4-OHT (paper).
+S4_T47D_TAM1,T-47D Tam1 (Helsinki),true,CVCL_0553,S4,1 uM 4-OHT for 8-12 months,,lab-made,Kept in 1 uM 4-OHT (paper).
+S4_T47D_TAM2,T-47D Tam2 (Helsinki),true,CVCL_0553,S4,1 uM 4-OHT for 8-12 months,,lab-made,Kept in 1 uM 4-OHT (paper).
+S4_ZR751_TAM1,ZR-75-1 Tam1 (Helsinki),true,CVCL_0588,S4,1 uM 4-OHT for 8-12 months,,lab-made,Kept in 1 uM 4-OHT (paper).
+S4_ZR751_TAM2,ZR-75-1 Tam2 (Helsinki),true,CVCL_0588,S4,1 uM 4-OHT for 8-12 months,,lab-made,Kept in 1 uM 4-OHT (paper).
+S4_BT474_TAM1,BT-474 Tam1 (Helsinki),true,CVCL_0179,S4,1 uM 4-OHT for 8-12 months,,lab-made,Kept in 1 uM 4-OHT (paper).
+S4_BT474_TAM2,BT-474 Tam2 (Helsinki),true,CVCL_0179,S4,1 uM 4-OHT for 8-12 months,,lab-made,Kept in 1 uM 4-OHT (paper).

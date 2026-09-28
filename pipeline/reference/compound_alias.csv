@@ -1,0 +1,30 @@
+alias,compound_id,seen_in_study,seen_in_field
+TOT,OHT,S1,"title, characteristics, description"
+trans-hydroxytamoxifen,OHT,S1,extract protocol
+hydroxytamoxifen,OHT,S1,series overall design
+Tam,OHT,S1,paper only (paper_1.pdf abbreviation for trans-hydroxytamoxifen)
+4-hydroxytamoxifen,OHT,S3,"title, characteristics, source name"
+OH-Tam,OHT,S3,treatment protocol
+4-OH-tamoxifen,OHT,S4,"description, summary"
+4-OH tamoxifen,OHT,S5,characteristics (ligand)
+4OH-Tamoxifen,OHT,S5,counts file header row 2
+4-OHT,OHT,S5,paper only (paper_5.pdf)
+tamoxifen,TAM_UNSPECIFIED,S2,characteristics (treatment)
+Tamoxifen,TAM_UNSPECIFIED,S2,"title, source name, description"
+Tam,TAM_UNSPECIFIED,S2,"lab codes, e.g. TamR.E2_Tam.24h"
+E2,E2,S1,"title, characteristics"
+17beta-estradiol,E2,S1,"series overall design, extract protocol"
+E2,E2,S2,"title, characteristics, codes"
+E2,E2,S5,"characteristics (ligand), counts file header"
+HRG,HRG_B1,S2,"title, characteristics, codes"
+Fulvestrant,FULVESTRANT,S5,"characteristics (ligand), counts file header"
+GDC-0810,GDC0810,S5,"characteristics (ligand), counts file header"
+GDC-0927,GDC0927,S5,"characteristics (ligand), counts file header"
+GNE-274,GNE274,S5,characteristics (ligand)
+G-03046274,GNE274,S5,counts file header row 2
+vehicle,ETHANOL,S1,characteristics (solvent is ethanol per paper_1.pdf)
+veh,ETHANOL,S1,"title, characteristics"
+vehicle,ETHANOL,S3,"title, source name (solvent is ethanol per paper_3.pdf)"
+control (vehicle),ETHANOL,S3,characteristics (agent)
+DMSO,DMSO,S5,characteristics (ligand)
+DMSO control,DMSO,S5,counts file header row 2

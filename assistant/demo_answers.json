@@ -1,0 +1,3274 @@
+[
+  {
+    "question": "How many MCF-7 samples were given 4-OHT, and in which studies?",
+    "can_answer": true,
+    "answer": "13 MCF-7 samples were given 4-OHT, across four studies. GSE4025 has 6, GSE26298 has 4, GSE111151 has 1 and GSE117942 has 2. Twelve of these were short-term treatments. The GSE111151 sample (GSM3024054) is different: it is the resistant MCF-7 Tam1 line, grown in 1 \u00b5M 4-OHT for months to make it resistant.\n\n- **GSE4025:** 10 nM for 24 h in hormone-starved cells (GSM92152\u201354 with empty virus, GSM92161\u201363 with extra ER\u03b2).\n- **GSE26298:** non-targeting siRNA controls, GSM645712/13 at 100 nM and GSM645714/15 at 500 nM. The exposure time isn't recorded, and the batch was worked out from the data rather than stated by the lab (M47).\n- **GSE117942:** 1 \u00b5M for 24 h (GSM3315632/33). The protocol's \"1 M\" was read as 1 \u00b5M, and the batch here is also inferred (M50).\n- **Not counted:** GSE21618's tamoxifen samples. That study never says which form of tamoxifen it used, so they are kept separate from 4-OHT (M03).",
+    "sample_ids": [
+      "GSM92152",
+      "GSM92153",
+      "GSM92154",
+      "GSM92161",
+      "GSM92162",
+      "GSM92163",
+      "GSM645712",
+      "GSM645713",
+      "GSM645714",
+      "GSM645715",
+      "GSM3024054",
+      "GSM3315632",
+      "GSM3315633"
+    ],
+    "source_file_ids": [
+      "S1_matrix",
+      "S3_matrix",
+      "S4_raw_tar",
+      "S5_counts"
+    ],
+    "inventory_ids": [
+      "M03",
+      "M01",
+      "M47",
+      "M50"
+    ],
+    "total_samples": 13,
+    "citations": {
+      "samples": [
+        {
+          "sample_id": "GSM3024054",
+          "study": "GSE111151",
+          "title": "MCF-7 Tam1",
+          "role": "treated",
+          "batch": null,
+          "source_file_id": "S4_raw_tar",
+          "treatment": "OHT 1000.0 nM"
+        },
+        {
+          "sample_id": "GSM3315632",
+          "study": "GSE117942",
+          "title": "SAM24314541",
+          "role": "treated",
+          "batch": "S5_SAM24314",
+          "source_file_id": "S5_counts",
+          "treatment": "OHT 1000.0 nM 24 h"
+        },
+        {
+          "sample_id": "GSM3315633",
+          "study": "GSE117942",
+          "title": "SAM24314542",
+          "role": "treated",
+          "batch": "S5_SAM24314",
+          "source_file_id": "S5_counts",
+          "treatment": "OHT 1000.0 nM 24 h"
+        },
+        {
+          "sample_id": "GSM645712",
+          "study": "GSE26298",
+          "title": "MCF-7 +scrambled siRNA + 100 nM 4-hydroxytamoxifen rep1 (MD33)",
+          "role": "treated",
+          "batch": "S3_A",
+          "source_file_id": "S3_matrix",
+          "treatment": "OHT 100.0 nM"
+        },
+        {
+          "sample_id": "GSM645713",
+          "study": "GSE26298",
+          "title": "MCF-7 +scrambled siRNA + 100 nM 4-hydroxytamoxifen rep2 (MD34)",
+          "role": "treated",
+          "batch": "S3_A",
+          "source_file_id": "S3_matrix",
+          "treatment": "OHT 100.0 nM"
+        },
+        {
+          "sample_id": "GSM645714",
+          "study": "GSE26298",
+          "title": "MCF-7 +scrambled siRNA + 500 nM 4-hydroxytamoxifen rep1 (MD35)",
+          "role": "treated",
+          "batch": "S3_A",
+          "source_file_id": "S3_matrix",
+          "treatment": "OHT 500.0 nM"
+        },
+        {
+          "sample_id": "GSM645715",
+          "study": "GSE26298",
+          "title": "MCF-7 +scrambled siRNA + 500 nM 4-hydroxytamoxifen rep2 (MD36)",
+          "role": "treated",
+          "batch": "S3_A",
+          "source_file_id": "S3_matrix",
+          "treatment": "OHT 500.0 nM"
+        },
+        {
+          "sample_id": "GSM92152",
+          "study": "GSE4025",
+          "title": "Ad+TOT replicate1",
+          "role": "treated",
+          "batch": null,
+          "source_file_id": "S1_matrix",
+          "treatment": "OHT 10.0 nM 24 h"
+        },
+        {
+          "sample_id": "GSM92153",
+          "study": "GSE4025",
+          "title": "Ad+TOT replicate2",
+          "role": "treated",
+          "batch": null,
+          "source_file_id": "S1_matrix",
+          "treatment": "OHT 10.0 nM 24 h"
+        },
+        {
+          "sample_id": "GSM92154",
+          "study": "GSE4025",
+          "title": "Ad+TOT replicate3",
+          "role": "treated",
+          "batch": null,
+          "source_file_id": "S1_matrix",
+          "treatment": "OHT 10.0 nM 24 h"
+        },
+        {
+          "sample_id": "GSM92161",
+          "study": "GSE4025",
+          "title": "AdERb +TOT replicate1",
+          "role": "treated",
+          "batch": null,
+          "source_file_id": "S1_matrix",
+          "treatment": "OHT 10.0 nM 24 h"
+        },
+        {
+          "sample_id": "GSM92162",
+          "study": "GSE4025",
+          "title": "AdERb +TOT replicate2",
+          "role": "treated",
+          "batch": null,
+          "source_file_id": "S1_matrix",
+          "treatment": "OHT 10.0 nM 24 h"
+        },
+        {
+          "sample_id": "GSM92163",
+          "study": "GSE4025",
+          "title": "AdERb +TOT replicate3",
+          "role": "treated",
+          "batch": null,
+          "source_file_id": "S1_matrix",
+          "treatment": "OHT 10.0 nM 24 h"
+        }
+      ],
+      "not_found": [],
+      "provenance": [
+        {
+          "entity_id": "GSM3024054",
+          "field": "role",
+          "source_file_id": "S4_matrix",
+          "source_location": "title; !Sample_description",
+          "raw_text": "title='MCF-7 Tam1'",
+          "rule": "resistant derivative ('Tam1', 'Tam2'), kept in 1 uM 4-OHT [M35]"
+        },
+        {
+          "entity_id": "GSM3024054|OHT",
+          "field": "dose_nM",
+          "source_file_id": "S4_matrix",
+          "source_location": "title; !Sample_description",
+          "raw_text": "title='MCF-7 Tam1'",
+          "rule": "resistant derivative ('Tam1', 'Tam2'), kept in 1 uM 4-OHT [M35]: '4-OH-tamoxifen' -> OHT"
+        },
+        {
+          "entity_id": "GSM3024054|OHT",
+          "field": "exposure_h",
+          "source_file_id": "S4_matrix",
+          "source_location": "title; !Sample_description",
+          "raw_text": "title='MCF-7 Tam1'",
+          "rule": "resistant derivative ('Tam1', 'Tam2'), kept in 1 uM 4-OHT [M35]: '4-OH-tamoxifen' -> OHT"
+        },
+        {
+          "entity_id": "GSM3315632",
+          "field": "batch",
+          "source_file_id": "S5_counts",
+          "source_location": "sample ID ranges and read depth (evidence_output.txt)",
+          "raw_text": "title='SAM24314541'",
+          "rule": "sequencing run inferred from the ID block (e.g. SAM24322xxx = later, deeper run) [M50]"
+        },
+        {
+          "entity_id": "GSM3315632",
+          "field": "role",
+          "source_file_id": "S5_matrix",
+          "source_location": "!Sample_characteristics_ch1 (ligand, concentration, time)",
+          "raw_text": "characteristics_ch1#1='ligand: 4-OH tamoxifen'; characteristics_ch1#2='concentration: 1uM'",
+          "rule": "other ligands at 1 uM (protocol's '1 M' is a lost micro sign) [M13]"
+        },
+        {
+          "entity_id": "GSM3315632|OHT",
+          "field": "dose_nM",
+          "source_file_id": "S5_matrix",
+          "source_location": "!Sample_characteristics_ch1 (ligand, concentration, time)",
+          "raw_text": "characteristics_ch1#1='ligand: 4-OH tamoxifen'; characteristics_ch1#2='concentration: 1uM'",
+          "rule": "other ligands at 1 uM (protocol's '1 M' is a lost micro sign) [M13]: '4-OH tamoxifen' -> OHT"
+        },
+        {
+          "entity_id": "GSM3315632|OHT",
+          "field": "exposure_h",
+          "source_file_id": "S5_matrix",
+          "source_location": "!Sample_characteristics_ch1 (ligand, concentration, time)",
+          "raw_text": "characteristics_ch1#1='ligand: 4-OH tamoxifen'; characteristics_ch1#2='concentration: 1uM'",
+          "rule": "other ligands at 1 uM (protocol's '1 M' is a lost micro sign) [M13]: '4-OH tamoxifen' -> OHT"
+        },
+        {
+          "entity_id": "GSM3315633",
+          "field": "batch",
+          "source_file_id": "S5_counts",
+          "source_location": "sample ID ranges and read depth (evidence_output.txt)",
+          "raw_text": "title='SAM24314542'",
+          "rule": "sequencing run inferred from the ID block (e.g. SAM24322xxx = later, deeper run) [M50]"
+        },
+        {
+          "entity_id": "GSM3315633",
+          "field": "role",
+          "source_file_id": "S5_matrix",
+          "source_location": "!Sample_characteristics_ch1 (ligand, concentration, time)",
+          "raw_text": "characteristics_ch1#1='ligand: 4-OH tamoxifen'; characteristics_ch1#2='concentration: 1uM'",
+          "rule": "other ligands at 1 uM (protocol's '1 M' is a lost micro sign) [M13]"
+        },
+        {
+          "entity_id": "GSM3315633|OHT",
+          "field": "dose_nM",
+          "source_file_id": "S5_matrix",
+          "source_location": "!Sample_characteristics_ch1 (ligand, concentration, time)",
+          "raw_text": "characteristics_ch1#1='ligand: 4-OH tamoxifen'; characteristics_ch1#2='concentration: 1uM'",
+          "rule": "other ligands at 1 uM (protocol's '1 M' is a lost micro sign) [M13]: '4-OH tamoxifen' -> OHT"
+        },
+        {
+          "entity_id": "GSM3315633|OHT",
+          "field": "exposure_h",
+          "source_file_id": "S5_matrix",
+          "source_location": "!Sample_characteristics_ch1 (ligand, concentration, time)",
+          "raw_text": "characteristics_ch1#1='ligand: 4-OH tamoxifen'; characteristics_ch1#2='concentration: 1uM'",
+          "rule": "other ligands at 1 uM (protocol's '1 M' is a lost micro sign) [M13]: '4-OH tamoxifen' -> OHT"
+        },
+        {
+          "entity_id": "GSM645712",
+          "field": "batch",
+          "source_file_id": "S3_paper",
+          "source_location": "Additional files 1-3 'Control sample'; expression correlation (evidence_output.txt)",
+          "raw_text": "description#1='MD33'",
+          "rule": "experiment A: MD31-MD38 (vehicle, 4-OHT, ER knockdown) [M47]"
+        },
+        {
+          "entity_id": "GSM645712",
+          "field": "role",
+          "source_file_id": "S3_matrix",
+          "source_location": "!Sample_characteristics_ch1 (agent, dose)",
+          "raw_text": "characteristics_ch1#2='agent: 4-hydroxytamoxifen'; characteristics_ch1#3='dose: 100 nM'",
+          "rule": "4-hydroxytamoxifen at the stated dose [M12]"
+        },
+        {
+          "entity_id": "GSM645712|OHT",
+          "field": "dose_nM",
+          "source_file_id": "S3_matrix",
+          "source_location": "!Sample_characteristics_ch1 (agent, dose)",
+          "raw_text": "characteristics_ch1#2='agent: 4-hydroxytamoxifen'; characteristics_ch1#3='dose: 100 nM'",
+          "rule": "4-hydroxytamoxifen at the stated dose [M12]: '4-hydroxytamoxifen' -> OHT"
+        },
+        {
+          "entity_id": "GSM645712|OHT",
+          "field": "exposure_h",
+          "source_file_id": "S3_matrix",
+          "source_location": "!Sample_characteristics_ch1 (agent, dose)",
+          "raw_text": "characteristics_ch1#2='agent: 4-hydroxytamoxifen'; characteristics_ch1#3='dose: 100 nM'",
+          "rule": "4-hydroxytamoxifen at the stated dose [M12]: '4-hydroxytamoxifen' -> OHT"
+        },
+        {
+          "entity_id": "GSM645713",
+          "field": "batch",
+          "source_file_id": "S3_paper",
+          "source_location": "Additional files 1-3 'Control sample'; expression correlation (evidence_output.txt)",
+          "raw_text": "description#1='MD34'",
+          "rule": "experiment A: MD31-MD38 (vehicle, 4-OHT, ER knockdown) [M47]"
+        },
+        {
+          "entity_id": "GSM645713",
+          "field": "role",
+          "source_file_id": "S3_matrix",
+          "source_location": "!Sample_characteristics_ch1 (agent, dose)",
+          "raw_text": "characteristics_ch1#2='agent: 4-hydroxytamoxifen'; characteristics_ch1#3='dose: 100 nM'",
+          "rule": "4-hydroxytamoxifen at the stated dose [M12]"
+        },
+        {
+          "entity_id": "GSM645713|OHT",
+          "field": "dose_nM",
+          "source_file_id": "S3_matrix",
+          "source_location": "!Sample_characteristics_ch1 (agent, dose)",
+          "raw_text": "characteristics_ch1#2='agent: 4-hydroxytamoxifen'; characteristics_ch1#3='dose: 100 nM'",
+          "rule": "4-hydroxytamoxifen at the stated dose [M12]: '4-hydroxytamoxifen' -> OHT"
+        },
+        {
+          "entity_id": "GSM645713|OHT",
+          "field": "exposure_h",
+          "source_file_id": "S3_matrix",
+          "source_location": "!Sample_characteristics_ch1 (agent, dose)",
+          "raw_text": "characteristics_ch1#2='agent: 4-hydroxytamoxifen'; characteristics_ch1#3='dose: 100 nM'",
+          "rule": "4-hydroxytamoxifen at the stated dose [M12]: '4-hydroxytamoxifen' -> OHT"
+        },
+        {
+          "entity_id": "GSM645714",
+          "field": "batch",
+          "source_file_id": "S3_paper",
+          "source_location": "Additional files 1-3 'Control sample'; expression correlation (evidence_output.txt)",
+          "raw_text": "description#1='MD35'",
+          "rule": "experiment A: MD31-MD38 (vehicle, 4-OHT, ER knockdown) [M47]"
+        },
+        {
+          "entity_id": "GSM645714",
+          "field": "role",
+          "source_file_id": "S3_matrix",
+          "source_location": "!Sample_characteristics_ch1 (agent, dose)",
+          "raw_text": "characteristics_ch1#2='agent: 4-hydroxytamoxifen'; characteristics_ch1#3='dose: 500 nM'",
+          "rule": "4-hydroxytamoxifen at the stated dose [M12]"
+        },
+        {
+          "entity_id": "GSM645714|OHT",
+          "field": "dose_nM",
+          "source_file_id": "S3_matrix",
+          "source_location": "!Sample_characteristics_ch1 (agent, dose)",
+          "raw_text": "characteristics_ch1#2='agent: 4-hydroxytamoxifen'; characteristics_ch1#3='dose: 500 nM'",
+          "rule": "4-hydroxytamoxifen at the stated dose [M12]: '4-hydroxytamoxifen' -> OHT"
+        },
+        {
+          "entity_id": "GSM645714|OHT",
+          "field": "exposure_h",
+          "source_file_id": "S3_matrix",
+          "source_location": "!Sample_characteristics_ch1 (agent, dose)",
+          "raw_text": "characteristics_ch1#2='agent: 4-hydroxytamoxifen'; characteristics_ch1#3='dose: 500 nM'",
+          "rule": "4-hydroxytamoxifen at the stated dose [M12]: '4-hydroxytamoxifen' -> OHT"
+        },
+        {
+          "entity_id": "GSM645715",
+          "field": "batch",
+          "source_file_id": "S3_paper",
+          "source_location": "Additional files 1-3 'Control sample'; expression correlation (evidence_output.txt)",
+          "raw_text": "description#1='MD36'",
+          "rule": "experiment A: MD31-MD38 (vehicle, 4-OHT, ER knockdown) [M47]"
+        },
+        {
+          "entity_id": "GSM645715",
+          "field": "role",
+          "source_file_id": "S3_matrix",
+          "source_location": "!Sample_characteristics_ch1 (agent, dose)",
+          "raw_text": "characteristics_ch1#2='agent: 4-hydroxytamoxifen'; characteristics_ch1#3='dose: 500 nM'",
+          "rule": "4-hydroxytamoxifen at the stated dose [M12]"
+        },
+        {
+          "entity_id": "GSM645715|OHT",
+          "field": "dose_nM",
+          "source_file_id": "S3_matrix",
+          "source_location": "!Sample_characteristics_ch1 (agent, dose)",
+          "raw_text": "characteristics_ch1#2='agent: 4-hydroxytamoxifen'; characteristics_ch1#3='dose: 500 nM'",
+          "rule": "4-hydroxytamoxifen at the stated dose [M12]: '4-hydroxytamoxifen' -> OHT"
+        },
+        {
+          "entity_id": "GSM645715|OHT",
+          "field": "exposure_h",
+          "source_file_id": "S3_matrix",
+          "source_location": "!Sample_characteristics_ch1 (agent, dose)",
+          "raw_text": "characteristics_ch1#2='agent: 4-hydroxytamoxifen'; characteristics_ch1#3='dose: 500 nM'",
+          "rule": "4-hydroxytamoxifen at the stated dose [M12]: '4-hydroxytamoxifen' -> OHT"
+        },
+        {
+          "entity_id": "GSM92152",
+          "field": "role",
+          "source_file_id": "S1_matrix",
+          "source_location": "!Sample_characteristics_ch1; dose from !Series_overall_design",
+          "raw_text": "characteristics_ch1='Ad(moi10)-infected, TOT-treated for 24hr'",
+          "rule": "'TOT' = trans-4-hydroxytamoxifen 10 nM, 24 h [M01]"
+        },
+        {
+          "entity_id": "GSM92152|OHT",
+          "field": "dose_nM",
+          "source_file_id": "S1_matrix",
+          "source_location": "!Sample_characteristics_ch1; dose from !Series_overall_design",
+          "raw_text": "characteristics_ch1='Ad(moi10)-infected, TOT-treated for 24hr'",
+          "rule": "'TOT' = trans-4-hydroxytamoxifen 10 nM, 24 h [M01]: 'TOT' -> OHT"
+        },
+        {
+          "entity_id": "GSM92152|OHT",
+          "field": "exposure_h",
+          "source_file_id": "S1_matrix",
+          "source_location": "!Sample_characteristics_ch1; dose from !Series_overall_design",
+          "raw_text": "characteristics_ch1='Ad(moi10)-infected, TOT-treated for 24hr'",
+          "rule": "'TOT' = trans-4-hydroxytamoxifen 10 nM, 24 h [M01]: 'TOT' -> OHT"
+        },
+        {
+          "entity_id": "GSM92153",
+          "field": "role",
+          "source_file_id": "S1_matrix",
+          "source_location": "!Sample_characteristics_ch1; dose from !Series_overall_design",
+          "raw_text": "characteristics_ch1='Ad(moi10)-infected, TOT-treated for 24hr'",
+          "rule": "'TOT' = trans-4-hydroxytamoxifen 10 nM, 24 h [M01]"
+        },
+        {
+          "entity_id": "GSM92153|OHT",
+          "field": "dose_nM",
+          "source_file_id": "S1_matrix",
+          "source_location": "!Sample_characteristics_ch1; dose from !Series_overall_design",
+          "raw_text": "characteristics_ch1='Ad(moi10)-infected, TOT-treated for 24hr'",
+          "rule": "'TOT' = trans-4-hydroxytamoxifen 10 nM, 24 h [M01]: 'TOT' -> OHT"
+        },
+        {
+          "entity_id": "GSM92153|OHT",
+          "field": "exposure_h",
+          "source_file_id": "S1_matrix",
+          "source_location": "!Sample_characteristics_ch1; dose from !Series_overall_design",
+          "raw_text": "characteristics_ch1='Ad(moi10)-infected, TOT-treated for 24hr'",
+          "rule": "'TOT' = trans-4-hydroxytamoxifen 10 nM, 24 h [M01]: 'TOT' -> OHT"
+        },
+        {
+          "entity_id": "GSM92154",
+          "field": "role",
+          "source_file_id": "S1_matrix",
+          "source_location": "!Sample_characteristics_ch1; dose from !Series_overall_design",
+          "raw_text": "characteristics_ch1='Ad(moi10)-infected, TOT-treated for 24hr'",
+          "rule": "'TOT' = trans-4-hydroxytamoxifen 10 nM, 24 h [M01]"
+        },
+        {
+          "entity_id": "GSM92154|OHT",
+          "field": "dose_nM",
+          "source_file_id": "S1_matrix",
+          "source_location": "!Sample_characteristics_ch1; dose from !Series_overall_design",
+          "raw_text": "characteristics_ch1='Ad(moi10)-infected, TOT-treated for 24hr'",
+          "rule": "'TOT' = trans-4-hydroxytamoxifen 10 nM, 24 h [M01]: 'TOT' -> OHT"
+        },
+        {
+          "entity_id": "GSM92154|OHT",
+          "field": "exposure_h",
+          "source_file_id": "S1_matrix",
+          "source_location": "!Sample_characteristics_ch1; dose from !Series_overall_design",
+          "raw_text": "characteristics_ch1='Ad(moi10)-infected, TOT-treated for 24hr'",
+          "rule": "'TOT' = trans-4-hydroxytamoxifen 10 nM, 24 h [M01]: 'TOT' -> OHT"
+        },
+        {
+          "entity_id": "GSM92161",
+          "field": "role",
+          "source_file_id": "S1_matrix",
+          "source_location": "!Sample_characteristics_ch1; dose from !Series_overall_design",
+          "raw_text": "characteristics_ch1='AdERb(moi10)-infected, TOT-treated for 24hr'",
+          "rule": "'TOT' = trans-4-hydroxytamoxifen 10 nM, 24 h [M01]"
+        },
+        {
+          "entity_id": "GSM92161|OHT",
+          "field": "dose_nM",
+          "source_file_id": "S1_matrix",
+          "source_location": "!Sample_characteristics_ch1; dose from !Series_overall_design",
+          "raw_text": "characteristics_ch1='AdERb(moi10)-infected, TOT-treated for 24hr'",
+          "rule": "'TOT' = trans-4-hydroxytamoxifen 10 nM, 24 h [M01]: 'TOT' -> OHT"
+        },
+        {
+          "entity_id": "GSM92161|OHT",
+          "field": "exposure_h",
+          "source_file_id": "S1_matrix",
+          "source_location": "!Sample_characteristics_ch1; dose from !Series_overall_design",
+          "raw_text": "characteristics_ch1='AdERb(moi10)-infected, TOT-treated for 24hr'",
+          "rule": "'TOT' = trans-4-hydroxytamoxifen 10 nM, 24 h [M01]: 'TOT' -> OHT"
+        },
+        {
+          "entity_id": "GSM92162",
+          "field": "role",
+          "source_file_id": "S1_matrix",
+          "source_location": "!Sample_characteristics_ch1; dose from !Series_overall_design",
+          "raw_text": "characteristics_ch1='AdERb(moi10)-infected, TOT-treated for 24hr'",
+          "rule": "'TOT' = trans-4-hydroxytamoxifen 10 nM, 24 h [M01]"
+        },
+        {
+          "entity_id": "GSM92162|OHT",
+          "field": "dose_nM",
+          "source_file_id": "S1_matrix",
+          "source_location": "!Sample_characteristics_ch1; dose from !Series_overall_design",
+          "raw_text": "characteristics_ch1='AdERb(moi10)-infected, TOT-treated for 24hr'",
+          "rule": "'TOT' = trans-4-hydroxytamoxifen 10 nM, 24 h [M01]: 'TOT' -> OHT"
+        },
+        {
+          "entity_id": "GSM92162|OHT",
+          "field": "exposure_h",
+          "source_file_id": "S1_matrix",
+          "source_location": "!Sample_characteristics_ch1; dose from !Series_overall_design",
+          "raw_text": "characteristics_ch1='AdERb(moi10)-infected, TOT-treated for 24hr'",
+          "rule": "'TOT' = trans-4-hydroxytamoxifen 10 nM, 24 h [M01]: 'TOT' -> OHT"
+        },
+        {
+          "entity_id": "GSM92163",
+          "field": "role",
+          "source_file_id": "S1_matrix",
+          "source_location": "!Sample_characteristics_ch1; dose from !Series_overall_design",
+          "raw_text": "characteristics_ch1='AdERb(moi10)-infected, TOT-treated for 24hr'",
+          "rule": "'TOT' = trans-4-hydroxytamoxifen 10 nM, 24 h [M01]"
+        },
+        {
+          "entity_id": "GSM92163|OHT",
+          "field": "dose_nM",
+          "source_file_id": "S1_matrix",
+          "source_location": "!Sample_characteristics_ch1; dose from !Series_overall_design",
+          "raw_text": "characteristics_ch1='AdERb(moi10)-infected, TOT-treated for 24hr'",
+          "rule": "'TOT' = trans-4-hydroxytamoxifen 10 nM, 24 h [M01]: 'TOT' -> OHT"
+        },
+        {
+          "entity_id": "GSM92163|OHT",
+          "field": "exposure_h",
+          "source_file_id": "S1_matrix",
+          "source_location": "!Sample_characteristics_ch1; dose from !Series_overall_design",
+          "raw_text": "characteristics_ch1='AdERb(moi10)-infected, TOT-treated for 24hr'",
+          "rule": "'TOT' = trans-4-hydroxytamoxifen 10 nM, 24 h [M01]: 'TOT' -> OHT"
+        }
+      ],
+      "files": [
+        {
+          "source_file_id": "S1_matrix",
+          "path": "studies/data/raw/paper_1_GSE4025_series_matrix.txt.gz",
+          "sha256": "c707d31b0278de041bb99d05046fba7603197cb85e2953fcc32ef2c806cfe175",
+          "origin_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE4nnn/GSE4025/matrix/GSE4025_series_matrix.txt.gz"
+        },
+        {
+          "source_file_id": "S3_matrix",
+          "path": "studies/data/raw/paper_3_GSE26298_series_matrix.txt.gz",
+          "sha256": "ee60cac2c9e9717565b24fabfb611d03aac0b9ee5f5ba33afcb4fb95e0b11336",
+          "origin_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE26nnn/GSE26298/matrix/GSE26298_series_matrix.txt.gz"
+        },
+        {
+          "source_file_id": "S4_raw_tar",
+          "path": "studies/data/raw/paper_4_GSE111151_RAW.tar",
+          "sha256": "235e17a9ff6b66036742abfedf0763a25f0b59e5ede29ffa0c9821ce0a09eaca",
+          "origin_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE111nnn/GSE111151/suppl/GSE111151_RAW.tar"
+        },
+        {
+          "source_file_id": "S5_counts",
+          "path": "studies/data/raw/paper_5_GSE117942_RNA-seq_counts.tsv.gz",
+          "sha256": "4d1a6426a423370639fb9ee9cefb20abe046248da9eb91381fea981c78375111",
+          "origin_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE117nnn/GSE117942/suppl/GSE117942_RNA-seq_counts.tsv.gz"
+        }
+      ],
+      "issues": [
+        {
+          "inventory_id": "M01",
+          "impact": "breaks",
+          "message": "OHT is written 3 ways in S1; all map to one compound.",
+          "records": 1,
+          "resolution": "fixed_by_rule"
+        },
+        {
+          "inventory_id": "M03",
+          "impact": "misleads",
+          "message": "The study never says which form of tamoxifen; kept separate from 4-hydroxytamoxifen.",
+          "records": 99,
+          "resolution": "flagged"
+        },
+        {
+          "inventory_id": "M47",
+          "impact": "breaks",
+          "message": "Batch S3_A is inferred from the data (sample IDs, read depth or expression), not stated by the lab.",
+          "records": 16,
+          "resolution": "flagged"
+        },
+        {
+          "inventory_id": "M50",
+          "impact": "misleads",
+          "message": "Batch S5_SAM24314 is inferred from the data (sample IDs, read depth or expression), not stated by the lab.",
+          "records": 90,
+          "resolution": "flagged"
+        }
+      ]
+    },
+    "steps": [
+      {
+        "purpose": "Count MCF-7 samples (base line MCF-7 incl. derived) given OHT, by study",
+        "sql": "SELECT s.study_id, st.geo_accession, count(DISTINCT s.sample_id) n,\n count(DISTINCT s.sample_id) FILTER (WHERE s.derived_line_id IS NULL) n_parental_line,\n count(DISTINCT s.sample_id) FILTER (WHERE t.exposure_type='acute') n_acute,\n string_agg(DISTINCT t.exposure_type, ',') types, string_agg(DISTINCT t.dose_status, ',') ds,\n string_agg(DISTINCT s.sample_id, ',') ids, string_agg(DISTINCT t.source_file_id, ',') sf\nFROM sample_treatment t JOIN sample s USING(sample_id) JOIN study st USING(study_id)\nWHERE t.compound_id='OHT' AND s.cell_line_id='CVCL_0031' AND s.include_in_analysis\nGROUP BY 1,2 ORDER BY 1",
+        "rows": 0,
+        "error": "ParserException: Parser Error: syntax error at or near \"types\"\n\nLINE 4:  string_agg(DISTINCT t.exposure_type, ',') types, string_agg(DISTINCT t.dose_status, ',') ds,\n                                                   ^"
+      },
+      {
+        "purpose": "Count MCF-7 samples given OHT, by study",
+        "sql": "SELECT s.study_id, st.geo_accession, count(DISTINCT s.sample_id) n,\n count(DISTINCT s.sample_id) FILTER (WHERE s.derived_line_id IS NULL) n_nonderived,\n string_agg(DISTINCT t.exposure_type, ',') AS exp_types, string_agg(DISTINCT t.dose_status, ',') AS ds,\n string_agg(DISTINCT CAST(t.dose_nM AS VARCHAR), ',') AS doses,\n string_agg(DISTINCT s.sample_id, ',') AS ids, string_agg(DISTINCT t.source_file_id, ',') AS sf\nFROM sample_treatment t JOIN sample s USING(sample_id) JOIN study st USING(study_id)\nWHERE t.compound_id='OHT' AND s.cell_line_id='CVCL_0031' AND s.include_in_analysis\nGROUP BY 1,2 ORDER BY 1",
+        "rows": 4,
+        "error": null
+      },
+      {
+        "purpose": "Issues touching these OHT samples or relevant study-level issues",
+        "sql": "SELECT inventory_id, check_name, impact, resolution, study_id, entity_id, left(message,200) m FROM issue\nWHERE entity_id IN ('GSM92153','GSM92154','GSM92161','GSM92163','GSM92152','GSM92162','GSM645712','GSM645713','GSM645714','GSM645715','GSM3024054','GSM3315632','GSM3315633')\n OR split_part(entity_id,'|',1) IN ('GSM645712','GSM645713','GSM645714','GSM645715','GSM3024054','GSM92152')\n OR check_name IN ('compound_form_unstated') OR (entity_type='study' AND study_id IN ('S1','S3','S4','S5','S2') AND impact<>'minor')",
+        "rows": 60,
+        "error": null
+      },
+      {
+        "purpose": "Per-sample details for the OHT MCF-7 samples",
+        "sql": "SELECT s.study_id, s.sample_id, s.genetic_change, s.derived_line_id, t.dose_nM, t.exposure_h, t.dose_as_given, s.hormone_deprived\nFROM sample_treatment t JOIN sample s USING(sample_id)\nWHERE t.compound_id='OHT' AND s.cell_line_id='CVCL_0031' ORDER BY 1,2",
+        "rows": 13,
+        "error": null
+      }
+    ],
+    "seconds": 26.3,
+    "usage": {
+      "input": 65860,
+      "output": 2265
+    },
+    "model": "claude-opus-5-5"
+  },
+  {
+    "question": "In GSE117942, how much does GREB1 change in MCF-7 cells after 4-OHT?",
+    "can_answer": true,
+    "answer": "In GSE117942, 24 h of 4-OHT at 1 \u00b5M lowers GREB1 in MCF-7 by about 2.52 log2 units, roughly 5.7-fold, compared with DMSO vehicle in the same batch. GREB1 averages 4.95 log2 CPM in the two 4-OHT samples (GSM3315632 at 4.953, GSM3315633 at 4.943) and 7.47 in the two DMSO samples (GSM3315628 at 7.475, GSM3315629 at 7.461). The two copies of each condition agree to within 0.02, and the cells were hormone-deprived. Two caveats: the lab didn't state the batch (S5_SAM24314), it was worked out from the data (M50); and the 1 \u00b5M dose was corrected from a '1 M' typo in the protocol text (M13).",
+    "sample_ids": [
+      "GSM3315632",
+      "GSM3315633",
+      "GSM3315628",
+      "GSM3315629"
+    ],
+    "source_file_ids": [
+      "S5_counts"
+    ],
+    "inventory_ids": [
+      "M50",
+      "M13"
+    ],
+    "citations": {
+      "samples": [
+        {
+          "sample_id": "GSM3315628",
+          "study": "GSE117942",
+          "title": "SAM24314537",
+          "role": "vehicle_control",
+          "batch": "S5_SAM24314",
+          "source_file_id": "S5_counts",
+          "treatment": "DMSO 24 h"
+        },
+        {
+          "sample_id": "GSM3315629",
+          "study": "GSE117942",
+          "title": "SAM24314538",
+          "role": "vehicle_control",
+          "batch": "S5_SAM24314",
+          "source_file_id": "S5_counts",
+          "treatment": "DMSO 24 h"
+        },
+        {
+          "sample_id": "GSM3315632",
+          "study": "GSE117942",
+          "title": "SAM24314541",
+          "role": "treated",
+          "batch": "S5_SAM24314",
+          "source_file_id": "S5_counts",
+          "treatment": "OHT 1000.0 nM 24 h"
+        },
+        {
+          "sample_id": "GSM3315633",
+          "study": "GSE117942",
+          "title": "SAM24314542",
+          "role": "treated",
+          "batch": "S5_SAM24314",
+          "source_file_id": "S5_counts",
+          "treatment": "OHT 1000.0 nM 24 h"
+        }
+      ],
+      "not_found": [],
+      "provenance": [
+        {
+          "entity_id": "GSM3315628",
+          "field": "batch",
+          "source_file_id": "S5_counts",
+          "source_location": "sample ID ranges and read depth (evidence_output.txt)",
+          "raw_text": "title='SAM24314537'",
+          "rule": "sequencing run inferred from the ID block (e.g. SAM24322xxx = later, deeper run) [M50]"
+        },
+        {
+          "entity_id": "GSM3315628",
+          "field": "role",
+          "source_file_id": "S5_matrix",
+          "source_location": "!Sample_characteristics_ch1 (ligand, concentration)",
+          "raw_text": "characteristics_ch1#1='ligand: DMSO'",
+          "rule": "DMSO vehicle [M21]"
+        },
+        {
+          "entity_id": "GSM3315628|DMSO",
+          "field": "dose_nM",
+          "source_file_id": "S5_matrix",
+          "source_location": "!Sample_characteristics_ch1 (ligand, concentration)",
+          "raw_text": "characteristics_ch1#1='ligand: DMSO'",
+          "rule": "DMSO vehicle [M21]: 'DMSO' -> DMSO"
+        },
+        {
+          "entity_id": "GSM3315628|DMSO",
+          "field": "exposure_h",
+          "source_file_id": "S5_matrix",
+          "source_location": "!Sample_characteristics_ch1 (ligand, concentration)",
+          "raw_text": "characteristics_ch1#1='ligand: DMSO'",
+          "rule": "DMSO vehicle [M21]: 'DMSO' -> DMSO"
+        },
+        {
+          "entity_id": "GSM3315629",
+          "field": "batch",
+          "source_file_id": "S5_counts",
+          "source_location": "sample ID ranges and read depth (evidence_output.txt)",
+          "raw_text": "title='SAM24314538'",
+          "rule": "sequencing run inferred from the ID block (e.g. SAM24322xxx = later, deeper run) [M50]"
+        },
+        {
+          "entity_id": "GSM3315629",
+          "field": "role",
+          "source_file_id": "S5_matrix",
+          "source_location": "!Sample_characteristics_ch1 (ligand, concentration)",
+          "raw_text": "characteristics_ch1#1='ligand: DMSO'",
+          "rule": "DMSO vehicle [M21]"
+        },
+        {
+          "entity_id": "GSM3315629|DMSO",
+          "field": "dose_nM",
+          "source_file_id": "S5_matrix",
+          "source_location": "!Sample_characteristics_ch1 (ligand, concentration)",
+          "raw_text": "characteristics_ch1#1='ligand: DMSO'",
+          "rule": "DMSO vehicle [M21]: 'DMSO' -> DMSO"
+        },
+        {
+          "entity_id": "GSM3315629|DMSO",
+          "field": "exposure_h",
+          "source_file_id": "S5_matrix",
+          "source_location": "!Sample_characteristics_ch1 (ligand, concentration)",
+          "raw_text": "characteristics_ch1#1='ligand: DMSO'",
+          "rule": "DMSO vehicle [M21]: 'DMSO' -> DMSO"
+        },
+        {
+          "entity_id": "GSM3315632",
+          "field": "batch",
+          "source_file_id": "S5_counts",
+          "source_location": "sample ID ranges and read depth (evidence_output.txt)",
+          "raw_text": "title='SAM24314541'",
+          "rule": "sequencing run inferred from the ID block (e.g. SAM24322xxx = later, deeper run) [M50]"
+        },
+        {
+          "entity_id": "GSM3315632",
+          "field": "role",
+          "source_file_id": "S5_matrix",
+          "source_location": "!Sample_characteristics_ch1 (ligand, concentration, time)",
+          "raw_text": "characteristics_ch1#1='ligand: 4-OH tamoxifen'; characteristics_ch1#2='concentration: 1uM'",
+          "rule": "other ligands at 1 uM (protocol's '1 M' is a lost micro sign) [M13]"
+        },
+        {
+          "entity_id": "GSM3315632|OHT",
+          "field": "dose_nM",
+          "source_file_id": "S5_matrix",
+          "source_location": "!Sample_characteristics_ch1 (ligand, concentration, time)",
+          "raw_text": "characteristics_ch1#1='ligand: 4-OH tamoxifen'; characteristics_ch1#2='concentration: 1uM'",
+          "rule": "other ligands at 1 uM (protocol's '1 M' is a lost micro sign) [M13]: '4-OH tamoxifen' -> OHT"
+        },
+        {
+          "entity_id": "GSM3315632|OHT",
+          "field": "exposure_h",
+          "source_file_id": "S5_matrix",
+          "source_location": "!Sample_characteristics_ch1 (ligand, concentration, time)",
+          "raw_text": "characteristics_ch1#1='ligand: 4-OH tamoxifen'; characteristics_ch1#2='concentration: 1uM'",
+          "rule": "other ligands at 1 uM (protocol's '1 M' is a lost micro sign) [M13]: '4-OH tamoxifen' -> OHT"
+        },
+        {
+          "entity_id": "GSM3315633",
+          "field": "batch",
+          "source_file_id": "S5_counts",
+          "source_location": "sample ID ranges and read depth (evidence_output.txt)",
+          "raw_text": "title='SAM24314542'",
+          "rule": "sequencing run inferred from the ID block (e.g. SAM24322xxx = later, deeper run) [M50]"
+        },
+        {
+          "entity_id": "GSM3315633",
+          "field": "role",
+          "source_file_id": "S5_matrix",
+          "source_location": "!Sample_characteristics_ch1 (ligand, concentration, time)",
+          "raw_text": "characteristics_ch1#1='ligand: 4-OH tamoxifen'; characteristics_ch1#2='concentration: 1uM'",
+          "rule": "other ligands at 1 uM (protocol's '1 M' is a lost micro sign) [M13]"
+        },
+        {
+          "entity_id": "GSM3315633|OHT",
+          "field": "dose_nM",
+          "source_file_id": "S5_matrix",
+          "source_location": "!Sample_characteristics_ch1 (ligand, concentration, time)",
+          "raw_text": "characteristics_ch1#1='ligand: 4-OH tamoxifen'; characteristics_ch1#2='concentration: 1uM'",
+          "rule": "other ligands at 1 uM (protocol's '1 M' is a lost micro sign) [M13]: '4-OH tamoxifen' -> OHT"
+        },
+        {
+          "entity_id": "GSM3315633|OHT",
+          "field": "exposure_h",
+          "source_file_id": "S5_matrix",
+          "source_location": "!Sample_characteristics_ch1 (ligand, concentration, time)",
+          "raw_text": "characteristics_ch1#1='ligand: 4-OH tamoxifen'; characteristics_ch1#2='concentration: 1uM'",
+          "rule": "other ligands at 1 uM (protocol's '1 M' is a lost micro sign) [M13]: '4-OH tamoxifen' -> OHT"
+        }
+      ],
+      "files": [
+        {
+          "source_file_id": "S5_counts",
+          "path": "studies/data/raw/paper_5_GSE117942_RNA-seq_counts.tsv.gz",
+          "sha256": "4d1a6426a423370639fb9ee9cefb20abe046248da9eb91381fea981c78375111",
+          "origin_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE117nnn/GSE117942/suppl/GSE117942_RNA-seq_counts.tsv.gz"
+        }
+      ],
+      "issues": [
+        {
+          "inventory_id": "M13",
+          "impact": "breaks",
+          "message": "'1 M' in treatment_protocol_ch1 equals 1,000,000,000 nM, a million-fold error from a lost micro sign; the sample fields say 1uM and the clean table stores 1,000 nM.",
+          "records": 1,
+          "resolution": "fixed_by_rule"
+        },
+        {
+          "inventory_id": "M50",
+          "impact": "misleads",
+          "message": "Batch S5_SAM24314 is inferred from the data (sample IDs, read depth or expression), not stated by the lab.",
+          "records": 90,
+          "resolution": "flagged"
+        }
+      ]
+    },
+    "steps": [
+      {
+        "purpose": "GREB1 values in S5 MCF-7 samples with treatments and batch",
+        "sql": "SELECT s.sample_id, s.batch, s.role, s.genetic_change, s.derived_line_id, string_agg(t.compound_id||' '||coalesce(t.dose_nM::text,'?')||'nM '||coalesce(t.exposure_h::text,'?')||'h '||t.dose_status, '; ') AS tr, m.value, m.source_file_id\nFROM sample s JOIN measurement m USING(sample_id) JOIN gene g USING(hgnc_id)\nLEFT JOIN sample_treatment t USING(sample_id)\nWHERE s.study_id='S5' AND s.cell_line_id='CVCL_0031' AND g.symbol='GREB1'\nGROUP BY ALL ORDER BY s.batch, tr",
+        "rows": 0,
+        "error": "Only one read-only SELECT or WITH query is allowed."
+      },
+      {
+        "purpose": "Issues for S5 relevant to MCF-7 / controls / dose",
+        "sql": "SELECT issue_id, inventory_id, check_name, impact, resolution, entity_type, entity_id, field, message FROM issue WHERE study_id='S5' ORDER BY inventory_id",
+        "rows": 60,
+        "error": null
+      },
+      {
+        "purpose": "GREB1 values in S5 MCF-7 samples with treatments and batch",
+        "sql": "SELECT s.sample_id, s.batch, s.role, s.genetic_change, s.derived_line_id, s.hormone_deprived, string_agg(t.compound_id||' '||coalesce(t.dose_nM::text,'?')||'nM '||coalesce(t.exposure_h::text,'?')||'h '||t.dose_status, '; ') AS tr, m.value, m.source_file_id\nFROM sample s JOIN measurement m USING(sample_id) JOIN gene g USING(hgnc_id)\nLEFT JOIN sample_treatment t USING(sample_id)\nWHERE s.study_id='S5' AND s.cell_line_id='CVCL_0031' AND g.symbol='GREB1'\nGROUP BY ALL ORDER BY s.batch, tr",
+        "rows": 0,
+        "error": "Only one read-only SELECT or WITH query is allowed."
+      },
+      {
+        "purpose": "GREB1 values in S5 MCF-7 samples with treatments and batch",
+        "sql": "SELECT s.sample_id, s.batch, s.role, s.genetic_change, s.derived_line_id, s.hormone_deprived, string_agg(t.compound_id||' '||coalesce(t.dose_nM::text,'?')||'nM '||coalesce(t.exposure_h::text,'?')||'h '||t.dose_status, ' + ') AS tr, m.value, m.source_file_id\nFROM sample s JOIN measurement m USING(sample_id) JOIN gene g USING(hgnc_id)\nLEFT JOIN sample_treatment t USING(sample_id)\nWHERE s.study_id='S5' AND s.cell_line_id='CVCL_0031' AND g.symbol='GREB1'\nGROUP BY ALL ORDER BY s.batch, tr",
+        "rows": 14,
+        "error": null
+      },
+      {
+        "purpose": "Issues touching the four OHT/DMSO MCF-7 samples",
+        "sql": "SELECT issue_id, inventory_id, check_name, impact, resolution, entity_id, message FROM issue WHERE entity_id IN ('GSM3315628','GSM3315629','GSM3315632','GSM3315633') OR entity_id LIKE 'GSM3315632|%' OR entity_id LIKE 'GSM3315633|%'",
+        "rows": 4,
+        "error": null
+      }
+    ],
+    "seconds": 23.0,
+    "usage": {
+      "input": 77971,
+      "output": 2171
+    },
+    "model": "claude-opus-5-5"
+  },
+  {
+    "question": "What tamoxifen dose did GSE21618 use?",
+    "can_answer": false,
+    "answer": "The data can't answer this. GSE21618 doesn't give its tamoxifen dose in the GEO record or in the paper, so the dose is stored as unknown (NULL) for all 49 tamoxifen-treated samples (GSM539617\u2013GSM539744). The study also never says which form of tamoxifen it used. The treatment is recorded only as \"tamoxifen\", so it is kept apart from 4-hydroxytamoxifen and shouldn't be treated as the same compound used in the other four studies. Both gaps are flagged under M03. There is a separate dose conflict for estradiol in this study (M11), but it doesn't affect tamoxifen.",
+    "sample_ids": [
+      "GSM539617",
+      "GSM539618",
+      "GSM539619",
+      "GSM539620",
+      "GSM539621",
+      "GSM539622",
+      "GSM539623",
+      "GSM539631",
+      "GSM539632",
+      "GSM539633",
+      "GSM539634",
+      "GSM539635",
+      "GSM539636",
+      "GSM539637",
+      "GSM539639",
+      "GSM539640",
+      "GSM539641",
+      "GSM539642",
+      "GSM539643",
+      "GSM539644",
+      "GSM539645",
+      "GSM539648",
+      "GSM539652",
+      "GSM539656",
+      "GSM539660",
+      "GSM539664",
+      "GSM539668",
+      "GSM539710",
+      "GSM539711",
+      "GSM539712",
+      "GSM539713",
+      "GSM539714",
+      "GSM539715",
+      "GSM539716",
+      "GSM539718",
+      "GSM539719",
+      "GSM539720",
+      "GSM539721",
+      "GSM539722",
+      "GSM539744"
+    ],
+    "source_file_ids": [
+      "S2_matrix"
+    ],
+    "inventory_ids": [
+      "M03"
+    ],
+    "total_samples": 49,
+    "citations": {
+      "samples": [
+        {
+          "sample_id": "GSM539617",
+          "study": "GSE21618",
+          "title": "TamR E2+Tamoxifen 1h",
+          "role": "treated",
+          "batch": "S2_TamR_timecourse",
+          "source_file_id": "S2_matrix",
+          "treatment": "E2 10.0 nM 1 h, TAM_UNSPECIFIED 1 h"
+        },
+        {
+          "sample_id": "GSM539618",
+          "study": "GSE21618",
+          "title": "TamR E2+Tamoxifen 2h",
+          "role": "treated",
+          "batch": "S2_TamR_timecourse",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 2 h, E2 10.0 nM 2 h"
+        },
+        {
+          "sample_id": "GSM539619",
+          "study": "GSE21618",
+          "title": "TamR E2+Tamoxifen 3h",
+          "role": "treated",
+          "batch": "S2_TamR_timecourse",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 3 h, E2 10.0 nM 3 h"
+        },
+        {
+          "sample_id": "GSM539620",
+          "study": "GSE21618",
+          "title": "TamR E2+Tamoxifen 6h",
+          "role": "treated",
+          "batch": "S2_TamR_timecourse",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 6 h, E2 10.0 nM 6 h"
+        },
+        {
+          "sample_id": "GSM539621",
+          "study": "GSE21618",
+          "title": "TamR E2+Tamoxifen 12h",
+          "role": "treated",
+          "batch": "S2_TamR_timecourse",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 12 h, E2 10.0 nM 12 h"
+        },
+        {
+          "sample_id": "GSM539622",
+          "study": "GSE21618",
+          "title": "TamR E2+Tamoxifen 24h",
+          "role": "treated",
+          "batch": "S2_TamR_timecourse",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 24 h, E2 10.0 nM 24 h"
+        },
+        {
+          "sample_id": "GSM539623",
+          "study": "GSE21618",
+          "title": "TamR E2+Tamoxifen 48h",
+          "role": "treated",
+          "batch": "S2_TamR_timecourse",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 48 h, E2 10.0 nM 48 h"
+        },
+        {
+          "sample_id": "GSM539631",
+          "study": "GSE21618",
+          "title": "TamR HRG+Tamoxifen 1h",
+          "role": "treated",
+          "batch": "S2_TamR_timecourse",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 1 h, HRG_B1 10.0 nM 1 h"
+        },
+        {
+          "sample_id": "GSM539632",
+          "study": "GSE21618",
+          "title": "TamR HRG+Tamoxifen 2h",
+          "role": "treated",
+          "batch": "S2_TamR_timecourse",
+          "source_file_id": "S2_matrix",
+          "treatment": "HRG_B1 10.0 nM 2 h, TAM_UNSPECIFIED 2 h"
+        },
+        {
+          "sample_id": "GSM539633",
+          "study": "GSE21618",
+          "title": "TamR HRG+Tamoxifen 3h",
+          "role": "treated",
+          "batch": "S2_TamR_timecourse",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 3 h, HRG_B1 10.0 nM 3 h"
+        },
+        {
+          "sample_id": "GSM539634",
+          "study": "GSE21618",
+          "title": "TamR HRG+Tamoxifen 6h",
+          "role": "treated",
+          "batch": "S2_TamR_timecourse",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 6 h, HRG_B1 10.0 nM 6 h"
+        },
+        {
+          "sample_id": "GSM539635",
+          "study": "GSE21618",
+          "title": "TamR HRG+Tamoxifen 12h",
+          "role": "treated",
+          "batch": "S2_TamR_timecourse",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 12 h, HRG_B1 10.0 nM 12 h"
+        },
+        {
+          "sample_id": "GSM539636",
+          "study": "GSE21618",
+          "title": "TamR HRG+Tamoxifen 24h",
+          "role": "treated",
+          "batch": "S2_TamR_timecourse",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 24 h, HRG_B1 10.0 nM 24 h"
+        },
+        {
+          "sample_id": "GSM539637",
+          "study": "GSE21618",
+          "title": "TamR HRG+Tamoxifen 48h",
+          "role": "treated",
+          "batch": "S2_TamR_timecourse",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 48 h, HRG_B1 10.0 nM 48 h"
+        },
+        {
+          "sample_id": "GSM539639",
+          "study": "GSE21618",
+          "title": "TamR Tamoxifen 1h",
+          "role": "treated",
+          "batch": "S2_TamR_timecourse",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 1 h"
+        },
+        {
+          "sample_id": "GSM539640",
+          "study": "GSE21618",
+          "title": "TamR Tamoxifen 2h",
+          "role": "treated",
+          "batch": "S2_TamR_timecourse",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 2 h"
+        },
+        {
+          "sample_id": "GSM539641",
+          "study": "GSE21618",
+          "title": "TamR Tamoxifen 3h",
+          "role": "treated",
+          "batch": "S2_TamR_timecourse",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 3 h"
+        },
+        {
+          "sample_id": "GSM539642",
+          "study": "GSE21618",
+          "title": "TamR Tamoxifen 6h",
+          "role": "treated",
+          "batch": "S2_TamR_timecourse",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 6 h"
+        },
+        {
+          "sample_id": "GSM539643",
+          "study": "GSE21618",
+          "title": "TamR Tamoxifen 12h",
+          "role": "treated",
+          "batch": "S2_TamR_timecourse",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 12 h"
+        },
+        {
+          "sample_id": "GSM539644",
+          "study": "GSE21618",
+          "title": "TamR Tamoxifen 24h",
+          "role": "treated",
+          "batch": "S2_TamR_timecourse",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 24 h"
+        },
+        {
+          "sample_id": "GSM539645",
+          "study": "GSE21618",
+          "title": "TamR Tamoxifen 48h",
+          "role": "treated",
+          "batch": "S2_TamR_timecourse",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 48 h"
+        },
+        {
+          "sample_id": "GSM539648",
+          "study": "GSE21618",
+          "title": "TamR#1 E2+Tamoxifen 24h",
+          "role": "treated",
+          "batch": "S2_TamR_clones",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 24 h, E2 10.0 nM 24 h"
+        },
+        {
+          "sample_id": "GSM539652",
+          "study": "GSE21618",
+          "title": "TamR#2 E2+Tamoxifen 24h",
+          "role": "treated",
+          "batch": "S2_TamR_clones",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 24 h, E2 10.0 nM 24 h"
+        },
+        {
+          "sample_id": "GSM539656",
+          "study": "GSE21618",
+          "title": "TamR#3 E2+Tamoxifen 24h",
+          "role": "treated",
+          "batch": "S2_TamR_clones",
+          "source_file_id": "S2_matrix",
+          "treatment": "E2 10.0 nM 24 h, TAM_UNSPECIFIED 24 h"
+        },
+        {
+          "sample_id": "GSM539660",
+          "study": "GSE21618",
+          "title": "TamR#4 E2+Tamoxifen 24h",
+          "role": "treated",
+          "batch": "S2_TamR_clones",
+          "source_file_id": "S2_matrix",
+          "treatment": "E2 10.0 nM 24 h, TAM_UNSPECIFIED 24 h"
+        },
+        {
+          "sample_id": "GSM539664",
+          "study": "GSE21618",
+          "title": "TamR#5 E2+Tamoxifen 24h",
+          "role": "treated",
+          "batch": "S2_TamR_clones",
+          "source_file_id": "S2_matrix",
+          "treatment": "E2 10.0 nM 24 h, TAM_UNSPECIFIED 24 h"
+        },
+        {
+          "sample_id": "GSM539668",
+          "study": "GSE21618",
+          "title": "TamR#6 E2+Tamoxifen 24h",
+          "role": "treated",
+          "batch": "S2_TamR_clones",
+          "source_file_id": "S2_matrix",
+          "treatment": "E2 10.0 nM 24 h, TAM_UNSPECIFIED 24 h"
+        },
+        {
+          "sample_id": "GSM539710",
+          "study": "GSE21618",
+          "title": "WT HRG+Tamoxifen 1h",
+          "role": "treated",
+          "batch": "S2_wt2",
+          "source_file_id": "S2_matrix",
+          "treatment": "HRG_B1 10.0 nM 1 h, TAM_UNSPECIFIED 1 h"
+        },
+        {
+          "sample_id": "GSM539711",
+          "study": "GSE21618",
+          "title": "WT HRG+Tamoxifen 2h",
+          "role": "treated",
+          "batch": "S2_wt2",
+          "source_file_id": "S2_matrix",
+          "treatment": "HRG_B1 10.0 nM 2 h, TAM_UNSPECIFIED 2 h"
+        },
+        {
+          "sample_id": "GSM539712",
+          "study": "GSE21618",
+          "title": "WT HRG+Tamoxifen 3h",
+          "role": "treated",
+          "batch": "S2_wt2",
+          "source_file_id": "S2_matrix",
+          "treatment": "HRG_B1 10.0 nM 3 h, TAM_UNSPECIFIED 3 h"
+        },
+        {
+          "sample_id": "GSM539713",
+          "study": "GSE21618",
+          "title": "WT HRG+Tamoxifen 6h",
+          "role": "treated",
+          "batch": "S2_wt2",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 6 h, HRG_B1 10.0 nM 6 h"
+        },
+        {
+          "sample_id": "GSM539714",
+          "study": "GSE21618",
+          "title": "WT HRG+Tamoxifen 12h",
+          "role": "treated",
+          "batch": "S2_wt2",
+          "source_file_id": "S2_matrix",
+          "treatment": "HRG_B1 10.0 nM 12 h, TAM_UNSPECIFIED 12 h"
+        },
+        {
+          "sample_id": "GSM539715",
+          "study": "GSE21618",
+          "title": "WT HRG+Tamoxifen 24h",
+          "role": "treated",
+          "batch": "S2_wt2",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 24 h, HRG_B1 10.0 nM 24 h"
+        },
+        {
+          "sample_id": "GSM539716",
+          "study": "GSE21618",
+          "title": "WT HRG+Tamoxifen 48h",
+          "role": "treated",
+          "batch": "S2_wt2",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 48 h, HRG_B1 10.0 nM 48 h"
+        },
+        {
+          "sample_id": "GSM539718",
+          "study": "GSE21618",
+          "title": "WT Tamoxifen 1h",
+          "role": "treated",
+          "batch": "S2_wt2",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 1 h"
+        },
+        {
+          "sample_id": "GSM539719",
+          "study": "GSE21618",
+          "title": "WT Tamoxifen 2h",
+          "role": "treated",
+          "batch": "S2_wt2",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 2 h"
+        },
+        {
+          "sample_id": "GSM539720",
+          "study": "GSE21618",
+          "title": "WT Tamoxifen 3h",
+          "role": "treated",
+          "batch": "S2_wt2",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 3 h"
+        },
+        {
+          "sample_id": "GSM539721",
+          "study": "GSE21618",
+          "title": "WT Tamoxifen 6h",
+          "role": "treated",
+          "batch": "S2_wt2",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 6 h"
+        },
+        {
+          "sample_id": "GSM539722",
+          "study": "GSE21618",
+          "title": "WT Tamoxifen 12h",
+          "role": "treated",
+          "batch": "S2_wt2",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 12 h"
+        },
+        {
+          "sample_id": "GSM539744",
+          "study": "GSE21618",
+          "title": "WT E2+Tamoxifen 48h",
+          "role": "treated",
+          "batch": "S2_wt4",
+          "source_file_id": "S2_matrix",
+          "treatment": "TAM_UNSPECIFIED 48 h, E2 10.0 nM 48 h"
+        }
+      ],
+      "not_found": [],
+      "provenance": [
+        {
+          "entity_id": "GSM539617",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "title; !Sample_description code 'TamR.'",
+          "raw_text": "title='TamR E2+Tamoxifen 1h'",
+          "rule": "'TamR' time course = the one selected resistant clone (paper doesn't say which of six) [M33]"
+        },
+        {
+          "entity_id": "GSM539617",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 1h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]"
+        },
+        {
+          "entity_id": "GSM539617",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 1h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539617|E2",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 1h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539617|E2",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 1h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539617|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 1h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539617|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 1h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539618",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "title; !Sample_description code 'TamR.'",
+          "raw_text": "title='TamR E2+Tamoxifen 2h'",
+          "rule": "'TamR' time course = the one selected resistant clone (paper doesn't say which of six) [M33]"
+        },
+        {
+          "entity_id": "GSM539618",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 2h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]"
+        },
+        {
+          "entity_id": "GSM539618",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 2h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539618|E2",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 2h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539618|E2",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 2h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539618|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 2h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539618|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 2h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539619",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "title; !Sample_description code 'TamR.'",
+          "raw_text": "title='TamR E2+Tamoxifen 3h'",
+          "rule": "'TamR' time course = the one selected resistant clone (paper doesn't say which of six) [M33]"
+        },
+        {
+          "entity_id": "GSM539619",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 3h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]"
+        },
+        {
+          "entity_id": "GSM539619",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 3h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539619|E2",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 3h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539619|E2",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 3h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539619|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 3h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539619|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 3h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539620",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "title; !Sample_description code 'TamR.'",
+          "raw_text": "title='TamR E2+Tamoxifen 6h'",
+          "rule": "'TamR' time course = the one selected resistant clone (paper doesn't say which of six) [M33]"
+        },
+        {
+          "entity_id": "GSM539620",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 6h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]"
+        },
+        {
+          "entity_id": "GSM539620",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 6h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539620|E2",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 6h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539620|E2",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 6h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539620|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 6h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539620|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 6h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539621",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "title; !Sample_description code 'TamR.'",
+          "raw_text": "title='TamR E2+Tamoxifen 12h'",
+          "rule": "'TamR' time course = the one selected resistant clone (paper doesn't say which of six) [M33]"
+        },
+        {
+          "entity_id": "GSM539621",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 12h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]"
+        },
+        {
+          "entity_id": "GSM539621",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 12h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539621|E2",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 12h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539621|E2",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 12h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539621|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 12h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539621|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 12h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539622",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "title; !Sample_description code 'TamR.'",
+          "raw_text": "title='TamR E2+Tamoxifen 24h'",
+          "rule": "'TamR' time course = the one selected resistant clone (paper doesn't say which of six) [M33]"
+        },
+        {
+          "entity_id": "GSM539622",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]"
+        },
+        {
+          "entity_id": "GSM539622",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539622|E2",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539622|E2",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539622|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539622|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539623",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "title; !Sample_description code 'TamR.'",
+          "raw_text": "title='TamR E2+Tamoxifen 48h'",
+          "rule": "'TamR' time course = the one selected resistant clone (paper doesn't say which of six) [M33]"
+        },
+        {
+          "entity_id": "GSM539623",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 48h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]"
+        },
+        {
+          "entity_id": "GSM539623",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 48h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539623|E2",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 48h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539623|E2",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 48h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539623|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 48h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539623|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 48h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539631",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "title; !Sample_description code 'TamR.'",
+          "raw_text": "title='TamR HRG+Tamoxifen 1h'",
+          "rule": "'TamR' time course = the one selected resistant clone (paper doesn't say which of six) [M33]"
+        },
+        {
+          "entity_id": "GSM539631",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 1h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]"
+        },
+        {
+          "entity_id": "GSM539631",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 1h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539631|HRG_B1",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 1h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539631|HRG_B1",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 1h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539631|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 1h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539631|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 1h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539632",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "title; !Sample_description code 'TamR.'",
+          "raw_text": "title='TamR HRG+Tamoxifen 2h'",
+          "rule": "'TamR' time course = the one selected resistant clone (paper doesn't say which of six) [M33]"
+        },
+        {
+          "entity_id": "GSM539632",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 2h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]"
+        },
+        {
+          "entity_id": "GSM539632",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 2h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539632|HRG_B1",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 2h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539632|HRG_B1",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 2h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539632|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 2h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539632|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 2h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539633",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "title; !Sample_description code 'TamR.'",
+          "raw_text": "title='TamR HRG+Tamoxifen 3h'",
+          "rule": "'TamR' time course = the one selected resistant clone (paper doesn't say which of six) [M33]"
+        },
+        {
+          "entity_id": "GSM539633",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 3h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]"
+        },
+        {
+          "entity_id": "GSM539633",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 3h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539633|HRG_B1",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 3h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539633|HRG_B1",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 3h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539633|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 3h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539633|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 3h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539634",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "title; !Sample_description code 'TamR.'",
+          "raw_text": "title='TamR HRG+Tamoxifen 6h'",
+          "rule": "'TamR' time course = the one selected resistant clone (paper doesn't say which of six) [M33]"
+        },
+        {
+          "entity_id": "GSM539634",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 6h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]"
+        },
+        {
+          "entity_id": "GSM539634",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 6h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539634|HRG_B1",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 6h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539634|HRG_B1",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 6h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539634|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 6h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539634|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 6h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539635",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "title; !Sample_description code 'TamR.'",
+          "raw_text": "title='TamR HRG+Tamoxifen 12h'",
+          "rule": "'TamR' time course = the one selected resistant clone (paper doesn't say which of six) [M33]"
+        },
+        {
+          "entity_id": "GSM539635",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 12h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]"
+        },
+        {
+          "entity_id": "GSM539635",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 12h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539635|HRG_B1",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 12h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539635|HRG_B1",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 12h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539635|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 12h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539635|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 12h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539636",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "title; !Sample_description code 'TamR.'",
+          "raw_text": "title='TamR HRG+Tamoxifen 24h'",
+          "rule": "'TamR' time course = the one selected resistant clone (paper doesn't say which of six) [M33]"
+        },
+        {
+          "entity_id": "GSM539636",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]"
+        },
+        {
+          "entity_id": "GSM539636",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539636|HRG_B1",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539636|HRG_B1",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539636|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539636|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539637",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "title; !Sample_description code 'TamR.'",
+          "raw_text": "title='TamR HRG+Tamoxifen 48h'",
+          "rule": "'TamR' time course = the one selected resistant clone (paper doesn't say which of six) [M33]"
+        },
+        {
+          "entity_id": "GSM539637",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 48h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]"
+        },
+        {
+          "entity_id": "GSM539637",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 48h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539637|HRG_B1",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 48h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539637|HRG_B1",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 48h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539637|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 48h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539637|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 48h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539639",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "title; !Sample_description code 'TamR.'",
+          "raw_text": "title='TamR Tamoxifen 1h'",
+          "rule": "'TamR' time course = the one selected resistant clone (paper doesn't say which of six) [M33]"
+        },
+        {
+          "entity_id": "GSM539639",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 1h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539639|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 1h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539639|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 1h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539640",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "title; !Sample_description code 'TamR.'",
+          "raw_text": "title='TamR Tamoxifen 2h'",
+          "rule": "'TamR' time course = the one selected resistant clone (paper doesn't say which of six) [M33]"
+        },
+        {
+          "entity_id": "GSM539640",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 2h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539640|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 2h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539640|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 2h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539641",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "title; !Sample_description code 'TamR.'",
+          "raw_text": "title='TamR Tamoxifen 3h'",
+          "rule": "'TamR' time course = the one selected resistant clone (paper doesn't say which of six) [M33]"
+        },
+        {
+          "entity_id": "GSM539641",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 3h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539641|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 3h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539641|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 3h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539642",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "title; !Sample_description code 'TamR.'",
+          "raw_text": "title='TamR Tamoxifen 6h'",
+          "rule": "'TamR' time course = the one selected resistant clone (paper doesn't say which of six) [M33]"
+        },
+        {
+          "entity_id": "GSM539642",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 6h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539642|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 6h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539642|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 6h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539643",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "title; !Sample_description code 'TamR.'",
+          "raw_text": "title='TamR Tamoxifen 12h'",
+          "rule": "'TamR' time course = the one selected resistant clone (paper doesn't say which of six) [M33]"
+        },
+        {
+          "entity_id": "GSM539643",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 12h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539643|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 12h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539643|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 12h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539644",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "title; !Sample_description code 'TamR.'",
+          "raw_text": "title='TamR Tamoxifen 24h'",
+          "rule": "'TamR' time course = the one selected resistant clone (paper doesn't say which of six) [M33]"
+        },
+        {
+          "entity_id": "GSM539644",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539644|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539644|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539645",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "title; !Sample_description code 'TamR.'",
+          "raw_text": "title='TamR Tamoxifen 48h'",
+          "rule": "'TamR' time course = the one selected resistant clone (paper doesn't say which of six) [M33]"
+        },
+        {
+          "entity_id": "GSM539645",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 48h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539645|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 48h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539645|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 48h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539648",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "title; paper Methods (six clones)",
+          "raw_text": "title='TamR#1 E2+Tamoxifen 24h'",
+          "rule": "'TamR#n' = six separate resistant clones, not replicates [M33]"
+        },
+        {
+          "entity_id": "GSM539648",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]"
+        },
+        {
+          "entity_id": "GSM539648",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539648|E2",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539648|E2",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539648|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539648|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539652",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "title; paper Methods (six clones)",
+          "raw_text": "title='TamR#2 E2+Tamoxifen 24h'",
+          "rule": "'TamR#n' = six separate resistant clones, not replicates [M33]"
+        },
+        {
+          "entity_id": "GSM539652",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]"
+        },
+        {
+          "entity_id": "GSM539652",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539652|E2",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539652|E2",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539652|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539652|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539656",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "title; paper Methods (six clones)",
+          "raw_text": "title='TamR#3 E2+Tamoxifen 24h'",
+          "rule": "'TamR#n' = six separate resistant clones, not replicates [M33]"
+        },
+        {
+          "entity_id": "GSM539656",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]"
+        },
+        {
+          "entity_id": "GSM539656",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539656|E2",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539656|E2",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539656|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539656|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539660",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "title; paper Methods (six clones)",
+          "raw_text": "title='TamR#4 E2+Tamoxifen 24h'",
+          "rule": "'TamR#n' = six separate resistant clones, not replicates [M33]"
+        },
+        {
+          "entity_id": "GSM539660",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]"
+        },
+        {
+          "entity_id": "GSM539660",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539660|E2",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539660|E2",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539660|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539660|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539664",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "title; paper Methods (six clones)",
+          "raw_text": "title='TamR#5 E2+Tamoxifen 24h'",
+          "rule": "'TamR#n' = six separate resistant clones, not replicates [M33]"
+        },
+        {
+          "entity_id": "GSM539664",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]"
+        },
+        {
+          "entity_id": "GSM539664",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539664|E2",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539664|E2",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539664|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539664|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539668",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "title; paper Methods (six clones)",
+          "raw_text": "title='TamR#6 E2+Tamoxifen 24h'",
+          "rule": "'TamR#n' = six separate resistant clones, not replicates [M33]"
+        },
+        {
+          "entity_id": "GSM539668",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]"
+        },
+        {
+          "entity_id": "GSM539668",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539668|E2",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539668|E2",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539668|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539668|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539710",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_description (second), lab code",
+          "raw_text": "description#1='wt2.HRG_Tam.01h'",
+          "rule": "wild-type batches only appear in the lab codes wt1..wt4 [M45]"
+        },
+        {
+          "entity_id": "GSM539710",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 1h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]"
+        },
+        {
+          "entity_id": "GSM539710",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 1h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539710|HRG_B1",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 1h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539710|HRG_B1",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 1h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539710|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 1h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539710|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 1h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539711",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_description (second), lab code",
+          "raw_text": "description#1='wt2.HRG_Tam.02h'",
+          "rule": "wild-type batches only appear in the lab codes wt1..wt4 [M45]"
+        },
+        {
+          "entity_id": "GSM539711",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 2h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]"
+        },
+        {
+          "entity_id": "GSM539711",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 2h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539711|HRG_B1",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 2h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539711|HRG_B1",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 2h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539711|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 2h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539711|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 2h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539712",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_description (second), lab code",
+          "raw_text": "description#1='wt2.HRG_Tam.03h'",
+          "rule": "wild-type batches only appear in the lab codes wt1..wt4 [M45]"
+        },
+        {
+          "entity_id": "GSM539712",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 3h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]"
+        },
+        {
+          "entity_id": "GSM539712",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 3h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539712|HRG_B1",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 3h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539712|HRG_B1",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 3h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539712|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 3h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539712|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 3h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539713",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_description (second), lab code",
+          "raw_text": "description#1='wt2.HRG_Tam.06h'",
+          "rule": "wild-type batches only appear in the lab codes wt1..wt4 [M45]"
+        },
+        {
+          "entity_id": "GSM539713",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 6h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]"
+        },
+        {
+          "entity_id": "GSM539713",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 6h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539713|HRG_B1",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 6h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539713|HRG_B1",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 6h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539713|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 6h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539713|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 6h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539714",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_description (second), lab code",
+          "raw_text": "description#1='wt2.HRG_Tam.12h'",
+          "rule": "wild-type batches only appear in the lab codes wt1..wt4 [M45]"
+        },
+        {
+          "entity_id": "GSM539714",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 12h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]"
+        },
+        {
+          "entity_id": "GSM539714",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 12h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539714|HRG_B1",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 12h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539714|HRG_B1",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 12h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539714|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 12h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539714|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 12h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539715",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_description (second), lab code",
+          "raw_text": "description#1='wt2.HRG_Tam.24h'",
+          "rule": "wild-type batches only appear in the lab codes wt1..wt4 [M45]"
+        },
+        {
+          "entity_id": "GSM539715",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]"
+        },
+        {
+          "entity_id": "GSM539715",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539715|HRG_B1",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539715|HRG_B1",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539715|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539715|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 24h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539716",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_description (second), lab code",
+          "raw_text": "description#1='wt2.HRG_Tam.48h'",
+          "rule": "wild-type batches only appear in the lab codes wt1..wt4 [M45]"
+        },
+        {
+          "entity_id": "GSM539716",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 48h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]"
+        },
+        {
+          "entity_id": "GSM539716",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 48h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539716|HRG_B1",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 48h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539716|HRG_B1",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 48h'",
+          "rule": "HRG = heregulin-beta1, 10 nM (paper) [M08]: 'HRG' -> HRG_B1"
+        },
+        {
+          "entity_id": "GSM539716|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 48h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539716|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: HRG, tamoxifen'; characteristics_ch1#9='time: 48h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539718",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_description (second), lab code",
+          "raw_text": "description#1='wt2.Tam.01h'",
+          "rule": "wild-type batches only appear in the lab codes wt1..wt4 [M45]"
+        },
+        {
+          "entity_id": "GSM539718",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 1h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539718|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 1h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539718|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 1h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539719",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_description (second), lab code",
+          "raw_text": "description#1='wt2.Tam.02h'",
+          "rule": "wild-type batches only appear in the lab codes wt1..wt4 [M45]"
+        },
+        {
+          "entity_id": "GSM539719",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 2h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539719|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 2h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539719|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 2h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539720",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_description (second), lab code",
+          "raw_text": "description#1='wt2.Tam.03h'",
+          "rule": "wild-type batches only appear in the lab codes wt1..wt4 [M45]"
+        },
+        {
+          "entity_id": "GSM539720",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 3h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539720|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 3h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539720|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 3h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539721",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_description (second), lab code",
+          "raw_text": "description#1='wt2.Tam.06h'",
+          "rule": "wild-type batches only appear in the lab codes wt1..wt4 [M45]"
+        },
+        {
+          "entity_id": "GSM539721",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 6h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539721|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 6h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539721|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 6h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539722",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_description (second), lab code",
+          "raw_text": "description#1='wt2.Tam.12h'",
+          "rule": "wild-type batches only appear in the lab codes wt1..wt4 [M45]"
+        },
+        {
+          "entity_id": "GSM539722",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 12h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539722|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 12h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539722|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: tamoxifen'; characteristics_ch1#9='time: 12h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539744",
+          "field": "batch",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_description (second), lab code",
+          "raw_text": "description#1='wt4.E2_Tam.48h'",
+          "rule": "wild-type batches only appear in the lab codes wt1..wt4 [M45]"
+        },
+        {
+          "entity_id": "GSM539744",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 48h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]"
+        },
+        {
+          "entity_id": "GSM539744",
+          "field": "role",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 48h'",
+          "rule": "tamoxifen, form and dose not stated [M03]"
+        },
+        {
+          "entity_id": "GSM539744|E2",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 48h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539744|E2",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 48h'",
+          "rule": "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture) [M11]: 'E2' -> E2"
+        },
+        {
+          "entity_id": "GSM539744|TAM_UNSPECIFIED",
+          "field": "dose_nM",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 48h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        },
+        {
+          "entity_id": "GSM539744|TAM_UNSPECIFIED",
+          "field": "exposure_h",
+          "source_file_id": "S2_matrix",
+          "source_location": "!Sample_characteristics_ch1 (treatment, time)",
+          "raw_text": "characteristics_ch1#8='treatment: E2, tamoxifen'; characteristics_ch1#9='time: 48h'",
+          "rule": "tamoxifen, form and dose not stated [M03]: 'tamoxifen' -> TAM_UNSPECIFIED"
+        }
+      ],
+      "files": [
+        {
+          "source_file_id": "S2_matrix",
+          "path": "studies/data/raw/paper_2_GSE21618_series_matrix.txt.gz",
+          "sha256": "d334c8999d2a1babf9a95989444d174544c9fc457783bcc43fee2858ec53c875",
+          "origin_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE21nnn/GSE21618/matrix/GSE21618_series_matrix.txt.gz"
+        }
+      ],
+      "issues": [
+        {
+          "inventory_id": "M03",
+          "impact": "misleads",
+          "message": "The study never says which form of tamoxifen; kept separate from 4-hydroxytamoxifen.",
+          "records": 99,
+          "resolution": "flagged"
+        }
+      ]
+    },
+    "steps": [
+      {
+        "purpose": "Tamoxifen doses in S2 (GSE21618)",
+        "sql": "SELECT t.compound_id, t.dose_nM, t.dose_status, t.dose_as_given, t.label_as_given, t.source_file_id, count(*) n, min(t.sample_id) ex1, max(t.sample_id) ex2\nFROM sample_treatment t JOIN sample s USING(sample_id)\nWHERE s.study_id='S2' AND t.compound_id IN ('TAM_UNSPECIFIED','OHT')\nGROUP BY ALL",
+        "rows": 1,
+        "error": null
+      },
+      {
+        "purpose": "Issues on S2 dose/compound form",
+        "sql": "SELECT check_name, inventory_id, impact, resolution, entity_type, count(*) n, min(entity_id), any_value(message), any_value(observed), any_value(expected)\nFROM issue WHERE study_id='S2' AND (check_name LIKE 'dose%' OR check_name='compound_form_unstated' OR field ILIKE '%dose%')\nGROUP BY ALL",
+        "rows": 3,
+        "error": null
+      },
+      {
+        "purpose": "List S2 tamoxifen sample IDs",
+        "sql": "SELECT string_agg(sample_id, ',' ORDER BY sample_id) FROM sample_treatment t JOIN sample s USING(sample_id) WHERE s.study_id='S2' AND compound_id='TAM_UNSPECIFIED'",
+        "rows": 1,
+        "error": null
+      }
+    ],
+    "seconds": 15.4,
+    "usage": {
+      "input": 33672,
+      "output": 1316
+    },
+    "model": "claude-opus-5-5"
+  }
+]

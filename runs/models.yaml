@@ -1,0 +1,23 @@
+# Messy Lab · models for the before/after runs. Picked 27 Sep 2026: the current top model from each lab,
+# confirmed against each provider's model list with our own API keys the same day.
+# Prices are list prices in USD per million tokens, used only to estimate cost from recorded token counts.
+# API keys come from .env (never committed), not from this file.
+picked_on: "2026-09-27"
+claude:
+  provider: anthropic
+  model: claude-opus-5-5          # Claude Opus 5.5, released 22 Sep 2026, Anthropic's newest flagship
+  key_env: ANTHROPIC_API_KEY
+  price_per_mtok: {input: 4.00, output: 20.00}
+gpt:
+  provider: openai
+  model: gpt-6-astra              # GPT-6 Astra, OpenAI's most capable model (Sol and Luna are cheaper tiers)
+  key_env: OPENAI_API_KEY
+  price_per_mtok: {input: 10.00, output: 50.00}
+# Gemini 3.1 Pro (gemini-3.1-pro-preview) was dropped on 27 Sep 2026: the key's 250 requests/day limit
+# covers only ~10-15 raw-file answers, and a full run needs ~1,000. It can be added back later with
+# --models gemini once a higher quota is available; nothing else changes.
+# gemini:
+#   provider: google
+#   model: gemini-3.1-pro-preview
+#   key_env: GEMINI_API_KEY
+#   price_per_mtok: {input: 2.00, output: 12.00}

@@ -1,0 +1,125 @@
+# S2 · GSE21618 · Oyama 2011 (RIKEN) · MCF-7 wild type and tamoxifen-resistant, E2 / HRG / tamoxifen time courses
+study: S2
+source_file_id: S2_matrix
+
+defaults:
+  cell_line_alias:  {value: MCF-7, source: {file: S2_matrix, location: "!Sample_characteristics_ch1 (cell line)"}}
+  genetic_change:   {value: none, source: {file: S2_matrix, location: "no genetic change described"}}
+  hormone_deprived: {value: "yes", source: {file: S2_paper, location: "Methods, Cell culture"}, raw: "phenol red-free DMEM with charcoal-dextran-treated FBS, then serum-starved 16-24 h"}
+  culture_medium:   {value: "phenol red-free DMEM, charcoal-dextran-treated FBS, serum-starved 16-24 h before treatment (paper; GEO says serum-free RPMI 16-18 h)", source: {file: S2_paper, location: "Methods, Cell culture"}}
+  lab_sample_code:  {value: "", source: {file: S2_matrix, location: "!Sample_description (second)"}}
+
+rules:
+  - name: "lab code kept"
+    when: {"description#1": '^(?P<code>.+)$'}
+    set: {lab_sample_code: "{code}"}
+    source: {file: S2_matrix, location: "!Sample_description (second)"}
+
+  # ---- which cells ----------------------------------------------------------------------------
+  - name: "phenotype field"
+    when: {"characteristics_ch1#7": 'tamoxifen phenotype: (?P<p>resistant|sensitive)'}
+    set: {resistance_phenotype: "{p}"}
+    source: {file: S2_matrix, location: "!Sample_characteristics_ch1 (tamoxifen phenotype)"}
+
+  - name: "'TamR' time course = the one selected resistant clone (paper doesn't say which of six)"
+    when: {title: '^TamR '}
+    set: {derived_line_alias: TamR, batch: S2_TamR_timecourse, batch_basis: stated}
+    source: {file: S2_matrix, location: "title; !Sample_description code 'TamR.'"}
+    inventory: M33
+
+  - name: "'TamR#n' = six separate resistant clones, not replicates"
+    when: {title: '^(?P<clone>TamR#\d)'}
+    set: {derived_line_alias: "{clone}", batch: S2_TamR_clones, batch_basis: stated}
+    source: {file: S2_matrix, location: "title; paper Methods (six clones)"}
+    inventory: M33
+
+  - name: "wild-type batches only appear in the lab codes wt1..wt4"
+    when: {"description#1": '^(?P<b>wt\d)\.'}
+    set: {batch: "S2_{b}", batch_basis: stated}
+    source: {file: S2_matrix, location: "!Sample_description (second), lab code"}
+    inventory: M45
+
+  - name: "replicate in lab code (r1, r2)"
+    when: {"description#1": '\.r(?P<rep>\d)$'}
+    set: {replicate: "{rep}", replicate_basis: stated}
+    source: {file: S2_matrix, location: "!Sample_description (second), lab code"}
+    inventory: M45
+
+  # ---- time -----------------------------------------------------------------------------------
+  - name: "time field"
+    when: {"characteristics_ch1#9": 'time: (?P<h>\d+)h'}
+    set: {}
+    source: {file: S2_matrix, location: "!Sample_characteristics_ch1 (time)"}
+
+  # ---- what was added. The treatment field is trusted over the source name (four source names are shifted, M39)
+  - name: "untreated"
+    when: {"characteristics_ch1#8": '^treatment: untreated$'}
+    set: {role: untreated_control, in_drug_at_harvest: "no"}
+    source: {file: S2_matrix, location: "!Sample_characteristics_ch1 (treatment)"}
+    inventory: M17
+
+  - name: "E2 (dose conflicts: 10 nM in the gene-expression methods, 100 nM in cell culture)"
+    when: {"characteristics_ch1#8": '^treatment: E2', "characteristics_ch1#9": 'time: (?P<h>\d+)h'}
+    set: {role: treated, in_drug_at_harvest: "yes"}
+    treatments:
+      - {compound_alias: E2, dose_nM: 10, dose_status: conflicting, exposure_type: acute, exposure_h: "{h}",
+         dose_as_given: "none in GEO; paper: 10 nM (Gene expression analysis) vs 100 nM (Cell culture)"}
+    source: {file: S2_matrix, location: "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf"}
+    inventory: M11
+
+  - name: "HRG = heregulin-beta1, 10 nM (paper)"
+    when: {"characteristics_ch1#8": '^treatment: HRG', "characteristics_ch1#9": 'time: (?P<h>\d+)h'}
+    set: {role: treated, in_drug_at_harvest: "yes"}
+    treatments:
+      - {compound_alias: HRG, dose_nM: 10, dose_status: from_paper, exposure_type: acute, exposure_h: "{h}",
+         dose_as_given: "none in GEO; paper: 10 nM"}
+    source: {file: S2_matrix, location: "!Sample_characteristics_ch1 (treatment, time); dose from paper_2.pdf"}
+    inventory: M08
+
+  - name: "tamoxifen, form and dose not stated"
+    when: {"characteristics_ch1#8": 'tamoxifen', "characteristics_ch1#9": 'time: (?P<h>\d+)h'}
+    set: {role: treated, in_drug_at_harvest: "yes"}
+    treatments:
+      - {compound_alias: tamoxifen, dose_status: unknown, exposure_type: acute, exposure_h: "{h}",
+         dose_as_given: "not stated in GEO or the paper"}
+    source: {file: S2_matrix, location: "!Sample_characteristics_ch1 (treatment, time)"}
+    inventory: M03
+
+  - name: "0 h = baseline; the drug was never added whatever the label says"
+    when: {"characteristics_ch1#9": '^time: 0h$'}
+    set: {role: untreated_control, in_drug_at_harvest: "no", note: "Labeled with a treatment at 0 h; this is the baseline before it was added."}
+    clear_treatments: true
+    source: {file: S2_matrix, location: "!Sample_characteristics_ch1 (time)"}
+    inventory: M18
+
+  - name: "resistant cells were kept in tamoxifen; unknown whether it was removed before untreated samples"
+    when: {"characteristics_ch1#7": 'resistant', "characteristics_ch1#8": '^treatment: (untreated|E2|HRG)$'}
+    set: {in_drug_at_harvest: unknown}
+    source: {file: S2_paper, location: "Methods, TamR cells routinely maintained in 1 uM tamoxifen"}
+    inventory: M36
+
+  - name: "0 h resistant baselines: same maintenance question"
+    when: {"characteristics_ch1#7": 'resistant', "characteristics_ch1#9": '^time: 0h$'}
+    set: {in_drug_at_harvest: unknown}
+    source: {file: S2_paper, location: "Methods, TamR cells routinely maintained in 1 uM tamoxifen"}
+    inventory: M36
+
+  - name: "no time given"
+    when: {"characteristics_ch1#9": '^$'}
+    set: {note: "No time given in GEO for this control."}
+    source: {file: S2_matrix, location: "!Sample_characteristics_ch1 (time) is blank"}
+    inventory: M24
+
+samples:
+  GSM539725: {name: "source name shifted one row; title, treatment field and code agree", inventory: M44,
+              set: {note: "GEO source name says 'E2, 24h'; title, treatment field and lab code all say untreated control."},
+              source: {file: S2_matrix, location: "!Sample_source_name_ch1 vs title, characteristics, description"}}
+  GSM539726: {name: "source name shifted one row; title, treatment field and code agree", inventory: M44,
+              set: {note: "GEO source name says 'E2+Tamoxifen, 24h'; title, treatment field and lab code all say E2 24 h."},
+              source: {file: S2_matrix, location: "!Sample_source_name_ch1 vs title, characteristics, description"}}
+  GSM539727: {name: "source name shifted one row; title, treatment field and code agree", inventory: M44,
+              set: {note: "GEO source name says 'Tamoxifen, 24h'; title, treatment field and lab code all say E2 + tamoxifen 24 h."},
+              source: {file: S2_matrix, location: "!Sample_source_name_ch1 vs title, characteristics, description"}}
+  GSM539728: {name: "source name shifted one row; title, treatment field and code agree", inventory: M44,
+              set: {note: "GEO source name says 'without stimulus'; title, treatment field and lab code all say tamoxifen 0 h."},
+              source: {file: S2_matrix, location: "!Sample_source_name_ch1 vs title, characteristics, description"}}

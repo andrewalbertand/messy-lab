@@ -1,0 +1,61 @@
+# Messy Lab · allowed values
+# Every column with a fixed list of values, and the unit rules. schema.sql enforces the same lists
+# with CHECK constraints; check_reference.py fails if the two ever drift apart.
+
+allowed_values:
+  sample.role:
+    treated: Something was added to the cells (a drug, hormone or growth factor), or they were grown in a drug long-term.
+    vehicle_control: Got only the solvent the drug is dissolved in (ethanol or DMSO), for comparison.
+    untreated_control: Nothing added at all, including baselines at 0 hours.
+    parental: The original line in a resistant-vs-parental comparison, grown without the drug.
+  sample.genetic_change:
+    none: Genes not altered.
+    overexpression: Extra copies of a gene added, e.g. estrogen receptor beta by adenovirus (S1).
+    empty_vector: Control for overexpression; the same virus with no gene in it.
+    knockdown: A gene silenced, e.g. by siRNA (S3).
+    non_targeting_control: Control for knockdown; a scrambled siRNA that silences nothing.
+  sample.resistance_phenotype:
+    sensitive: Growth stops or slows in tamoxifen.
+    resistant: Keeps growing in tamoxifen.
+    unknown: Not stated and not inferable.
+  sample.hormone_deprived: {yes: Estrogen removed from the medium before the experiment., no: Normal serum., unknown: Not stated.}
+  sample.in_drug_at_harvest: {yes: Drug still present when RNA was taken., no: No drug present., unknown: Not stated.}
+  sample.batch_basis: {stated: The lab says so., inferred: Worked out from the data; see the issue table.}
+  sample.replicate_basis: {stated: The lab numbered it., assigned: Numbered by us within its group.}
+  sample_treatment.dose_status:
+    stated: Given in the GEO files.
+    from_paper: Missing from GEO, taken from the paper.
+    conflicting: Sources disagree; dose_nM holds the most credible value and the issue table holds the conflict.
+    unknown: No source gives it; dose_nM is empty.
+    not_applicable: No dose applies, e.g. the solvent in a vehicle control.
+  sample_treatment.exposure_type:
+    acute: A defined exposure measured in hours.
+    chronic: Months-long exposure used to make a resistant line.
+  measurement.value_type: {log2_array_signal: Array signal on a log2 scale., log2_cpm: RNA-seq log2 counts per million.}
+  measurement.raw_value_type: {linear_array_signal: Array signal not logged., log2_array_signal: Array signal already log2., raw_count: RNA-seq read count.}
+  compound.compound_class: {SERM: Selective estrogen receptor modulator (tamoxifen family)., SERD: Selective estrogen receptor degrader., hormone: Natural hormone (estradiol)., growth_factor: Protein growth signal (heregulin)., vehicle: Solvent only., other: "Anything else, e.g. an experimental analog."}
+  feature_map.feature_type: {affy_probe_set: "Affymetrix probe set (S1, S3).", refseq_probe_set: Custom RefSeq probe set (S2)., ensembl_gene: Ensembl gene ID (S4)., entrez_gene: Entrez gene ID (S5).}
+  feature_map.map_status: {mapped: One gene., unmapped: No gene found., multiple_genes: Matches several genes; not used., control_probe: Affymetrix control (AFFX-)., corrupt_annotation: "Annotation is unreadable, e.g. only '#' characters."}
+  study.technology: {microarray: Gene-expression chip., rna_seq: RNA sequencing.}
+  study.raw_value_scale: {log2: Values already log2., linear: Values not logged., raw_count: Read counts.}
+  source_file.file_kind: {series_matrix: GEO series matrix., platform_annotation: Probe-to-gene key., per_sample_bundle: Tar of one file per sample., counts_table: One wide table of counts., gene_reference: HGNC gene list., paper: Published paper PDF.}
+  issue.impact: {breaks: Wrong answers if ignored., misleads: Plausible answers that mean something else., minor: Bookkeeping.}
+  issue.resolution: {fixed_by_rule: A mapping rule corrects it., flagged: Kept as is and marked., excluded: The record is left out of analysis.}
+
+units:
+  dose:
+    store_as: nM
+    convert_to_nM:            # multiply the number by this
+      M: 1000000000
+      mM: 1000000
+      uM: 1000                # also written µM (micro sign), μM (Greek mu), um
+      nM: 1
+      pM: 0.001
+    spellings_seen: ["10nM", "10 nM", "100 nM", "500 nM", "1nM", "1uM", "1 µM", "1 μM", "10 8 mol/L (paper_1.pdf, means 10^-8 M)", "1 M (S5 protocol, micro sign lost)"]
+    reject_above_nM: 100000   # anything above 100 uM is a data error, e.g. '1 M'
+    no_dose: ["n/a", "0", "(blank)"]   # -> dose_nM empty, dose_status not_applicable or unknown
+  time:
+    store_as: hours
+    convert_to_hours: {min: 0.016667, h: 1, hr: 1, hours: 1, days: 24}
+    spellings_seen: ["24hr", "24h", "24 hours", "0h", "00h", "1h"]
+    chronic_when: "months, e.g. 'eight to twelve months', '1 month ... additional 2 months' -> exposure_type chronic, exposure_h empty"

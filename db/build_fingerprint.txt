@@ -1,0 +1,17 @@
+# Contents of db/messy_lab.duckdb from the last build. Rebuilding from the same raw files and code
+# gives the same fingerprint.
+source_file                  16 rows   d7a3cf3720e77e2de393ecf526bb7cb4
+study                         5 rows   c70b07cda15f9dca3980e611f2a13611
+compound                     10 rows   e1d5471ac20c1fe9aafb3440f1b02f82
+compound_alias               29 rows   d5b521b68951984f2aaadacf6b174b14
+cell_line                    22 rows   b25a10efde9f1d3bdcbaec8d1b53a271
+cell_line_alias              35 rows   ba2bc1ec9f84bf26f136ec1914da7cc7
+gene                     45,111 rows   380850fa2db275efa4f8a92c726a7b61
+feature_map             195,175 rows   485e274f6fb3392c89e324c08af48fa1
+sample                      265 rows   3c82f20b9bc62e4e18071e56ed562d39
+sample_treatment            265 rows   75d6e4f839a5d2067758eb72d09740ea
+measurement           5,508,917 rows   da70493fc37e58091a67ac098caf6581
+provenance                4,558 rows   4ac244d21808dce0d2acbb3ee81bc308
+issue                       399 rows   e71e537de824feefa6b693aec19aa934
+
+fingerprint f7818169c896e9dcd82c577bd5248b70

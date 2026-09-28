@@ -1,0 +1,57 @@
+# Messy Lab · study facts that GEO doesn't carry (from the papers). GEO accession, GEO title,
+# platform, processing text and sample counts are read from the raw files by build.py.
+S1:
+  paper_title: "Gene expression preferentially regulated by tamoxifen in breast cancer cells and correlations with clinical outcome"
+  first_author: Frasor J
+  year: 2006
+  journal: Cancer Research
+  pmid: "16849584"
+  lab_institution: "University of Illinois at Urbana-Champaign (GEO contact lists Kite Pharma, the submitter's later employer)"
+  technology: microarray
+  platform_description: "Affymetrix Human Genome U133A"
+  raw_value_scale: linear
+  notes: "Values labeled GCRMA but deposited un-logged (M55)."
+S2:
+  paper_title: "Integrated quantitative analysis of the phosphoproteome and transcriptome in tamoxifen-resistant breast cancer"
+  first_author: Oyama M
+  year: 2011
+  journal: Journal of Biological Chemistry
+  pmid: "21044952"
+  lab_institution: "University of Tokyo and RIKEN, Japan"
+  technology: microarray
+  platform_description: "Affymetrix U133 Plus 2.0 read with a custom RefSeq CDF (BrainArray v11)"
+  raw_value_scale: log2
+  notes: "Tamoxifen form never stated (M03). Four source names shifted one row (M44)."
+S3:
+  paper_title: "During hormone depletion or tamoxifen treatment of breast cancer cells the estrogen receptor apoprotein supports cell cycling through the retinoic acid receptor alpha1 apoprotein"
+  first_author: Salazar MD
+  year: 2011
+  journal: Breast Cancer Research
+  pmid: "21299862"
+  lab_institution: "University of Toledo"
+  technology: microarray
+  platform_description: "Affymetrix Human Genome U133 Plus 2.0"
+  raw_value_scale: linear
+  notes: "Two separate experiments under identical control labels (M47). Deposited values differ from the paper's analysis (M57)."
+S4:
+  paper_title: "Association of tamoxifen resistance and lipid reprogramming in breast cancer"
+  first_author: Hultsch S
+  year: 2018
+  journal: BMC Cancer
+  pmid: "30143015"
+  lab_institution: "University of Helsinki (FIMM)"
+  technology: rna_seq
+  platform_description: "Illumina HiSeq 2000, paired-end, ribodepleted"
+  raw_value_scale: raw_count
+  notes: "No replicates. Resistant lines kept in 1 uM 4-OHT at harvest (M35)."
+S5:
+  paper_title: "Therapeutic ligands antagonize estrogen receptor function by impairing its mobility"
+  first_author: Guan J
+  year: 2019
+  journal: Cell
+  pmid: "31353221"
+  lab_institution: "Genentech"
+  technology: rna_seq
+  platform_description: "Illumina HiSeq 4000"
+  raw_value_scale: raw_count
+  notes: "Protocol writes the dose as '1 M' (M13). 28 Excel-damaged gene names (M65). The paper says reads were 50 bp and also that they were trimmed to 75 bp; read length is unresolved (M72)."

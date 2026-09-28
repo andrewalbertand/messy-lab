@@ -1,0 +1,81 @@
+# S3 · GSE26298 · Salazar 2011 (Toledo) · hormone-depleted MCF-7, siRNA knockdowns, vehicle or 4-OHT
+study: S3
+source_file_id: S3_matrix
+
+defaults:
+  cell_line_alias:      {value: MCF-7 breast cancer cell line, source: {file: S3_matrix, location: "!Sample_characteristics_ch1 (cell line)"}}
+  resistance_phenotype: {value: sensitive, source: {file: S3_paper, location: "Introduction, parental MCF-7"}}
+  hormone_deprived:     {value: "yes", source: {file: S3_matrix, location: "!Sample_treatment_protocol_ch1"}, raw: "low glucose phenol red free medium supplemented with 5% charcoal stripped FBS"}
+  culture_medium:       {value: "low-glucose phenol red-free medium, 5% charcoal-stripped FBS, not replenished", source: {file: S3_matrix, location: "!Sample_treatment_protocol_ch1"}}
+  harvest_note:         {value: "RNA taken 72 h after siRNA transfection (paper figure legend; not in GEO)", source: {file: S3_paper, location: "Figure legend, mRNA profiling"}}
+  in_drug_at_harvest:   {value: "no", source: {file: S3_matrix, location: "!Sample_treatment_protocol_ch1"}}
+
+rules:
+  - name: "lab code (MD31..MD42)"
+    when: {"description#1": '^(?P<code>MD\d+)$'}
+    set: {lab_sample_code: "{code}"}
+    source: {file: S3_matrix, location: "!Sample_description (second)"}
+
+  - name: "scrambled siRNA = non-targeting control"
+    when: {"characteristics_ch1#1": 'scrambled'}
+    set: {genetic_change: non_targeting_control, genetic_change_method: "scrambled siRNA, Dharmafect 1"}
+    source: {file: S3_matrix, location: "!Sample_characteristics_ch1 (sirna)"}
+    inventory: M32
+
+  - name: "ER siRNA = knockdown of ESR1"
+    when: {"characteristics_ch1#1": 'ER siRNA'}
+    set: {genetic_change: knockdown, genetic_change_target: "HGNC:3467", genetic_change_method: "siRNA against ESR1, Dharmafect 1"}
+    source: {file: S3_matrix, location: "!Sample_characteristics_ch1 (sirna)"}
+    inventory: M32
+
+  - name: "RARalpha siRNA = knockdown of RARA"
+    when: {"characteristics_ch1#1": 'RARalpha siRNA'}
+    set: {genetic_change: knockdown, genetic_change_target: "HGNC:9864", genetic_change_method: "siRNA against RARA, Dharmafect 1"}
+    source: {file: S3_matrix, location: "!Sample_characteristics_ch1 (sirna)"}
+    inventory: M32
+
+  - name: "vehicle = ethanol (paper)"
+    when: {"characteristics_ch1#2": 'control \(vehicle\)'}
+    set: {role: vehicle_control}
+    treatments:
+      - {compound_alias: control (vehicle), dose_status: not_applicable, exposure_type: acute,
+         exposure_note: "ethanol per paper; exposure length not stated (RNA 72 h after transfection)", label_as_given: "control (vehicle)"}
+    source: {file: S3_matrix, location: "!Sample_characteristics_ch1 (agent)"}
+    inventory: M20
+
+  - name: "4-hydroxytamoxifen at the stated dose"
+    when: {"characteristics_ch1#2": '4-hydroxytamoxifen', "characteristics_ch1#3": 'dose: (?P<d>\d+) nM'}
+    set: {role: treated, in_drug_at_harvest: "yes"}
+    treatments:
+      - {compound_alias: 4-hydroxytamoxifen, dose_nM: "{d}", dose_status: stated, exposure_type: acute,
+         dose_as_given: "{d} nM", exposure_note: "exposure length not stated (RNA 72 h after transfection); medium not replenished"}
+    source: {file: S3_matrix, location: "!Sample_characteristics_ch1 (agent, dose)"}
+    inventory: M12
+
+  - name: "500 nM appears in GEO only"
+    when: {"characteristics_ch1#3": 'dose: 500 nM'}
+    set: {note: "500 nM is not mentioned in the paper, which describes 100 nM only."}
+    source: {file: S3_paper, location: "Methods"}
+    inventory: M12
+
+  - name: "replicate from title"
+    when: {title: 'rep(?P<rep>\d)'}
+    set: {replicate: "{rep}", replicate_basis: stated}
+    source: {file: S3_matrix, location: title}
+
+  - name: "experiment A: MD31-MD38 (vehicle, 4-OHT, ER knockdown)"
+    when: {"description#1": '^MD3[1-8]$'}
+    set: {batch: S3_A, batch_basis: inferred}
+    source: {file: S3_paper, location: "Additional files 1-3 'Control sample'; expression correlation (evidence_output.txt)"}
+    inventory: M47
+
+  - name: "experiment B: MD39-MD42 (vehicle, RAR-alpha knockdown)"
+    when: {"description#1": '^(MD39|MD4[0-2])$'}
+    set: {batch: S3_B, batch_basis: inferred, note: "Separate experiment from MD31-38; its controls are MD39 and MD40 ('Control sample 2' in the paper)."}
+    source: {file: S3_paper, location: "Additional files 4-5 'Control sample 2'; expression correlation (evidence_output.txt)"}
+    inventory: M47
+
+samples:
+  GSM645721: {name: "second RAR-alpha sample also titled 'rep1'", inventory: M46,
+              set: {replicate: 2, replicate_basis: assigned, note: "GEO titles both RAR-alpha knockdown samples 'rep1'; this is the second."},
+              source: {file: S3_matrix, location: title}}

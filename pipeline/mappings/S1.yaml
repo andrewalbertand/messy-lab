@@ -1,0 +1,68 @@
+# S1 · GSE4025 · Frasor 2006 · MCF-7 with extra ERβ or empty virus, then vehicle, E2 or 4-OHT for 24 h
+study: S1
+source_file_id: S1_matrix
+
+defaults:
+  cell_line_alias:      {value: MCF-7 breast cancer cells, source: {file: S1_matrix, location: "!Sample_source_name_ch1"}}
+  resistance_phenotype: {value: sensitive, source: {file: S1_paper, location: "Introduction, parental MCF-7"}}
+  hormone_deprived:     {value: "yes", source: {file: S1_matrix, location: "!Sample_extract_protocol_ch1"}, raw: "5% CD-stripped calf serum"}
+  culture_medium:       {value: "5% charcoal-dextran-stripped calf serum (base medium not stated)", source: {file: S1_matrix, location: "!Sample_extract_protocol_ch1"}}
+  harvest_note:         {value: "48 h adenovirus infection, then 24 h ligand, then TRIzol", source: {file: S1_matrix, location: "!Series_overall_design"}}
+  in_drug_at_harvest:   {value: "no", source: {file: S1_matrix, location: "!Sample_extract_protocol_ch1"}}
+
+rules:
+  - name: "empty-virus control ('Ad+')"
+    when: {title: '^Ad\+'}
+    set: {genetic_change: empty_vector, genetic_change_method: "adenovirus with no insert, moi 10"}
+    source: {file: S1_matrix, location: title}
+    inventory: M31
+
+  - name: "extra estrogen receptor beta ('AdERb')"
+    when: {title: '^AdERb'}
+    set: {genetic_change: overexpression, genetic_change_target: "HGNC:3468", genetic_change_method: "adenovirus carrying ESR2, moi 10"}
+    source: {file: S1_matrix, location: title}
+    inventory: M31
+
+  - name: "moi stated three ways; 10 used"
+    when: {characteristics_ch1: 'moi10'}
+    set: {note: "Virus dose: characteristics and paper say moi 10, the sample protocol says 5 or 50."}
+    source: {file: S1_paper, location: "Methods, Adenoviral delivery"}
+    inventory: M41
+
+  - name: "vehicle ('veh', 'vehicle') = 0.1% ethanol"
+    when: {characteristics_ch1: 'vehicle|veh-treated'}
+    set: {role: vehicle_control}
+    treatments:
+      - {compound_alias: veh, dose_status: not_applicable, exposure_type: acute, exposure_h: 24,
+         exposure_note: "0.1% ethanol per paper", label_as_given: "vehicle / veh"}
+    source: {file: S1_matrix, location: "!Sample_characteristics_ch1"}
+    inventory: M16
+
+  - name: "E2 10 nM, 24 h"
+    when: {characteristics_ch1: 'E2-treated'}
+    set: {role: treated, in_drug_at_harvest: "yes"}
+    treatments:
+      - {compound_alias: E2, dose_nM: 10, dose_status: stated, exposure_type: acute, exposure_h: 24,
+         dose_as_given: "10nM (series overall design)", label_as_given: "E2"}
+    source: {file: S1_matrix, location: "!Sample_characteristics_ch1; dose from !Series_overall_design"}
+    inventory: M10
+
+  - name: "'TOT' = trans-4-hydroxytamoxifen 10 nM, 24 h"
+    when: {characteristics_ch1: 'TOT-treated'}
+    set: {role: treated, in_drug_at_harvest: "yes"}
+    treatments:
+      - {compound_alias: TOT, dose_nM: 10, dose_status: stated, exposure_type: acute, exposure_h: 24,
+         dose_as_given: "10nM (series overall design)", label_as_given: "TOT"}
+    source: {file: S1_matrix, location: "!Sample_characteristics_ch1; dose from !Series_overall_design"}
+    inventory: M01
+
+  - name: "replicate number from title"
+    when: {title: 'replicate(?P<rep>\d)'}
+    set: {replicate: "{rep}", replicate_basis: stated}
+    source: {file: S1_matrix, location: title}
+
+  - name: "unexplained 'b' suffix"
+    when: {title: 'replicate\d b$'}
+    set: {note: "Title ends in 'b'; the lab never says what it means (possibly a re-run array)."}
+    source: {file: S1_matrix, location: title}
+    inventory: M42

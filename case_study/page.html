@@ -1,0 +1,442 @@
+<title>Messy Lab Case Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=PT+Mono&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --paper:#ffffff; --band:#eaeaee; --ink:#000000; --ink-2:#3d3d42; --ink-3:#6e6e76; --rule:#d4d4da; --rule-2:#e6e6ea;
+  --before:#9a9aa3; --after:#000000; --wrong:#a3342c; --right:#2f6b3a;
+  --display:"Gilda Display", Georgia, "Times New Roman", serif;
+  --body:"PT Serif", Georgia, "Times New Roman", serif;
+  --mono:"PT Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 var(--body)}
+a{color:inherit}
+.in{max-width:1040px;margin:0 auto;padding-inline:24px}
+.band{background:var(--band)}
+section.s{padding-block:64px}
+h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:-.02em;margin:0;text-wrap:balance}
+h1{font-size:clamp(34px,5vw,52px);line-height:1.08}
+h2{font-size:clamp(28px,3.4vw,40px);line-height:1.15;margin-bottom:14px}
+h3{font-size:24px;line-height:1.2}
+p{margin:0 0 12px;max-width:68ch}
+.eyebrow{font:13px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:14px}
+.lede{font-size:19px;color:var(--ink-2)}
+.small{font-size:14px;color:var(--ink-3)}
+.mono{font-family:var(--mono)}
+/* top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);background:var(--paper);border-bottom:1px solid var(--rule-2);z-index:20}
+.top .in{display:flex;justify-content:space-between;align-items:center;padding-block:12px;gap:12px}
+.mark{font-family:var(--display);font-size:24px;line-height:1;text-decoration:none;letter-spacing:.02em}
+.mark small{display:block;font:9px/1.4 var(--body);letter-spacing:.3em;text-transform:uppercase;border-top:1px solid var(--ink);margin-top:3px;padding-top:2px;text-align:right}
+.btn{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;font:15px var(--body);padding:12px 26px;border:0;cursor:pointer}
+.btn:hover{background:#2a2a2e}
+.btn:focus-visible,a:focus-visible,button:focus-visible,select:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+/* hero numbers */
+.hero{padding-block:72px 64px}
+.nums{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;border-top:1px solid var(--ink);margin-top:36px}
+.num{padding:18px 18px 4px 0;display:grid;gap:4px;text-decoration:none}
+.num + .num{padding-left:18px;border-left:1px solid var(--rule)}
+.num b{white-space:nowrap;font-family:var(--display);font-weight:400;font-size:clamp(30px,4vw,44px);line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.num:first-child b{font-size:clamp(38px,5.2vw,58px)}
+.num span{font-size:14px;color:var(--ink-2)}
+.num em{font-style:normal;font-size:12.5px;color:var(--ink-3);text-decoration:underline;text-underline-offset:3px}
+a.num:hover b{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+.nl{text-decoration:underline;text-decoration-color:var(--ink-3);text-underline-offset:3px;font-variant-numeric:tabular-nums}
+.nl:hover{text-decoration-color:var(--ink)}
+/* tables */
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th{font:12px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);text-align:left;padding:8px 10px;border-bottom:1px solid var(--ink)}
+td{padding:9px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+/* before-after bars */
+.ba{display:grid;gap:16px;margin-top:10px}
+.ba-row{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center}
+.ba-row .lab{font-size:15px}
+.ba-row .lab small{display:block;color:var(--ink-3);font:12px var(--mono)}
+.bars{display:grid;gap:5px}
+.bar{display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--ink-2)}
+.bar i{display:block;height:12px;border-radius:0 3px 3px 0}
+.bar.b i{background:var(--before)} .bar.a i{background:var(--after)}
+.legend{display:flex;gap:18px;font-size:13.5px;color:var(--ink-2);margin-top:4px}
+.legend i{display:inline-block;width:12px;height:12px;margin-right:6px;vertical-align:-1px}
+/* per-question grid */
+.qgrid td{padding:6px 8px;font-size:14px}
+.qgrid td.c{text-align:center;font-family:var(--mono);font-size:13.5px}
+.qgrid td.c a{text-decoration:none;display:inline-block;min-width:34px;padding:1px 0}
+.qgrid td.c a.full{color:var(--ink)} .qgrid td.c a.part{color:var(--wrong);font-weight:700}
+.qgrid td.c a:hover{text-decoration:underline}
+.qgrid tr.ns td{color:var(--ink-3)}
+/* wrong answers */
+.wa{display:grid;gap:0;border-top:1px solid var(--ink)}
+.w{display:grid;grid-template-columns:200px 1fr;gap:6px 28px;padding:22px 0;border-bottom:1px solid var(--rule)}
+.w .who{font-size:14px;color:var(--ink-3)}
+.w .who b{display:block;font-family:var(--display);font-weight:400;font-size:22px;color:var(--ink);line-height:1.2;margin-bottom:4px}
+.w q{display:block;font-style:italic;quotes:none;margin-bottom:8px}
+.w .gap{display:flex;gap:22px;flex-wrap:wrap;margin:6px 0 10px;font-size:15px}
+.w .gap span b{font-family:var(--mono);font-weight:400}
+.w .gap .said b{color:var(--wrong)} .w .gap .truth b{color:var(--right)}
+.inv{font-family:var(--mono);font-size:13px;border:1px solid var(--ink);padding:0 5px;white-space:nowrap}
+.tx{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;font-size:13.5px;color:var(--ink-3);align-items:center}
+.tx button{font:13.5px var(--body);background:none;border:1px solid var(--rule);padding:3px 9px;cursor:pointer;color:var(--ink)}
+.tx button:hover{border-color:var(--ink)}
+/* inventory */
+.ex td:first-child{font-family:var(--mono);font-size:13.5px;white-space:nowrap}
+.ex td:nth-child(2){font-style:italic}
+/* schema */
+figure{margin:18px 0 0}
+figure svg{width:100%;height:auto;display:block;background:var(--paper);border:1px solid var(--rule)}
+figcaption{font-size:14px;color:var(--ink-3);margin-top:8px}
+svg text{font-family:"PT Serif",Georgia,serif}
+/* timeline */
+.tl{display:grid;border-top:1px solid var(--ink)}
+.tl div{display:grid;grid-template-columns:170px 1fr;gap:20px;padding:12px 0;border-bottom:1px solid var(--rule)}
+.tl b{font-weight:400;font-family:var(--mono);font-size:14px;color:var(--ink-2)}
+/* explorer */
+.filters{display:flex;gap:10px;flex-wrap:wrap;align-items:end;margin:6px 0 14px}
+.filters label{display:grid;gap:4px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.filters select{font:15px var(--body);padding:7px 10px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:0}
+.count{font-size:15px;margin-left:auto;align-self:center}
+.runs td{font-size:14px;padding:7px 8px}
+.runs td.a{font-family:var(--mono);font-size:12px;color:var(--ink-2);max-width:360px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.runs .ok{color:var(--right)} .runs .no{color:var(--wrong);font-weight:700} .runs .ns{color:var(--ink-3)}
+.runs button{font:14px var(--body);background:none;border:0;border-bottom:1px solid var(--ink);padding:0;cursor:pointer;color:var(--ink)}
+.more{margin-top:12px}
+.more button{font:15px var(--body);background:none;border:1px solid var(--ink);padding:8px 16px;cursor:pointer}
+/* drawer */
+.dr{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:50;display:flex;justify-content:flex-end}
+.dr .panel{width:min(760px,100%);height:100%;background:var(--paper);overflow:auto;padding:28px 28px 60px;box-shadow:-8px 0 30px rgba(0,0,0,.15)}
+.dr .x{float:right;font:15px var(--body);background:none;border:1px solid var(--ink);padding:5px 12px;cursor:pointer}
+.dr h3{margin:4px 0 6px}
+.dr .verdict{display:inline-block;font:13px var(--body);letter-spacing:.1em;text-transform:uppercase;color:#fff;padding:3px 8px;margin:6px 0 10px}
+.dr .verdict.ok{background:var(--right)} .dr .verdict.no{background:var(--wrong)} .dr .verdict.ns{background:var(--ink-3)}
+.dr .kv{display:grid;grid-template-columns:130px 1fr;gap:4px 14px;font-size:14px;margin:10px 0 18px}
+.dr .kv div:nth-child(odd){color:var(--ink-3)}
+.dr pre{font:12px/1.5 var(--mono);background:#f5f5f7;border:1px solid var(--rule-2);padding:10px;white-space:pre-wrap;word-break:break-word;max-height:320px;overflow:auto;margin:6px 0 0}
+.dr .stepn{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-top:18px}
+.dr .out{color:var(--ink-2)}
+/* cta */
+.cta{text-align:center}
+.cta p{margin-inline:auto}
+footer{padding-block:30px;font-size:13.5px;color:var(--ink-3);border-top:1px solid var(--rule-2)}
+@media (max-width:820px){
+  .nums{grid-template-columns:1fr 1fr}
+  .num:nth-child(3){padding-left:0;border-left:0}
+  .grid2{grid-template-columns:1fr;gap:28px}
+  .w{grid-template-columns:1fr}
+  .tl div{grid-template-columns:1fr;gap:2px}
+  section.s{padding-block:48px}
+}
+@media (max-width:480px){.in{padding-inline:16px}.ba-row{grid-template-columns:90px 1fr}.mark{font-size:20px}.btn{padding:10px 16px}}
+</style>
+
+<header class="top"><div class="in">
+  <a class="mark" href="https://www.aabioconsulting.com" target="_blank" rel="noopener">AA BIO<small>Consulting</small></a>
+  <a class="btn" href="https://calendly.com/andrew-albert-125/intro-call" target="_blank" rel="noopener">Book a call →</a>
+</div></header>
+
+<main>
+<section class="band hero"><div class="in">
+  <div class="eyebrow">Case study · Messy Lab</div>
+  <h1>Same AI, same questions, cleaner data. Correct answers went from 83% to 99%.</h1>
+  <p class="lede" style="margin-top:18px">I took five public gene-expression studies on tamoxifen response in breast cancer cells, found every way their files disagree, and rebuilt them as one clean database. Then I asked two leading AI models the same research questions on the raw files and on the clean database. Every answer below is saved with its full transcript, and every number links to the runs behind it.</p>
+  <div class="nums">
+    <a class="num" href="#runs-scored"><b>83% → 99%</b><span>answers correct, raw files → clean database</span><em>276 graded answers</em></a>
+    <a class="num" href="#runs-wrong"><b>24 → 2</b><span>wrong answers out of 138</span><em>see every wrong answer</em></a>
+    <a class="num" href="#runs-scored"><b>$0.89 → $0.22</b><span>API cost per answer</span><em>per-run costs</em></a>
+    <a class="num" href="#runs-scored"><b>45 s → 15 s</b><span>time per answer</span><em>per-run times</em></a>
+  </div>
+</div></section>
+
+<section class="s"><div class="in grid2">
+  <div>
+    <div class="eyebrow">The setup</div>
+    <h2>A real research program, messy the way real data is</h2>
+    <p>Five studies from five labs, published between 2006 and 2019: 265 samples, 8 breast cancer cell lines, 10 compounds, two microarray platforms and two RNA-seq pipelines. All are public in NCBI GEO, so anyone can download the same files and repeat the test.</p>
+    <p>I wrote 25 questions a biotech team asks about its data, like sample counts, doses, controls and gene changes. I answered each one by query, then checked every answer by hand against the raw files and the papers. That became the <a href="answer_key.json" target="_blank" rel="noopener">answer key</a>, and a <a href="grade.py" target="_blank" rel="noopener">grading script</a> scores each AI answer automatically.</p>
+    <p>Two models, <span class="mono">claude-opus-5-5</span> (Anthropic) and <span class="mono">gpt-6-astra</span> (OpenAI), each answered every question three times on the raw files and three times on the clean database. Instructions, tools and time limits were identical in both conditions. <a href="harness.py" target="_blank" rel="noopener">See the test harness.</a></p>
+    <p class="small">Scored on 23 of the 25 questions. Two were dropped after the run as ambiguous (Q10's answer key was too strict; Q23 had a defensible second reading). All 300 answers, including those two, are in the table at the bottom.</p>
+  </div>
+  <div>
+    <div class="eyebrow">The five studies</div>
+    <div class="tw"><table>
+      <thead><tr><th>GEO series</th><th>Lab</th><th class="r">Year</th><th class="r">Samples</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">GSE4025</td><td>Univ. of Illinois</td><td class="r">2006</td><td class="r">17</td></tr>
+        <tr><td class="mono">GSE21618</td><td>Univ. of Tokyo and RIKEN</td><td class="r">2011</td><td class="r">143</td></tr>
+        <tr><td class="mono">GSE26298</td><td>Univ. of Toledo</td><td class="r">2011</td><td class="r">12</td></tr>
+        <tr><td class="mono">GSE111151</td><td>Univ. of Helsinki</td><td class="r">2018</td><td class="r">11</td></tr>
+        <tr><td class="mono">GSE117942</td><td>Genentech</td><td class="r">2019</td><td class="r">82</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</div></section>
+
+<section class="s band" id="results"><div class="in">
+  <div class="eyebrow">Results</div>
+  <h2>Both models improved; the weaker one improved most</h2>
+  <div class="grid2">
+    <div>
+      <div class="legend"><span><i style="background:var(--before)"></i>Raw files</span><span><i style="background:var(--after)"></i>Clean database</span></div>
+      <div class="ba" id="ba"></div>
+    </div>
+    <div>
+      <div class="tw"><table id="restab"></table></div>
+      <p class="small" style="margin-top:10px" id="restab-note"></p>
+    </div>
+  </div>
+  <h3 style="margin-top:44px">By question</h3>
+  <p class="small">Correct out of 3 runs. Click any cell to see those runs. Red marks a question the model missed at least once.</p>
+  <div class="tw"><table class="qgrid" id="qgrid"></table></div>
+</div></section>
+
+<section class="s" id="wrong"><div class="in">
+  <div class="eyebrow">Five real wrong answers from the raw files</div>
+  <h2>None of these looked wrong</h2>
+  <p>Each answer came with a confident, well-written explanation. Each traces back to a specific problem in the files, numbered in the <a href="mess_inventory.csv" target="_blank" rel="noopener">mess inventory</a>.</p>
+  <div class="wa" id="wa"></div>
+</div></section>
+
+<section class="s band" id="inventory"><div class="in">
+  <div class="eyebrow">What was wrong with the files</div>
+  <h2>75 problems, each written down with evidence and a fix</h2>
+  <p>28 would give a wrong answer if missed, 21 give a plausible but misleading one, and 26 slow people down. The clean database handles all 75: <b>63</b> fixed by a written rule, <b>12</b> flagged for the analyst, <b>0</b> left uncovered. These are the strongest examples. <a href="mess_inventory.csv" target="_blank" rel="noopener">Download the full inventory (CSV).</a></p>
+  <div class="tw"><table class="ex">
+    <thead><tr><th>Row</th><th>What the files say</th><th>What it actually means</th><th>How the database handles it</th></tr></thead>
+    <tbody>
+      <tr><td>M13</td><td>"1 M 4-OH tamoxifen"</td><td>The micro sign was lost. As written, the dose is one molar, a million times the real 1 µM.</td><td>Stored as 1,000 nM. Any dose above 100 µM is rejected.</td></tr>
+      <tr><td>M18</td><td>16 of 17 "0h" samples carry a drug label, e.g. "WT E2 0h"</td><td>At zero hours no drug had been added. These are baselines.</td><td>Stored as untreated, original label kept.</td></tr>
+      <tr><td>M44</td><td>A sample titled "WT Control" has source "E2, 24h"</td><td>The source column slipped one row for four samples.</td><td>The fields that agree win; all four are flagged.</td></tr>
+      <tr><td>M47</td><td>Four control samples share two identical titles</td><td>Two separate experiments under one label; expression correlation shows which is which.</td><td>Split into two batches, each compared only with its own controls.</td></tr>
+      <tr><td>M55</td><td>Values labeled "GCRMA" run from 1.2 to 19,450</td><td>GCRMA is normally log2, about 2 to 15. These were un-logged.</td><td>Scale recorded as linear and converted to log2.</td></tr>
+      <tr><td>M65</td><td>28 gene names like "1-Mar" and "7-Sep"</td><td>Excel turned gene names into dates; two different genes both became "1-Mar".</td><td>Genes keyed by stable ID, names from HGNC.</td></tr>
+      <tr><td>M07</td><td>"GNE-274" in one file, "G-03046274" in another</td><td>The same compound under two names, with nothing saying so.</td><td>One compound record with both names as aliases.</td></tr>
+      <tr><td>M03</td><td>"tamoxifen", "Tam"</td><td>The paper never says which form, so it may not be the 4-OHT the other studies used.</td><td>Kept as its own compound, flagged, never pooled silently.</td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+
+<section class="s" id="schema"><div class="in">
+  <div class="eyebrow">The clean database</div>
+  <h2>One table per real thing, traceable to the raw file</h2>
+  <p>One official ID per gene, compound, cell line and sample. The raw files are never edited; checksums prove it on every build, and one command rebuilds the whole database from them.</p>
+  <figure>
+  <svg viewBox="0 0 900 380" role="img" aria-label="Diagram of the database tables and how they connect">
+    <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6e6e76"/></marker></defs>
+    <rect width="900" height="380" fill="#ffffff"/>
+    <g font-size="14" fill="#000">
+      <rect x="20" y="18" width="860" height="62" fill="#eaeaee"/>
+      <text x="36" y="44" font-size="12" letter-spacing="2" fill="#6e6e76">TRACEABILITY</text>
+      <text x="36" y="64" font-size="13" fill="#3d3d42">Every row below points back here</text>
+      <g transform="translate(340,30)"><rect width="160" height="38" fill="#fff" stroke="#000"/><text x="80" y="17" text-anchor="middle" font-weight="700">source_file</text><text x="80" y="31" text-anchor="middle" font-size="11.5" fill="#6e6e76">16 files, checksummed</text></g>
+      <g transform="translate(515,30)"><rect width="170" height="38" fill="#fff" stroke="#000"/><text x="85" y="17" text-anchor="middle" font-weight="700">provenance</text><text x="85" y="31" text-anchor="middle" font-size="11.5" fill="#6e6e76">4,558 decisions, raw text kept</text></g>
+      <g transform="translate(700,30)"><rect width="165" height="38" fill="#fff" stroke="#000"/><text x="82" y="17" text-anchor="middle" font-weight="700">issue</text><text x="82" y="31" text-anchor="middle" font-size="11.5" fill="#6e6e76">399 flags, rows M01–M75</text></g>
+
+      <g transform="translate(30,118)"><rect width="170" height="54" fill="#fff" stroke="#000"/><text x="85" y="23" text-anchor="middle" font-weight="700">study</text><text x="85" y="41" text-anchor="middle" font-size="12" fill="#6e6e76">5 studies, papers, platforms</text></g>
+      <g transform="translate(30,232)"><rect width="170" height="54" fill="#fff" stroke="#000"/><text x="85" y="23" text-anchor="middle" font-weight="700">cell_line</text><text x="85" y="41" text-anchor="middle" font-size="12" fill="#6e6e76">22 lines, Cellosaurus IDs</text></g>
+      <g transform="translate(320,165)"><rect width="200" height="70" fill="#000"/><text x="100" y="28" text-anchor="middle" font-weight="700" fill="#fff" font-size="16">sample</text><text x="100" y="47" text-anchor="middle" font-size="12" fill="#e0e0e4">265 · role, batch, replicate,</text><text x="100" y="61" text-anchor="middle" font-size="12" fill="#e0e0e4">in drug at harvest</text></g>
+      <g transform="translate(610,118)"><rect width="160" height="54" fill="#fff" stroke="#000"/><text x="80" y="23" text-anchor="middle" font-weight="700">sample_treatment</text><text x="80" y="41" text-anchor="middle" font-size="12" fill="#6e6e76">dose in nM, hours, status</text></g>
+      <g transform="translate(785,118)"><rect width="100" height="54" fill="#fff" stroke="#000"/><text x="50" y="23" text-anchor="middle" font-weight="700">compound</text><text x="50" y="41" text-anchor="middle" font-size="12" fill="#6e6e76">10 · 29 aliases</text></g>
+      <g transform="translate(610,232)"><rect width="160" height="54" fill="#fff" stroke="#000"/><text x="80" y="23" text-anchor="middle" font-weight="700">measurement</text><text x="80" y="41" text-anchor="middle" font-size="12" fill="#6e6e76">5.5 million values, log2</text></g>
+      <g transform="translate(610,316)"><rect width="160" height="54" fill="#fff" stroke="#000"/><text x="80" y="23" text-anchor="middle" font-weight="700">gene</text><text x="80" y="41" text-anchor="middle" font-size="12" fill="#6e6e76">45,111 · HGNC IDs</text></g>
+      <g transform="translate(320,316)"><rect width="200" height="54" fill="#fff" stroke="#000"/><text x="100" y="23" text-anchor="middle" font-weight="700">feature_map</text><text x="100" y="41" text-anchor="middle" font-size="12" fill="#6e6e76">195,175 probes and IDs → gene</text></g>
+      <g stroke="#6e6e76" stroke-width="1.5" fill="none">
+        <path d="M200,145 C260,145 270,185 318,190" marker-end="url(#ar)"/>
+        <path d="M200,259 C260,259 270,215 318,210" marker-end="url(#ar)"/>
+        <path d="M520,188 C565,188 570,145 608,145" marker-end="url(#ar)"/>
+        <path d="M770,145 L783,145" marker-end="url(#ar)"/>
+        <path d="M520,212 C565,212 570,259 608,259" marker-end="url(#ar)"/>
+        <path d="M690,286 L690,314" marker-end="url(#ar)"/>
+        <path d="M520,343 L608,343" marker-end="url(#ar)"/>
+      </g>
+    </g>
+  </svg>
+  <figcaption>The core tables. Each sample belongs to a study and a cell line and has its treatments and measurements; every measurement is tied to one gene.</figcaption>
+  </figure>
+</div></section>
+
+<section class="s band" id="time"><div class="in grid2">
+  <div>
+    <div class="eyebrow">The time it took</div>
+    <h2>One weekend, from download to graded results</h2>
+    <p>The whole build ran from Saturday 26 September to Monday 28 September 2026, working with AI coding tools under close review. Every step is in version control with its date.</p>
+    <p>The AI test itself took <a class="nl" href="#runs-all">300 answers</a> and about <b>2.6 hours</b> of model time, run six at a time, for <b>$169</b> in API fees.</p>
+    <p class="small">A client sprint takes three weeks because it also covers your systems, your team's questions, access and review, and a working tool your team adopts.</p>
+  </div>
+  <div class="tl">
+    <div><b>Sat 26 Sep</b><span>Picked the research area and five studies, downloaded the raw files, and wrote the 75-row mess inventory.</span></div>
+    <div><b>Sat 26 Sep</b><span>Designed the clean database schema.</span></div>
+    <div><b>Sun 27 Sep, morning</b><span>Loaders, label standardization, gene mapping, one value scale, automatic checks, one-command build, data dictionary, coverage report.</span></div>
+    <div><b>Sun 27 Sep, midday</b><span>25 questions, saved answer queries, hand checks against the raw files, answer key and grader.</span></div>
+    <div><b>Sun 27 Sep, afternoon</b><span>300 AI answers collected and graded automatically.</span></div>
+    <div><b>Sun 27 Sep, evening</b><span>Dashboard on the clean database.</span></div>
+    <div><b>Mon 28 Sep</b><span>Assistant that answers through the database and cites its records.</span></div>
+  </div>
+</div></section>
+
+<section class="s" id="runs"><div class="in">
+  <div class="eyebrow">Every run</div>
+  <h2>All 300 answers, with transcripts</h2>
+  <p>Each row is one answer. Open it to see every piece of code the model ran, what came back, its final answer and how it was graded.</p>
+  <div class="filters">
+    <label for="fc">Condition<select id="fc"><option value="">Both</option><option value="before">Raw files</option><option value="after">Clean database</option></select></label>
+    <label for="fm">Model<select id="fm"><option value="">Both</option><option value="claude">Claude</option><option value="gpt">GPT</option></select></label>
+    <label for="fq">Question<select id="fq"><option value="">All</option></select></label>
+    <label for="fr">Result<select id="fr"><option value="">All</option><option value="ok">Correct</option><option value="no">Wrong</option><option value="ns">Not scored</option><option value="scored">Scored only</option></select></label>
+    <div class="count" id="count"></div>
+  </div>
+  <div class="tw"><table class="runs"><thead><tr><th>Question</th><th>Condition</th><th>Model</th><th class="r">Run</th><th>Result</th><th>Answer given</th><th class="r">Time</th><th class="r">Cost</th><th></th></tr></thead><tbody id="rt"></tbody></table></div>
+  <div class="more" id="more"></div>
+</div></section>
+
+<section class="s band cta"><div class="in">
+  <h2>Is your data holding up your AI plans?</h2>
+  <p>Book a short call. You'll have a scope and a fixed quote within 48 hours, free.</p>
+  <a class="btn" href="https://calendly.com/andrew-albert-125/intro-call" target="_blank" rel="noopener" style="margin-top:10px">Book a call →</a>
+</div></section>
+</main>
+
+<footer><div class="in">
+  <p>Andrew Albert, AA Bio Consulting · Frisco, Texas · <span class="mono">andrew@aabioconsulting.com</span></p>
+  <p>All data in this study is public (NCBI GEO series GSE4025, GSE21618, GSE26298, GSE111151, GSE117942 and their papers). No client data was used. Run costs are API list prices at the time of the run.</p>
+</div></footer>
+
+<div class="dr" id="dr" hidden><div class="panel" role="dialog" aria-modal="true" aria-labelledby="drt"><button class="x" id="drx">Close</button><div id="drb"></div></div></div>
+
+<script type="application/json" id="idx">/*__INDEX__*/</script>
+<script>
+(function(){
+const D = JSON.parse(document.getElementById('idx').textContent), R = D.runs, Q = D.questions;
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const MN = {claude:'Claude', gpt:'GPT'}, CN = {before:'Raw files', after:'Clean database'};
+const pct = xs => Math.round(100 * xs.filter(r => r.ok).length / xs.length);
+const sel = (c, m) => R.filter(r => r.sc && (!c || r.c === c) && (!m || r.m === m));
+
+/* results bars + table */
+$('ba').innerHTML = ['claude','gpt',''].map(m => {
+  const b = sel('before', m), a = sel('after', m), name = m ? MN[m] : 'Both models';
+  const id = m || 'all';
+  return `<div class="ba-row"><div class="lab">${name}<small>${m === 'claude' ? 'claude-opus-5-5' : m === 'gpt' ? 'gpt-6-astra' : 'combined'}</small></div><div class="bars">
+    <a class="bar b" href="#runs-before-${id}"><i style="width:${pct(b) * .8}%"></i><span class="nl">${pct(b)}%</span></a>
+    <a class="bar a" href="#runs-after-${id}"><i style="width:${pct(a) * .8}%"></i><span class="nl">${pct(a)}%</span></a></div></div>`;
+}).join('');
+const avg = (xs, k) => xs.reduce((s, r) => s + r[k], 0) / xs.length;
+const cell = (xs, text, hash) => `<a class="nl" href="#${hash}">${text}</a>`;
+$('restab').innerHTML = `<thead><tr><th></th><th class="r">Raw files</th><th class="r">Clean database</th></tr></thead><tbody>` +
+  [['Claude correct', m => 'claude', xs => `${xs.filter(r => r.ok).length} of ${xs.length}`],
+   ['GPT correct', m => 'gpt', xs => `${xs.filter(r => r.ok).length} of ${xs.length}`]].map(([l, mf, f]) =>
+     `<tr><td>${l}</td>${['before','after'].map(c => `<td class="r">${cell(sel(c, mf()), f(sel(c, mf())), `runs-${c}-${mf()}`)}</td>`).join('')}</tr>`).join('') +
+  `<tr><td>Wrong answers</td>${['before','after'].map(c => `<td class="r"><a class="nl" href="#runs-wrong-${c}">${sel(c).filter(r => !r.ok).length} of ${sel(c).length}</a></td>`).join('')}</tr>` +
+  `<tr><td>Avg. time per answer</td>${['before','after'].map(c => `<td class="r"><a class="nl" href="#runs-${c}-all">${Math.round(avg(sel(c), 's'))} s</a></td>`).join('')}</tr>` +
+  `<tr><td>Avg. cost per answer</td>${['before','after'].map(c => `<td class="r"><a class="nl" href="#runs-${c}-all">$${avg(sel(c), 'usd').toFixed(2)}</a></td>`).join('')}</tr>` +
+  `<tr><td>Avg. code steps per answer</td>${['before','after'].map(c => `<td class="r"><a class="nl" href="#runs-${c}-all">${avg(sel(c), 'n').toFixed(1)}</a></td>`).join('')}</tr></tbody>`;
+const qids = [...new Set(R.map(r => r.q))].sort();
+const allRight = qids.filter(q => ['claude','gpt'].every(m => R.filter(r => r.q === q && r.c === 'before' && r.m === m && r.sc).every(r => r.ok)) && R.some(r => r.q === q && r.sc));
+$('restab-note').innerHTML = `Both models were right in every run on the raw files for <a class="nl" href="#runs-before-all">${allRight.length} of 23</a> questions. The gains come from the rest, where the raw files mislead.`;
+
+/* per-question grid */
+$('qgrid').innerHTML = `<thead><tr><th>Question</th><th style="text-align:center">Claude, raw</th><th style="text-align:center">GPT, raw</th><th style="text-align:center">Claude, clean</th><th style="text-align:center">GPT, clean</th></tr></thead><tbody>` +
+  qids.map(q => { const scored = R.some(r => r.q === q && r.sc);
+    return `<tr class="${scored ? '' : 'ns'}"><td><span class="mono">${q}</span> ${esc(Q[q].replace(/^\*\([^)]*\)\*\s*/, ''))}${scored ? '' : ' <i>(not scored)</i>'}</td>` +
+      [['before','claude'],['before','gpt'],['after','claude'],['after','gpt']].map(([c, m]) => { const xs = R.filter(r => r.q === q && r.c === c && r.m === m), k = xs.filter(r => r.ok).length;
+        return `<td class="c"><a class="${k === xs.length ? 'full' : 'part'}" href="#runs-${q}-${c}-${m}">${k}/${xs.length}</a></td>`; }).join('') + '</tr>'; }).join('') + '</tbody>';
+
+/* five wrong answers */
+const W = [
+  {t:'Drug counts', who:'Both models, 6 of 6 runs', q:'Q04', inv:'M18', ask:'Which compounds were added to cells, and in how many samples each?',
+   said:'E2 80, tamoxifen 59, heregulin 46', truth:'76, 49 and 42',
+   why:'In GSE21618 the "0h" samples carry a drug name, but at zero hours nothing had been added. Both models counted them as dosed.',
+   runs:['before/claude/run1/Q04.json','before/claude/run2/Q04.json','before/claude/run3/Q04.json','before/gpt/run1/Q04.json','before/gpt/run2/Q04.json','before/gpt/run3/Q04.json']},
+  {t:'Untreated samples', who:'GPT, 3 of 3 runs', q:'Q08', inv:'M18', ask:'How many samples in GSE21618 never had anything added to them before their RNA was taken?',
+   said:'7', truth:'31', why:'The same trap from the other side: every drug-labeled 0 h sample was left out of the untreated count. Claude got this right every time.',
+   runs:['before/gpt/run1/Q08.json','before/gpt/run2/Q08.json','before/gpt/run3/Q08.json']},
+  {t:'Mislabeled samples', who:'Claude, run 1', q:'Q13', inv:'M44', ask:'Which samples have labels that contradict each other?',
+   said:'GSM645720, GSM645721', truth:'GSM539725 to GSM539728', why:'Four samples in GSE21618 have a source field that slipped one row, so "WT Control" says "E2, 24h". It only shows when fields are compared with each other.',
+   runs:['before/claude/run1/Q13.json']},
+  {t:'ESR1 knockdown', who:'GPT, 2 of 3 runs', q:'Q21', inv:'M61', ask:'In GSE26298, how much lower is ESR1 in the ESR1-knockdown samples than in their own control?',
+   said:'−0.72 log2 (1.6-fold)', truth:'−2.82 log2 (7-fold)', why:'GPT averaged all nine array probes labeled ESR1, most of which barely detect it. The database keeps one probe per gene by a fixed rule.',
+   runs:['before/gpt/run2/Q21.json','before/gpt/run3/Q21.json']},
+  {t:'Missing controls', who:'GPT 3 of 3, Claude 1 of 3', q:'Q11', inv:'M50', ask:'Which treated samples have no control with the same cells in the same experimental run?',
+   said:'up to 79 other samples', truth:'8 samples in GSE117942', why:'Eight samples were sequenced in a separate, undocumented run with no control of their own. It shows only in the sample ID range and read depth. GPT never found them.',
+   runs:['before/gpt/run1/Q11.json','before/gpt/run2/Q11.json','before/gpt/run3/Q11.json','before/claude/run2/Q11.json']},
+];
+$('wa').innerHTML = W.map(w => `<div class="w"><div class="who"><b>${w.t}</b>${w.who}<br><span class="mono">${w.q}</span> · inventory <span class="inv">${w.inv}</span></div>
+  <div><q>“${esc(w.ask)}”</q><div class="gap"><span class="said">They said <b>${esc(w.said)}</b></span><span class="truth">Answer <b>${esc(w.truth)}</b></span></div>
+  <p>${esc(w.why)}</p><div class="tx">Transcripts: ${w.runs.map(p => { const [c, m, r] = p.split('/'); return `<button data-p="${p}">${MN[m]} ${r.replace('run', 'run ')}</button>`; }).join('')}</div></div></div>`).join('');
+
+/* explorer */
+qids.forEach(q => $('fq').insertAdjacentHTML('beforeend', `<option value="${q}">${q}</option>`));
+let limit = 40;
+function draw(){
+  const c = $('fc').value, m = $('fm').value, q = $('fq').value, rs = $('fr').value;
+  const xs = R.filter(r => (!c || r.c === c) && (!m || r.m === m) && (!q || r.q === q) &&
+    (!rs || (rs === 'ok' && r.sc && r.ok) || (rs === 'no' && r.sc && !r.ok) || (rs === 'ns' && !r.sc) || (rs === 'scored' && r.sc)));
+  const sc = xs.filter(r => r.sc), ok = sc.filter(r => r.ok).length;
+  $('count').innerHTML = `${xs.length} answers${sc.length ? ` · <b>${ok} of ${sc.length}</b> scored answers correct (${Math.round(100 * ok / sc.length)}%)` : ''}`;
+  $('rt').innerHTML = xs.slice(0, limit).map(r => `<tr><td class="mono">${r.q}</td><td>${CN[r.c]}</td><td>${MN[r.m]}</td><td class="r">${r.r}</td>
+    <td class="${!r.sc ? 'ns' : r.ok ? 'ok' : 'no'}">${!r.sc ? 'not scored' : r.ok ? 'correct' : 'wrong'}</td><td class="a" title="${esc(r.a)}">${esc(r.a)}</td>
+    <td class="r">${Math.round(r.s)} s</td><td class="r">$${r.usd.toFixed(2)}</td><td><button data-p="${r.p}">Transcript</button></td></tr>`).join('');
+  $('more').innerHTML = xs.length > limit ? `<button id="mb">Show all ${xs.length}</button>` : '';
+  if (xs.length > limit) $('mb').onclick = () => { limit = 1e9; draw(); };
+}
+['fc','fm','fq','fr'].forEach(id => $(id).addEventListener('change', () => { limit = 40; draw(); }));
+function fromHash(){
+  const h = location.hash.slice(1); if (!h.startsWith('runs')) return;
+  const p = h.split('-').slice(1); const set = (id, v) => $(id).value = v;
+  set('fc',''); set('fm',''); set('fq',''); set('fr', p.length ? 'scored' : '');
+  for (const t of p) {
+    if (t === 'before' || t === 'after') set('fc', t);
+    else if (t === 'claude' || t === 'gpt') set('fm', t);
+    else if (/^Q\d\d$/.test(t)) { set('fq', t); set('fr', ''); }
+    else if (t === 'wrong') set('fr', 'no');
+    else if (t === 'all') set('fr', '');
+  }
+  if (p.includes('all') && !p.some(x => x === 'before' || x === 'after')) set('fr', '');
+  limit = 40; draw();
+  requestAnimationFrame(() => $('runs').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'}));
+}
+window.addEventListener('hashchange', fromHash);
+draw(); if (location.hash.startsWith('#runs')) fromHash();
+
+/* transcript drawer */
+let KEY = null;
+fetch('answer_key.json').then(r => r.json()).then(k => { KEY = {}; k.questions.forEach(q => KEY[q.id] = q); }).catch(() => {});
+const trunc = (s, n) => { s = String(s ?? ''); return s.length > n ? s.slice(0, n) + `\n… (${s.length - n} more characters in the raw file)` : s; };
+async function open(p){
+  $('dr').hidden = false; document.body.style.overflow = 'hidden';
+  $('drb').innerHTML = '<p class="small">Loading transcript…</p>';
+  try {
+    const d = await (await fetch('runs/' + p)).json();
+    const sc = !['Q10','Q23'].includes(d.question), ok = d.correct === true || d.correct === 'True';
+    const exp = KEY && KEY[d.question] ? JSON.stringify(KEY[d.question].answer) : '';
+    let html = `<div class="eyebrow">${d.question} · ${CN[d.condition]} · ${MN[d.model_name]} · run ${d.run}</div>
+      <h3 id="drt">${esc(String(Q[d.question] || '').replace(/^\*\([^)]*\)\*\s*/, ''))}</h3>
+      <span class="verdict ${!sc ? 'ns' : ok ? 'ok' : 'no'}">${!sc ? 'Not scored' : ok ? 'Correct' : 'Wrong'}</span>
+      <div class="kv"><div>Model</div><div class="mono">${esc(d.model_id)}</div><div>Answer given</div><div class="mono">${esc(JSON.stringify(d.answer))}</div>
+      ${exp ? `<div>Answer key</div><div class="mono">${esc(exp)}</div>` : ''}<div>Explanation</div><div>${esc(d.explanation)}</div>
+      <div>Time, cost</div><div>${d.seconds} s · $${Number(d.cost_usd).toFixed(3)} · ${d.tool_calls} code steps</div>
+      <div>Raw file</div><div><a href="runs/${esc(p)}" target="_blank" rel="noopener">${esc(p)}</a></div></div>`;
+    let n = 0;
+    for (const st of d.steps || []) {
+      if (st.text) html += `<div class="stepn">Model</div><pre class="out">${esc(trunc(st.text, 2500))}</pre>`;
+      for (const c of st.calls || []) {
+        if (c.tool === 'run_python') { n++; html += `<div class="stepn">Step ${n} · code (${st.t} s)</div><pre>${esc(trunc(c.code, 3000))}</pre><div class="stepn">Output</div><pre class="out">${esc(trunc(c.output, 2500))}</pre>`; }
+        else if (c.tool === 'submit_answer') html += `<div class="stepn">Submitted (${st.t} s)</div><pre>${esc(trunc(JSON.stringify(c.args, null, 2), 3000))}</pre>`;
+      }
+    }
+    $('drb').innerHTML = html; $('drx').focus();
+  } catch (e) { $('drb').innerHTML = `<p>Couldn't load this transcript. <a href="runs/${esc(p)}" target="_blank" rel="noopener">Open the raw file</a>.</p>`; }
+}
+function close(){ $('dr').hidden = true; document.body.style.overflow = ''; }
+document.addEventListener('click', e => { const b = e.target.closest('button[data-p]'); if (b) open(b.dataset.p); });
+$('drx').onclick = close; $('dr').addEventListener('click', e => { if (e.target.id === 'dr') close(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('dr').hidden) close(); });
+})();
+</script>

@@ -1,0 +1,326 @@
+<title>Messy Lab Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500&display=swap">
+<style>
+:root{
+  --bg:#f3f5f6; --panel:#ffffff; --ink:#132026; --ink-2:#4b5a61; --ink-3:#7b888e; --line:#dfe4e7; --line-2:#eef1f3;
+  --accent:#1d5c8a; --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --gray:#b7c0c5;
+  --up:#e34948; --down:#2a78d6; --mid:#e6eaec;
+  --breaks:#d03b3b; --misleads:#c8652f; --minor:#7b888e;
+  --seq0:#eef4fb; --seq1:#cde2fb; --seq2:#9ec5f4; --seq3:#6da7ec; --seq4:#3987e5; --seq5:#256abf;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --serif:"IBM Plex Serif",Georgia,serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#10171b; --panel:#172126; --ink:#eef3f5; --ink-2:#b3c0c6; --ink-3:#83939a; --line:#2a373d; --line-2:#1f2a2f;
+    --accent:#7fb6e6; --s1:#3987e5; --s2:#d95926; --s3:#199e70; --gray:#55646b;
+    --up:#e66767; --down:#3987e5; --mid:#2a373d;
+    --breaks:#e66767; --misleads:#ec835a; --minor:#8e9da3;
+    --seq0:#18242b; --seq1:#173a5e; --seq2:#184f95; --seq3:#1c5cab; --seq4:#2a78d6; --seq5:#5598e7;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#10171b; --panel:#172126; --ink:#eef3f5; --ink-2:#b3c0c6; --ink-3:#83939a; --line:#2a373d; --line-2:#1f2a2f;
+  --accent:#7fb6e6; --s1:#3987e5; --s2:#d95926; --s3:#199e70; --gray:#55646b;
+  --up:#e66767; --down:#3987e5; --mid:#2a373d;
+  --breaks:#e66767; --misleads:#ec835a; --minor:#8e9da3;
+  --seq0:#18242b; --seq1:#173a5e; --seq2:#184f95; --seq3:#1c5cab; --seq4:#2a78d6; --seq5:#5598e7;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:14px/1.5 var(--sans);margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:20px;padding-block:28px 48px;display:grid;gap:20px}
+header{display:grid;gap:6px}
+.eyebrow{font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+h1{font:500 30px/1.15 var(--serif);margin:0;text-wrap:balance}
+.lede{color:var(--ink-2);max-width:68ch;margin:0}
+.kpis{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.kpi{background:var(--panel);padding:12px 14px;display:grid;gap:2px}
+.kpi b{font:500 22px/1.1 var(--mono);font-variant-numeric:tabular-nums}
+.kpi span{color:var(--ink-2);font-size:12px}
+.kpi.warn b{color:var(--misleads)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+section.panel{align-content:start;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px 18px 16px;display:grid;gap:12px;min-width:0}
+.ph{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+h2{font:600 15px/1.3 var(--sans);margin:0}
+.sub{color:var(--ink-3);font-size:12px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--ink-2)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.bars{display:grid;gap:8px}
+.bar-row{display:grid;grid-template-columns:150px 1fr 44px;gap:10px;align-items:center}
+.bar-row .lab{font-size:13px;line-height:1.25;min-width:0}
+.bar-row .lab small{display:block;color:var(--ink-3);font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track{display:flex;gap:2px;height:14px}
+.seg{height:100%;border-radius:0}
+.seg:first-child{border-radius:0}
+.seg:last-child{border-radius:0 4px 4px 0}
+.num{font:500 13px var(--mono);font-variant-numeric:tabular-nums;text-align:right}
+.mono{font-family:var(--mono)}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:6px 8px;text-align:left;border-bottom:1px solid var(--line-2);white-space:nowrap}
+th{font:500 11px var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3);border-bottom-color:var(--line)}
+td.c,th.c{text-align:center;font-family:var(--mono);font-variant-numeric:tabular-nums}
+td.cell{min-width:40px}
+td.cell span{display:inline-block;min-width:30px;padding:2px 0;border-radius:3px}
+tr.vehicle td:first-child{color:var(--ink-2)}
+.chip{display:inline-block;font:500 11px/1.5 var(--mono);padding:0 6px;border-radius:3px;border:1px solid var(--line);color:var(--ink-2);white-space:nowrap}
+.chip.conflicting{border-color:var(--misleads);color:var(--misleads)}
+.chip.unknown{border-color:var(--breaks);color:var(--breaks)}
+.chip.inv{color:var(--accent);border-color:transparent;background:var(--line-2)}
+.impact{font:500 11px var(--mono);white-space:nowrap}
+.impact::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;background:currentColor;vertical-align:0}
+.impact.breaks{color:var(--breaks)} .impact.misleads{color:var(--misleads)} .impact.minor{color:var(--minor)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tabs button{font:500 12px var(--mono);border:1px solid var(--line);background:transparent;color:var(--ink-2);padding:4px 10px;border-radius:999px;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--panel);border-color:var(--ink)}
+.tabs button:focus-visible,.gl input:focus-visible,.sugg button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.issue-list{display:grid;gap:0}
+.issue{display:grid;grid-template-columns:auto 1fr auto;gap:4px 12px;padding:9px 0;border-top:1px solid var(--line-2);align-items:baseline}
+.issue p{margin:0;color:var(--ink-2);font-size:12.5px;grid-column:2/4}
+.issue .what{font-weight:500}
+.issue .n{font:500 13px var(--mono)}
+/* gene lookup */
+.gl{display:grid;gap:14px}
+.search{position:relative;max-width:420px}
+.search input{width:100%;font:500 16px var(--mono);padding:10px 12px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
+.sugg{position:absolute;left:0;right:0;top:calc(100% + 4px);background:var(--panel);border:1px solid var(--line);border-radius:6px;box-shadow:0 8px 24px rgba(0,0,0,.12);z-index:5;max-height:300px;overflow:auto}
+.sugg button{display:grid;grid-template-columns:90px 1fr;gap:8px;width:100%;text-align:left;border:0;background:transparent;color:var(--ink);padding:7px 10px;cursor:pointer;font:13px var(--sans)}
+.sugg button b{font:500 13px var(--mono)}
+.sugg button span{color:var(--ink-3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sugg button:hover,.sugg button.on{background:var(--line-2)}
+.gene-head{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.gene-head b{font:500 22px var(--mono)}
+.gene-head span{color:var(--ink-2)}
+.cmp{display:grid;gap:0}
+.cmp-row{display:grid;grid-template-columns:170px minmax(0,1fr) 150px;gap:14px;align-items:center;padding:11px 0;border-top:1px solid var(--line-2)}
+.cmp-row .st b{font:500 13px var(--mono);display:block}
+.cmp-row .st small{color:var(--ink-3);font-size:12px}
+.cmp-row .viz{display:grid;gap:4px;min-width:0}
+.cmp-row .what{font-size:12.5px;color:var(--ink-2)}
+.cmp-row .note{font-size:12px;color:var(--ink-3)}
+.axis{position:relative;height:18px;background:linear-gradient(var(--line),var(--line)) center/1px 100% no-repeat}
+.axis .b{position:absolute;top:3px;height:12px}
+.axis .b.neg{border-radius:4px 0 0 4px;background:var(--down)}
+.axis .b.pos{border-radius:0 4px 4px 0;background:var(--up)}
+.axis .b.muted{opacity:.45}
+.val{text-align:right;display:grid;gap:1px}
+.val b{font:500 16px var(--mono);font-variant-numeric:tabular-nums}
+.val small{color:var(--ink-3);font-size:11.5px}
+.ticks{display:grid;grid-template-columns:170px minmax(0,1fr) 150px;gap:14px;font:11px var(--mono);color:var(--ink-3)}
+.ticks div{display:flex;justify-content:space-between}
+.quick{display:flex;gap:6px;flex-wrap:wrap;align-items:center;font-size:12px;color:var(--ink-3)}
+.quick button{font:500 12px var(--mono);border:1px solid var(--line);background:var(--panel);color:var(--accent);padding:3px 8px;border-radius:4px;cursor:pointer}
+.na{font:500 12px var(--mono);color:var(--ink-3)}
+footer{color:var(--ink-3);font-size:12px;display:grid;gap:4px}
+#tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--panel);font:12px/1.4 var(--sans);padding:6px 9px;border-radius:5px;z-index:10;max-width:260px}
+@media (max-width:900px){.kpis{grid-template-columns:repeat(3,minmax(0,1fr))}.grid2{grid-template-columns:1fr}}
+@media (max-width:620px){
+  .wrap{padding-inline:16px}
+  .bar-row{grid-template-columns:110px 1fr 40px}
+  .cmp-row,.ticks{grid-template-columns:1fr}
+  .ticks>div:first-child,.ticks>div:last-child{display:none}
+  .val{text-align:left;grid-auto-flow:column;justify-content:start;gap:10px;align-items:baseline}
+  h1{font-size:25px}
+}
+@media (prefers-reduced-motion:no-preference){.axis .b{transition:left .25s ease,width .25s ease}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Messy Lab · tamoxifen response in ER+ breast cancer cells</div>
+    <h1>Five public studies, one clean database</h1>
+    <p class="lede">Every sample, treatment and known data problem from five GEO studies, standardized and traced back to the raw files. Built from <span class="mono">db/messy_lab.duckdb</span>.</p>
+  </header>
+
+  <div class="kpis" id="kpis"></div>
+
+  <div class="grid2">
+    <section class="panel" aria-labelledby="h-study">
+      <div class="ph"><h2 id="h-study">Samples by study</h2><div class="legend"><span><i style="background:var(--s1)"></i>treated</span><span><i style="background:var(--s3)"></i>control</span><span><i style="background:var(--s2)"></i>parental line</span></div></div>
+      <div class="bars" id="studies"></div>
+    </section>
+    <section class="panel" aria-labelledby="h-cell">
+      <div class="ph"><h2 id="h-cell">Samples by cell line</h2><div class="legend"><span><i style="background:var(--s1)"></i>original line</span><span><i style="background:var(--s2)"></i>resistant derivative</span></div></div>
+      <div class="bars" id="cells"></div>
+    </section>
+  </div>
+
+  <section class="panel" aria-labelledby="h-drug">
+    <div class="ph"><h2 id="h-drug">Drug, dose and time</h2><span class="sub">Samples per cell. A sample given two drugs counts under each. Dose chips show where the source was unclear.</span></div>
+    <div class="scroll"><table id="drugs"></table></div>
+  </section>
+
+  <section class="panel" aria-labelledby="h-issue">
+    <div class="ph"><h2 id="h-issue">Data issues by study</h2><div class="legend"><span><i style="background:var(--s1)"></i>fixed by a rule</span><span><i style="background:var(--gray)"></i>excluded</span><span><i style="background:var(--s2)"></i>open, flagged for the analyst</span></div></div>
+    <div class="bars" id="issues"></div>
+    <div class="ph" style="margin-top:6px"><h2>Open issues</h2><div class="tabs" id="issueTabs" role="group" aria-label="Choose a study"></div></div>
+    <div class="issue-list" id="openIssues"></div>
+  </section>
+
+  <section class="panel gl" aria-labelledby="h-gene">
+    <div class="ph"><h2 id="h-gene">Gene lookup · change under 4-OHT in each study</h2><span class="sub">MCF-7 cells. log2 change = mean of treated samples − mean of matched controls from the same run.</span></div>
+    <div class="search">
+      <label for="geneInput" class="eyebrow" style="display:block;margin-bottom:6px">Gene symbol</label>
+      <input id="geneInput" autocomplete="off" spellcheck="false" value="GREB1" aria-autocomplete="list" aria-controls="sugg">
+      <div class="sugg" id="sugg" role="listbox" hidden></div>
+    </div>
+    <div class="quick" id="quick">Try</div>
+    <div class="gene-head" id="geneHead"></div>
+    <div class="ticks" aria-hidden="true"><div></div><div id="tickRow"></div><div></div></div>
+    <div class="cmp" id="cmp"></div>
+  </section>
+
+  <footer id="foot"></footer>
+</div>
+<div id="tip" hidden></div>
+
+<script type="application/json" id="data">/*__DATA__*/</script>
+<script>
+(function(){
+const D = JSON.parse(document.getElementById('data').textContent);
+const $ = id => document.getElementById(id);
+const fmt = n => n.toLocaleString('en-US');
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const authorOf = {}; D.studies.forEach(s => authorOf[s.geo_accession] = s.first_author.split(' ')[0] + ' ' + s.year);
+
+/* tooltip */
+const tip = $('tip');
+document.addEventListener('mousemove', e => {
+  const t = e.target.closest('[data-tip]');
+  if (!t) { tip.hidden = true; return; }
+  tip.innerHTML = t.dataset.tip; tip.hidden = false;
+  const x = Math.min(e.clientX + 14, innerWidth - tip.offsetWidth - 8), y = Math.min(e.clientY + 14, innerHeight - tip.offsetHeight - 8);
+  tip.style.left = x + 'px'; tip.style.top = y + 'px';
+});
+
+/* KPIs */
+const T = D.totals;
+$('kpis').innerHTML = [
+  [T.studies, 'studies from 5 labs, 2006–2019'], [T.samples, 'samples'], [T.cell_lines, 'cell lines'],
+  [T.compounds, 'compounds and solvents'], [fmt(T.genes_all5), 'genes comparable in all 5'], [T.open_issues, 'open issues, of ' + T.issues + ' found']
+].map(([v, l], i) => `<div class="kpi${i === 5 ? ' warn' : ''}"><b>${v}</b><span>${l}</span></div>`).join('');
+
+/* stacked bar helper */
+function stack(parts, max){
+  return `<div class="track" style="width:${Math.max(2, 100 * parts.reduce((a, p) => a + p.v, 0) / max)}%">` +
+    parts.filter(p => p.v > 0).map(p => `<div class="seg" style="flex:${p.v};background:${p.c}" data-tip="${esc(p.tip)}"></div>`).join('') + '</div>';
+}
+
+/* samples by study */
+const maxS = Math.max(...D.studies.map(s => s.samples));
+$('studies').innerHTML = D.studies.map(s => `<div class="bar-row">
+  <div class="lab"><span class="mono">${s.geo_accession}</span><small>${esc(authorOf[s.geo_accession])} · ${s.technology === 'rna_seq' ? 'RNA-seq' : 'microarray'}</small></div>
+  ${stack([{v:s.treated,c:'var(--s1)',tip:`<b>${s.geo_accession}</b><br>${s.treated} treated`},{v:s.controls,c:'var(--s3)',tip:`<b>${s.geo_accession}</b><br>${s.controls} controls (solvent only or nothing added)`},{v:s.parental,c:'var(--s2)',tip:`<b>${s.geo_accession}</b><br>${s.parental} parental lines, the untreated comparison for the resistant lines`}], maxS)}
+  <div class="num">${s.samples}</div></div>`).join('');
+
+/* cell lines */
+const maxC = Math.max(...D.cell_lines.map(c => c.samples));
+$('cells').innerHTML = D.cell_lines.map(c => `<div class="bar-row">
+  <div class="lab">${esc(c.cell_line)}<small>${esc(c.studies)}</small></div>
+  ${stack([{v:c.samples - c.derived,c:'var(--s1)',tip:`<b>${esc(c.cell_line)}</b><br>${c.samples - c.derived} samples of the original line`},{v:c.derived,c:'var(--s2)',tip:`<b>${esc(c.cell_line)}</b><br>${c.derived} samples of lines made resistant to tamoxifen`}], maxC)}
+  <div class="num">${c.samples}</div></div>`).join('');
+
+/* drug, dose, time matrix */
+const TIMES = ['1','2','3','6','12','24','48','not stated','chronic'];
+const rows = {}; const order = [];
+D.treatments.forEach(t => {
+  const k = t.compound + '|' + t.dose_nM + '|' + t.dose_status;
+  if (!rows[k]) { rows[k] = {t, cells:{}, studies:new Set()}; order.push(k); }
+  rows[k].cells[t.time] = (rows[k].cells[t.time] || 0) + t.samples;
+  t.studies.split(', ').forEach(s => rows[k].studies.add(s));
+});
+const maxCell = Math.max(...order.flatMap(k => Object.values(rows[k].cells)));
+const shade = n => { const r = n / maxCell; return r > .8 ? 'var(--seq5)' : r > .5 ? 'var(--seq4)' : r > .3 ? 'var(--seq3)' : r > .15 ? 'var(--seq2)' : 'var(--seq1)'; };
+const inkOn = n => n / maxCell > .5 ? '#fff' : 'var(--ink)';
+const dose = t => {
+  if (t.dose_status === 'not_applicable') return '<span class="sub">solvent</span>';
+  if (t.dose_nM == null) return '<span class="chip unknown" data-tip="Dose not given in GEO or the paper">not stated</span>';
+  const d = t.dose_nM >= 1000 ? (t.dose_nM / 1000) + ' µM' : t.dose_nM + ' nM';
+  const chip = {conflicting:'<span class="chip conflicting" data-tip="GEO and the paper give different doses; the gene-expression methods value is stored">sources disagree</span>',
+                from_paper:'<span class="chip" data-tip="Not in GEO; taken from the paper">from paper</span>'}[t.dose_status] || '';
+  return `<span class="mono">${d}</span> ${chip}`;
+};
+$('drugs').innerHTML = `<thead><tr><th>Compound</th><th>Dose</th>${TIMES.map(t => `<th class="c">${/^\d/.test(t) ? t + ' h' : t}</th>`).join('')}<th>Studies</th></tr></thead><tbody>` +
+  order.map(k => { const r = rows[k]; return `<tr class="${r.t.is_vehicle ? 'vehicle' : ''}"><td>${esc(r.t.compound)}</td><td>${dose(r.t)}</td>` +
+    TIMES.map(tm => { const n = r.cells[tm]; return `<td class="c cell">${n ? `<span style="background:${shade(n)};color:${inkOn(n)}" data-tip="<b>${esc(r.t.compound)}</b>, ${tm === 'chronic' ? 'grown in it for months' : tm === 'not stated' ? 'exposure time not stated' : tm + ' h'}<br>${n} samples">${n}</span>` : ''}</td>`; }).join('') +
+    `<td class="mono sub">${[...r.studies].join(', ')}</td></tr>`; }).join('') + '</tbody>';
+
+/* issues */
+const studiesIss = D.studies.map(s => s.geo_accession);
+const byRes = {}; D.issues.forEach(i => { const g = i.geo_accession || 'all'; (byRes[g] = byRes[g] || {})[i.resolution] = i.n; });
+const tot = g => Object.values(byRes[g] || {}).reduce((a, b) => a + b, 0);
+const maxI = Math.max(...studiesIss.map(tot));
+$('issues').innerHTML = studiesIss.map(g => { const r = byRes[g] || {}; return `<div class="bar-row">
+  <div class="lab"><span class="mono">${g}</span><small>${esc(authorOf[g])}</small></div>
+  ${stack([{v:r.fixed_by_rule||0,c:'var(--s1)',tip:`<b>${g}</b><br>${r.fixed_by_rule||0} fixed by a written rule`},{v:r.excluded||0,c:'var(--gray)',tip:`<b>${g}</b><br>${r.excluded||0} excluded (rows or files left out, with the reason recorded)`},{v:r.flagged||0,c:'var(--s2)',tip:`<b>${g}</b><br>${r.flagged||0} open: kept, but flagged so an analyst sees them`}], maxI)}
+  <div class="num">${tot(g)}</div></div>`; }).join('');
+const NAMES = {batch_inferred:'Batch worked out from the data, not stated by the lab', unknown_value:'A value no source gives', dose_conflicting:'Dose differs between GEO and the paper',
+  dose_unknown:'Dose never stated', compound_form_unstated:'Form of tamoxifen never stated', no_control_in_batch:'Treated samples with no control in the same run',
+  duplicate_titles:'Two samples share one title', design_gap:'Drug tested in only some cell lines', fewer_replicates:'Fewer replicates than the design implies',
+  empty_reference:'Protocol text says "see above"', gene_name_outdated:'Old gene names', unexplained_label:'Label never explained', gene_rows_unmapped:'Rows with no gene',
+  several_rows_per_gene:'Several rows per gene', value_scale_mismatch:'Stored values differ from what the paper analyzed', date_like_gene_name:'Gene names turned into dates'};
+let cur = studiesIss.reduce((a, g) => ((byRes[g] || {}).flagged || 0) > ((byRes[a] || {}).flagged || 0) ? g : a, studiesIss[0]);
+function drawOpen(){
+  $('issueTabs').innerHTML = studiesIss.map(g => `<button aria-pressed="${g === cur}" data-g="${g}">${g} · ${(byRes[g] || {}).flagged || 0}</button>`).join('');
+  const list = D.open_issue_types.filter(i => i.geo_accession === cur);
+  $('openIssues').innerHTML = list.length ? list.map(i => `<div class="issue"><span class="impact ${i.impact}">${i.impact}</span>
+    <span class="what">${esc(NAMES[i.check_name] || i.check_name.replace(/_/g, ' '))} <span class="chip inv" data-tip="Row in the mess inventory">${i.inventory_id || ''}</span></span>
+    <span class="n">${i.n}</span><p>${esc(i.example)}</p></div>`).join('') : '<p class="sub">No open issues in this study. Everything found was fixed by a rule or excluded.</p>';
+}
+$('issueTabs').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { cur = b.dataset.g; drawOpen(); } });
+drawOpen();
+
+/* gene lookup */
+const G = D.genes, idx = new Map(G.map((g, i) => [g[0].toUpperCase(), i]));
+const LIM = 4;
+$('tickRow').innerHTML = '<span>−4</span><span>−2</span><span>0</span><span>+2</span><span>+4</span>';
+$('tickRow').style.display = 'flex'; $('tickRow').style.justifyContent = 'space-between';
+['GREB1','PGR','TFF1','MYC','CCND1','ESR1','AREG'].filter(s => idx.has(s)).forEach(s => {
+  const b = document.createElement('button'); b.textContent = s; b.onclick = () => show(s); $('quick').appendChild(b); });
+function foldText(v){ const f = Math.pow(2, Math.abs(v)); return Math.abs(v) < 0.15 ? 'little or no change' : (f < 10 ? f.toFixed(1) : Math.round(f)) + '× ' + (v > 0 ? 'higher' : 'lower'); }
+function show(sym){
+  const i = idx.get(String(sym).trim().toUpperCase());
+  $('geneInput').value = i == null ? sym : G[i][0]; $('sugg').hidden = true;
+  if (i == null) { $('geneHead').innerHTML = `<span>No gene named <b class="mono" style="font-size:16px">${esc(sym)}</b> in these studies. Try an approved HGNC symbol.</span>`; $('cmp').innerHTML = ''; return; }
+  const g = G[i];
+  $('geneHead').innerHTML = `<b>${esc(g[0])}</b><span>${esc(g[1])}</span>`;
+  $('cmp').innerHTML = D.comparisons.map((c, k) => {
+    const v = g[2 + k], who = `<div class="st"><b>${c.study}</b><small>${esc(authorOf[c.study])}</small></div>`;
+    const note = c.note ? `<div class="note">${esc(c.note)}</div>` : '';
+    if (!c.treated.length) return `<div class="cmp-row">${who}<div class="viz"><div class="what">${esc(c.label)}</div>${note}</div><div class="val"><span class="na">not comparable</span></div></div>`;
+    if (v == null) return `<div class="cmp-row">${who}<div class="viz"><div class="what">${esc(c.label)}</div><div class="note">This gene isn't measured on this study's platform.</div></div><div class="val"><span class="na">not measured</span></div></div>`;
+    const cl = Math.max(-LIM, Math.min(LIM, v)), w = Math.abs(cl) / LIM * 50, left = cl < 0 ? 50 - w : 50;
+    const muted = c.study === 'GSE21618' ? ' muted' : '';
+    return `<div class="cmp-row">${who}<div class="viz"><div class="what">${esc(c.label)} · <span class="mono">${c.n_treated} vs ${c.n_control}</span> samples</div>
+      <div class="axis"><div class="b ${cl < 0 ? 'neg' : 'pos'}${muted}" style="left:${left}%;width:${Math.max(w, .4)}%" data-tip="<b>${esc(g[0])}</b> in ${c.study}<br>${v > 0 ? '+' : ''}${v.toFixed(2)} log2 (${foldText(v)})${Math.abs(v) > LIM ? '<br>bar clipped at ±4' : ''}"></div></div>${note}</div>
+      <div class="val"><b>${v > 0 ? '+' : ''}${v.toFixed(2)}</b><small>${foldText(v)}</small></div></div>`;
+  }).join('');
+}
+const inp = $('geneInput'), sug = $('sugg'); let hits = [], on = -1;
+inp.addEventListener('input', () => {
+  const q = inp.value.trim().toUpperCase(); on = -1;
+  if (!q) { sug.hidden = true; return; }
+  hits = []; for (const g of G) { if (g[0].toUpperCase().startsWith(q)) { hits.push(g); if (hits.length === 8) break; } }
+  if (hits.length < 8) for (const g of G) { const n = g[0].toUpperCase(); if (!n.startsWith(q) && n.includes(q)) { hits.push(g); if (hits.length === 8) break; } }
+  sug.innerHTML = hits.map((g, i) => `<button type="button" role="option" data-s="${esc(g[0])}"><b>${esc(g[0])}</b><span>${esc(g[1])}</span></button>`).join('');
+  sug.hidden = !hits.length;
+});
+inp.addEventListener('keydown', e => {
+  const bs = [...sug.querySelectorAll('button')];
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { if (!bs.length || sug.hidden) return; e.preventDefault(); on = (on + (e.key === 'ArrowDown' ? 1 : -1) + bs.length) % bs.length; bs.forEach((b, i) => b.classList.toggle('on', i === on)); }
+  if (e.key === 'Enter') { e.preventDefault(); show(on >= 0 && bs[on] ? bs[on].dataset.s : inp.value); }
+  if (e.key === 'Escape') sug.hidden = true;
+});
+sug.addEventListener('mousedown', e => { const b = e.target.closest('button'); if (b) { e.preventDefault(); show(b.dataset.s); } });
+inp.addEventListener('blur', () => setTimeout(() => sug.hidden = true, 100));
+show('GREB1');
+
+$('foot').innerHTML = `<div>${fmt(T.values)} expression values · ${fmt(G.length)} genes in the lookup · arrays in log2, RNA-seq in log2(CPM+1) · build <span class="mono">${esc(D.fingerprint.slice(0, 12))}</span></div>
+  <div>Sources: GEO series GSE4025, GSE21618, GSE26298, GSE111151, GSE117942 and their papers. Every fix and flag traces to a row in the mess inventory (M01–M75).</div>`;
+})();
+</script>

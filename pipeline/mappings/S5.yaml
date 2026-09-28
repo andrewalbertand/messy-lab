@@ -1,0 +1,60 @@
+# S5 · GSE117942 · Guan 2019 (Genentech) · seven lines, six ER ligands or DMSO, 24 h, duplicates
+study: S5
+source_file_id: S5_counts
+
+defaults:
+  genetic_change:       {value: none, source: {file: S5_matrix, location: "no genetic change described"}}
+  resistance_phenotype: {value: unknown, source: {file: S5_matrix, location: "not stated"}}
+  hormone_deprived:     {value: "yes", source: {file: S5_matrix, location: "!Sample_growth_protocol_ch1"}, raw: "hormone deprivation media for at least 3 days"}
+  culture_medium:       {value: "hormone deprivation medium, 3+ days (base: RPMI, 10% FBS per paper)", source: {file: S5_matrix, location: "!Sample_growth_protocol_ch1"}}
+  in_drug_at_harvest:   {value: "no", source: {file: S5_matrix, location: "!Sample_treatment_protocol_ch1"}}
+
+rules:
+  - name: "lab code is the sample title"
+    when: {title: '^(?P<code>SAM\d+)$'}
+    set: {lab_sample_code: "{code}"}
+    source: {file: S5_matrix, location: title}
+    inventory: M48
+
+  - name: "cell line"
+    when: {characteristics_ch1: 'cell line: (?P<line>.+)$'}
+    set: {cell_line_alias: "{line}"}
+    source: {file: S5_matrix, location: "!Sample_characteristics_ch1 (cell line)"}
+    inventory: M29
+
+  - name: "sequencing run inferred from the ID block (e.g. SAM24322xxx = later, deeper run)"
+    when: {title: '^(?P<block>SAM\d{5})'}
+    set: {batch: "S5_{block}", batch_basis: inferred}
+    source: {file: S5_counts, location: "sample ID ranges and read depth (evidence_output.txt)"}
+    inventory: M50
+
+  - name: "DMSO vehicle"
+    when: {"characteristics_ch1#1": 'ligand: DMSO'}
+    set: {role: vehicle_control}
+    treatments:
+      - {compound_alias: DMSO, dose_status: not_applicable, exposure_type: acute, exposure_h: 24,
+         dose_as_given: "concentration: 0", label_as_given: "DMSO / DMSO control"}
+    source: {file: S5_matrix, location: "!Sample_characteristics_ch1 (ligand, concentration)"}
+    inventory: M21
+
+  - name: "E2 at 1 nM"
+    when: {"characteristics_ch1#1": 'ligand: E2$', "characteristics_ch1#2": 'concentration: 1nM'}
+    set: {role: treated, in_drug_at_harvest: "yes"}
+    treatments:
+      - {compound_alias: E2, dose_nM: 1, dose_status: stated, exposure_type: acute, exposure_h: 24, dose_as_given: "1nM"}
+    source: {file: S5_matrix, location: "!Sample_characteristics_ch1 (ligand, concentration, time)"}
+
+  - name: "other ligands at 1 uM (protocol's '1 M' is a lost micro sign)"
+    when: {"characteristics_ch1#1": 'ligand: (?P<lig>4-OH tamoxifen|GDC-0810|GDC-0927|GNE-274|Fulvestrant)$', "characteristics_ch1#2": 'concentration: 1uM'}
+    set: {role: treated, in_drug_at_harvest: "yes"}
+    treatments:
+      - {compound_alias: "{lig}", dose_nM: 1000, dose_status: stated, exposure_type: acute, exposure_h: 24,
+         dose_as_given: "1uM (treatment protocol says '1 M')", label_as_given: "{lig}"}
+    source: {file: S5_matrix, location: "!Sample_characteristics_ch1 (ligand, concentration, time)"}
+    inventory: M13
+
+  - name: "counts file calls GNE-274 'G-03046274'"
+    when: {counts_file_treatment: 'G-03046274'}
+    set: {note: "Counts file labels this compound 'G-03046274'; the series matrix says GNE-274. Same compound."}
+    source: {file: S5_counts, location: "header row 2"}
+    inventory: M07

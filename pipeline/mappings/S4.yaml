@@ -1,0 +1,48 @@
+# S4 · GSE111151 · Hultsch 2018 (Helsinki) · four parental lines and seven tamoxifen-resistant derivatives, no replicates
+study: S4
+source_file_id: S4_raw_tar
+
+defaults:
+  genetic_change:   {value: none, source: {file: S4_matrix, location: "no genetic change described"}}
+  hormone_deprived: {value: "no", source: {file: S4_matrix, location: "!Sample_growth_protocol_ch1"}, raw: "10 % FCS"}
+  harvest_note:     {value: "RNA from routine culture; one sample per line, no biological replicates (paper)", source: {file: S4_paper, location: "Methods, RNA-sequencing"}}
+
+rules:
+  - name: "base line from title"
+    when: {title: '^(?P<line>MCF-7|T-47D|ZR-75-1|BT-474)'}
+    set: {cell_line_alias: "{line}"}
+    source: {file: S4_matrix, location: title}
+    inventory: M28
+
+  - name: "parental lines, grown without drug"
+    when: {title: '^(MCF-7|T-47D|ZR-75-1|BT-474)$'}
+    set: {role: parental, resistance_phenotype: sensitive, in_drug_at_harvest: "no"}
+    source: {file: S4_paper, location: "Methods, parental lines cultured without tamoxifen"}
+    inventory: M22
+
+  - name: "resistant derivative ('Tam1', 'Tam2'), kept in 1 uM 4-OHT"
+    when: {title: '^(?P<name>.+ Tam\d)$'}
+    set: {derived_line_alias: "{name}", role: treated, resistance_phenotype: resistant, in_drug_at_harvest: "yes",
+          note: "Resistant vs parental here also means drug present vs absent at harvest (paper, not GEO)."}
+    treatments:
+      - {compound_alias: 4-OH-tamoxifen, dose_nM: 1000, dose_status: stated, exposure_type: chronic,
+         exposure_note: "8-12 months, then kept in drug", dose_as_given: "1uM", label_as_given: "4-OH-tamoxifen"}
+    source: {file: S4_matrix, location: "title; !Sample_description"}
+    inventory: M35
+
+  - name: "DMEM lines"
+    when: {title: '^(MCF-7|BT-474)'}
+    set: {culture_medium: "DMEM with L-glutamine, 10% FCS, 0.1% bovine insulin"}
+    source: {file: S4_matrix, location: "!Sample_growth_protocol_ch1"}
+    inventory: M40
+
+  - name: "RPMI lines"
+    when: {title: '^ZR-75-1'}
+    set: {culture_medium: "RPMI-1640 with L-glutamine, 10% FCS"}
+    source: {file: S4_matrix, location: "!Sample_growth_protocol_ch1"}
+
+  - name: "T-47D: RPMI plus insulin"
+    when: {title: '^T-47D'}
+    set: {culture_medium: "RPMI-1640 with L-glutamine, 10% FCS, 0.1% bovine insulin"}
+    source: {file: S4_matrix, location: "!Sample_growth_protocol_ch1"}
+    inventory: M40
