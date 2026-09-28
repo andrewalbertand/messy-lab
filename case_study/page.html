@@ -133,19 +133,19 @@ footer{padding-block:30px;font-size:13.5px;color:var(--ink-3);border-top:1px sol
   .tl div{grid-template-columns:1fr;gap:2px}
   section.s{padding-block:48px}
 }
-@media (max-width:480px){.in{padding-inline:16px}.ba-row{grid-template-columns:90px 1fr}.mark{font-size:20px}.btn{padding:10px 16px}}
+@media (max-width:480px){.top .in a[href*=github]{display:none}.in{padding-inline:16px}.ba-row{grid-template-columns:90px 1fr}.mark{font-size:20px}.btn{padding:10px 16px}}
 </style>
 
 <header class="top"><div class="in">
   <a class="mark" href="https://www.aabioconsulting.com" target="_blank" rel="noopener">AA BIO<small>Consulting</small></a>
-  <a class="btn" href="https://calendly.com/andrew-albert-125/intro-call" target="_blank" rel="noopener">Book a call →</a>
+  <div style="display:flex;gap:18px;align-items:center"><a href="https://github.com/andrewalbertand/messy-lab" target="_blank" rel="noopener" style="font-size:15px">Code and data on GitHub</a><a class="btn" href="https://calendly.com/andrew-albert-125/intro-call" target="_blank" rel="noopener">Book a call →</a></div>
 </div></header>
 
 <main>
 <section class="band hero"><div class="in">
   <div class="eyebrow">Case study · Messy Lab</div>
   <h1>Same AI, same questions, cleaner data. Correct answers went from 83% to 99%.</h1>
-  <p class="lede" style="margin-top:18px">I took five public gene-expression studies on tamoxifen response in breast cancer cells, found every way their files disagree, and rebuilt them as one clean database. Then I asked two leading AI models the same research questions on the raw files and on the clean database. Every answer below is saved with its full transcript, and every number links to the runs behind it.</p>
+  <p class="lede" style="margin-top:18px">I took five public gene-expression studies on tamoxifen response in breast cancer cells, found every way their files disagree, and rebuilt them as one clean database. Then I asked two leading AI models the same research questions on the raw files and on the clean database. Every answer below is saved with its full transcript, and every number links to the runs behind it. The code, the raw files and all 300 transcripts are <a href="https://github.com/andrewalbertand/messy-lab" target="_blank" rel="noopener">open on GitHub</a>, and one command rebuilds the database. <a href="https://www.linkedin.com/feed/update/urn:li:activity:7510416589368975360/" target="_blank" rel="noopener">Short write-up on LinkedIn.</a></p>
   <div class="nums">
     <a class="num" href="#runs-scored"><b>83% → 99%</b><span>answers correct, raw files → clean database</span><em>276 graded answers</em></a>
     <a class="num" href="#runs-wrong"><b>24 → 2</b><span>wrong answers out of 138</span><em>see every wrong answer</em></a>
@@ -283,7 +283,7 @@ footer{padding-block:30px;font-size:13.5px;color:var(--ink-3);border-top:1px sol
 <section class="s" id="runs"><div class="in">
   <div class="eyebrow">Every run</div>
   <h2>All 300 answers, with transcripts</h2>
-  <p>Each row is one answer. Open it to see every piece of code the model ran, what came back, its final answer and how it was graded.</p>
+  <p>Each row is one answer. Open it to see every piece of code the model ran, what came back, its final answer and how it was graded. The same files are in <a href="https://github.com/andrewalbertand/messy-lab/tree/main/runs/results" target="_blank" rel="noopener">runs/results on GitHub</a>.</p>
   <div class="filters">
     <label for="fc">Condition<select id="fc"><option value="">Both</option><option value="before">Raw files</option><option value="after">Clean database</option></select></label>
     <label for="fm">Model<select id="fm"><option value="">Both</option><option value="claude">Claude</option><option value="gpt">GPT</option></select></label>
@@ -303,6 +303,8 @@ footer{padding-block:30px;font-size:13.5px;color:var(--ink-3);border-top:1px sol
 </main>
 
 <footer><div class="in">
+  <p>Repository: <a href="https://github.com/andrewalbertand/messy-lab" target="_blank" rel="noopener">github.com/andrewalbertand/messy-lab</a> (MIT License).</p>
+  <p>Write-up: <a href="https://www.linkedin.com/feed/update/urn:li:activity:7510416589368975360/" target="_blank" rel="noopener">"I pointed AI at a messy lab's data. Then I cleaned it." on LinkedIn</a>.</p>
   <p>Andrew Albert, AA Bio Consulting · Frisco, Texas · <span class="mono">andrew@aabioconsulting.com</span></p>
   <p>All data in this study is public (NCBI GEO series GSE4025, GSE21618, GSE26298, GSE111151, GSE117942 and their papers). No client data was used. Run costs are API list prices at the time of the run.</p>
 </div></footer>
